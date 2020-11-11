@@ -1,7 +1,8 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public abstract class OfficeInteractable : MonoBehaviour
+public abstract class OfficeInteractable : MonoBehaviour, IPointerClickHandler
 {
     protected GameManager gm;
     public Sprite[] models; 
@@ -33,6 +34,8 @@ public abstract class OfficeInteractable : MonoBehaviour
     }
 
     public override string ToString() => $"{this.name} : Level {Level}, costs {ActualCost()} to upgrade.";
+    
+    public abstract void OnPointerClick(PointerEventData eventData);
 
     private void OnDestroy() => SaveState();
     void SaveState() => PlayerPrefs.SetInt($"{name}_Level", Level);
