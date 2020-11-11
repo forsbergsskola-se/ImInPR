@@ -24,6 +24,11 @@ public class GameManager : MonoBehaviour
                 Debug.Log(cash.Amount);
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.LeftControl))
+        {
+            FindObjectOfType<SoundManager>().PlaySound("TestSouNd");
+        }
         #endregion
     }
 }
