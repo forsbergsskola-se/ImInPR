@@ -4,6 +4,11 @@ public class BandTaskConfig : ScriptableObject
 {
     //TODO Add EXP class 
     [SerializeField] private ExperienceAmount[] rewards;
-    [SerializeField] private int time;
-    [SerializeField] private int cost;
+    public int time;
+    public int cost;
+
+    /*void Finish(Band band)
+    {
+        
+    }*/
 }
