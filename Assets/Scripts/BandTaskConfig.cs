@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 [CreateAssetMenu(fileName = "NewTask", menuName = "Task")]
-public class BandTaskSO : ScriptableObject
+public class BandTaskConfig : ScriptableObject
 {
     //TODO Add EXP class 
     [SerializeField] private ExperienceAmount[] rewards;
