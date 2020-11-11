@@ -18,6 +18,9 @@ public class SoundManager : MonoBehaviour
 
         if (sound != null)
         {
+            if(_audioSource.isPlaying)
+                _audioSource.Stop();
+            
             _audioSource.PlayOneShot(sound, volume);
         
             Debug.Log($"playing GameSound : {sound.name}");
