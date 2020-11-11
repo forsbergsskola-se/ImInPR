@@ -28,13 +28,13 @@ public class GameManager : MonoBehaviour
         {
             foreach (var value in officeEquipment)
             {
-                Debug.Log(cash.Amount);
+                Debug.Log(value);
             }
         }
 
         if (Input.GetKeyDown(KeyCode.LeftControl))
         {
-            FindObjectOfType<SoundManager>().PlaySound("TestSouNd");
+            FindObjectOfType<SoundManager>().PlaySound("BastardsOfSatan");
         }
         #endregion
     }

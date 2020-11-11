@@ -6,8 +6,9 @@ public class SoundManager : MonoBehaviour
 
     private AudioSource _audioSource;
     [Range(0,1f)]
-    public float volume = 1f;
-    private void Start()
+    public float volume = 0.5f;
+
+    private void Awake()
     {
         _audioSource = FindObjectOfType<AudioSource>();
     }

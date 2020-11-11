@@ -484,6 +484,7 @@ GameObject:
   - component: {fileID: 296079779}
   - component: {fileID: 296079781}
   - component: {fileID: 296079780}
+  - component: {fileID: 296079782}
   m_Layer: 0
   m_Name: BoomBox
   m_TagString: Untagged
@@ -503,7 +504,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1469920146}
-  m_RootOrder: 9
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -548,6 +549,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 296079778}
   m_CullTransparentMesh: 0
+--- !u!114 &296079782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 296079778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30389ada1bdb20047b80bdcda475ef2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  models: []
+  levelUpCost: 50
 --- !u!1 &379075615
 GameObject:
   m_ObjectHideFlags: 0
@@ -1327,6 +1342,7 @@ GameObject:
   - component: {fileID: 930818503}
   - component: {fileID: 930818505}
   - component: {fileID: 930818504}
+  - component: {fileID: 930818506}
   m_Layer: 0
   m_Name: Phone
   m_TagString: Untagged
@@ -1346,7 +1362,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1469920146}
-  m_RootOrder: 6
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1391,6 +1407,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 930818502}
   m_CullTransparentMesh: 0
+--- !u!114 &930818506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 930818502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da4d5554eb9fd9744bd0b33e1d72c8b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  models: []
+  levelUpCost: 0
 --- !u!1 &937066198
 GameObject:
   m_ObjectHideFlags: 0
@@ -1421,7 +1451,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1469920146}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1752,7 +1782,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1469920146}
-  m_RootOrder: 7
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2063,11 +2093,11 @@ RectTransform:
   - {fileID: 1315222419}
   - {fileID: 644452881}
   - {fileID: 456627537}
+  - {fileID: 1909260368}
+  - {fileID: 296079779}
   - {fileID: 937066199}
   - {fileID: 930818503}
   - {fileID: 1115743055}
-  - {fileID: 1909260368}
-  - {fileID: 296079779}
   m_Father: {fileID: 1053364221}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2193,7 +2223,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1469920146}
-  m_RootOrder: 8
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2251,4 +2281,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   models: []
-  levelUpCost: 0
+  levelUpCost: 10

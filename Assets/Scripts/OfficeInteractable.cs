@@ -3,7 +3,7 @@ using UnityEngine;
 
 public abstract class OfficeInteractable : MonoBehaviour
 {
-    private GameManager gm;
+    protected GameManager gm;
     public Sprite[] models; 
     public int Level { get; private set; }
     public int levelUpCost;
@@ -31,6 +31,8 @@ public abstract class OfficeInteractable : MonoBehaviour
         //todo implement proper costIncrease per levelUp
         return levelUpCost * Level;
     }
+
+    public override string ToString() => $"{this.name} : Level {Level}, costs {ActualCost()} to upgrade.";
 
     private void OnDestroy() => SaveState();
     void SaveState() => PlayerPrefs.SetInt($"{name}_Level", Level);

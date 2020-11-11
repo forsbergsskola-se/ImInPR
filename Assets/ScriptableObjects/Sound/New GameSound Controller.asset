@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameSounds:
   - {fileID: 11400000, guid: 9355f150944f8a14ebb4b86541d8472f, type: 2}
+  - {fileID: 11400000, guid: 314b222dd9ac1654aada31cc8c11219f, type: 2}
