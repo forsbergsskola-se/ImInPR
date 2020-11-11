@@ -670,6 +670,7 @@ GameObject:
   - component: {fileID: 456627537}
   - component: {fileID: 456627539}
   - component: {fileID: 456627538}
+  - component: {fileID: 456627540}
   m_Layer: 0
   m_Name: Plant
   m_TagString: Untagged
@@ -734,6 +735,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 456627536}
   m_CullTransparentMesh: 0
+--- !u!114 &456627540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 456627536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b19aaa563ead924787f0645a218ddfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  models: []
+  levelUpCost: 0
 --- !u!1 &644452880
 GameObject:
   m_ObjectHideFlags: 0
@@ -1912,6 +1927,7 @@ GameObject:
   - component: {fileID: 1469920149}
   - component: {fileID: 1469920148}
   - component: {fileID: 1469920147}
+  - component: {fileID: 1469920150}
   m_Layer: 0
   m_Name: UI
   m_TagString: Untagged
@@ -2008,6 +2024,18 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &1469920150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1469920145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad4f707495325cc4d8e57e73c16f3875, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1909260367
 GameObject:
   m_ObjectHideFlags: 0
@@ -2019,6 +2047,7 @@ GameObject:
   - component: {fileID: 1909260368}
   - component: {fileID: 1909260370}
   - component: {fileID: 1909260369}
+  - component: {fileID: 1909260371}
   m_Layer: 0
   m_Name: Chair
   m_TagString: Untagged
@@ -2083,3 +2112,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1909260367}
   m_CullTransparentMesh: 0
+--- !u!114 &1909260371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1909260367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee700845e3a06104f8042a4b28abfbe7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  models: []
+  levelUpCost: 0
