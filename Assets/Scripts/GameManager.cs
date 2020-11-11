@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
@@ -7,10 +8,16 @@ public class GameManager : MonoBehaviour
     public Cash cash;
     
     public static List<OfficeInteractable> officeEquipment;
+
+    private void Awake()
+    {
+        cash = new Cash();
+    }
+
     private void Start()
     {
         officeEquipment = GetComponentsInChildren<OfficeInteractable>().ToList();
-        cash = new Cash();
+        
     }
 
     private void Update()
