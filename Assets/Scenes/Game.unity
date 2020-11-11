@@ -2049,7 +2049,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d434f5af53c4fa45939659639929f75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameSoundController: {fileID: 0}
+  gameSoundController: {fileID: 11400000, guid: db9afdfc28fd190479b9f440cba44677, type: 2}
 --- !u!1 &1909260367
 GameObject:
   m_ObjectHideFlags: 0

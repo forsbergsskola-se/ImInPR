@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class OfficeInteractable : MonoBehaviour
@@ -10,9 +8,11 @@ public abstract class OfficeInteractable : MonoBehaviour
     public int Level { get; private set; }
     public int levelUpCost;
 
+    public event Action OnLevelUp;
     private void Start()
     {
         gm = FindObjectOfType<GameManager>();
+        PlayerPrefs.GetInt($"{name}_Level", 0);
     }
 
     public virtual void IncreaseLevel()
@@ -21,14 +21,17 @@ public abstract class OfficeInteractable : MonoBehaviour
         {
             //SpawnFloating Text
             Level++;
+            OnLevelUp?.Invoke();
             //Increase levelUpCost??
         }
     }
 
     public int ActualCost()
     {
+        //todo implement proper costIncrease per levelUp
         return levelUpCost * Level;
     }
-    
-    
+
+    private void OnDestroy() => SaveState();
+    void SaveState() => PlayerPrefs.SetInt($"{name}_Level", Level);
 }

@@ -1,9 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
 using UnityEngine;
 
-public class Cash 
+public class Cash
 {
+    public event Action OnCashChanged;
     public int Amount
     {
         get => PlayerPrefs.GetInt("Cash", 1000);
@@ -13,6 +13,7 @@ public class Cash
     public void Add(int value)
     {
         this.Amount += value;
+        OnCashChanged?.Invoke();
     }
 
     public bool Spend(int value)
@@ -20,8 +21,7 @@ public class Cash
         if (value > this.Amount) return false;
 
         this.Amount -= value;
+        OnCashChanged?.Invoke();
         return true;
-
     }
-    
 }

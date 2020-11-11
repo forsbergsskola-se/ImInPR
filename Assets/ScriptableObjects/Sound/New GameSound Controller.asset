@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26f30524fe2688841a9828fbefc81e1c, type: 3}
   m_Name: New GameSound Controller
   m_EditorClassIdentifier: 
-  gameSounds: []
+  gameSounds:
+  - {fileID: 11400000, guid: 9355f150944f8a14ebb4b86541d8472f, type: 2}

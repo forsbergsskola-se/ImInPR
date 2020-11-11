@@ -14,7 +14,7 @@ public class GameSoundController : ScriptableObject
                 return gameSound.clip;
             }
         }
-        Debug.Log("Sound clip not found...");
+        Debug.Log($"Sound clip {name} not found...");
         return null;
     }
 }
