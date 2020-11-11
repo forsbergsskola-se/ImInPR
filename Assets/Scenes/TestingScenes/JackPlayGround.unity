@@ -748,7 +748,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   models: []
-  levelUpCost: 0
+  levelUpCost: 10
 --- !u!1 &644452880
 GameObject:
   m_ObjectHideFlags: 0
@@ -2139,4 +2139,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   models: []
-  levelUpCost: 0
+  levelUpCost: 20
