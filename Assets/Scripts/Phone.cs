@@ -1,6 +1,6 @@
 ﻿using UnityEngine.EventSystems;
 
-public class Phone : OfficeInteractable, IPointerClickHandler
+public class Phone : OfficeInteractable
 {
 
     public override void OnPointerClick(PointerEventData eventData)

@@ -1,6 +1,6 @@
 ﻿using UnityEngine.EventSystems;
 
-public class BoomBox : OfficeInteractable, IPointerClickHandler
+public class BoomBox : OfficeInteractable
 {
     public override void OnPointerClick(PointerEventData eventData)
     {

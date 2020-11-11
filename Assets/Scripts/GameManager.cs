@@ -24,17 +24,21 @@ public class GameManager : MonoBehaviour
     {
         
         #region Testing
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.F1)) //Shows name, level and cost of upgrade of all OfficeInteractables
         {
             foreach (var value in officeEquipment)
             {
                 Debug.Log(value);
             }
         }
-
-        if (Input.GetKeyDown(KeyCode.LeftControl))
+        
+        if (Input.GetKeyDown(KeyCode.F2))
         {
             FindObjectOfType<SoundManager>().PlaySound("BastardsOfSatan");
+        }
+        if (Input.GetKeyDown(KeyCode.F3))
+        {
+            FindObjectOfType<SoundManager>().PlaySound("ThePureHate-GrindCore");
         }
         #endregion
     }
