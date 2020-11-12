@@ -9,14 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 72f816c7f2ce13a4ea39c9120427ea36, type: 3}
   m_Name: ThePureHate
   m_EditorClassIdentifier: Assembly-CSharp::Bands
-  name: The Pure Hate
-  genre: Grindcore
-  Tier: 0
-  bioText: "A group that despite their fans. A Pure Hate concert often starts with
-    them insulting the audience until there\u2019s no one left. Then they start to
-    play."
-  thumbnail: {fileID: 0}
-  songName: ThePureHate-GrindCore

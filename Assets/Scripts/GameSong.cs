@@ -6,7 +6,7 @@ public class GameSong : GameSound
 {
     [Header("Track Info")] 
     public string songName;
-    public string BandName;
+    public string bandName;
     
     [Header("Created By")]
     public string soundDesignerName;
