@@ -189,7 +189,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40
+  m_fontSize: 28.1
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -262,6 +262,8 @@ GameObject:
   - component: {fileID: 4679948482045361574}
   - component: {fileID: 4679948482045361575}
   - component: {fileID: 2167575779905164744}
+  - component: {fileID: 6579990887761473589}
+  - component: {fileID: 8000253855489006978}
   m_Layer: 0
   m_Name: Task
   m_TagString: Untagged
@@ -327,6 +329,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4679948482045361577}
   m_CullTransparentMesh: 0
+--- !u!114 &6579990887761473589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4679948482045361577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55ec733a3c9eb4b46baf3cec3414e522, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  task: {fileID: 11400000, guid: bc75716265a950f4cbc676b2a0fbfa21, type: 2}
+--- !u!114 &8000253855489006978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4679948482045361577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 419d5da93a240461b9474c6a19f02bb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  taskName: {fileID: 4679948481307194973}
+  outcome: {fileID: 6236723930755530146}
+  timeCost: {fileID: 3991187429982491178}
+  progressBar: {fileID: 3011839177826933862}
 --- !u!1 &4780424589890695634
 GameObject:
   m_ObjectHideFlags: 0
@@ -420,7 +451,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40
+  m_fontSize: 38.55
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -494,7 +525,6 @@ GameObject:
   - component: {fileID: 4651950558526099631}
   - component: {fileID: 6236723930755530146}
   - component: {fileID: 3353087184438695889}
-  - component: {fileID: 6740058031151458415}
   m_Layer: 0
   m_Name: Outcome
   m_TagString: Untagged
@@ -576,7 +606,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40
+  m_fontSize: 18
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -638,19 +668,6 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
---- !u!114 &6740058031151458415
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6270100862945137214}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55ec733a3c9eb4b46baf3cec3414e522, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  task: {fileID: 11400000, guid: bc75716265a950f4cbc676b2a0fbfa21, type: 2}
 --- !u!1 &7846405807545407796
 GameObject:
   m_ObjectHideFlags: 0

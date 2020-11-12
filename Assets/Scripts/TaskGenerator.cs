@@ -6,17 +6,26 @@ using Random = UnityEngine.Random;
 
 public class TaskGenerator : MonoBehaviour
 {
-    List<BandTask> currentlyActiveTasks;
+    List<BandTask> currentlyActiveTasks = new List<BandTask>();
     public List<BandTaskConfig> allTasks;
     public BandTask taskPrefab;
 
-    /*void SpawnTask(Band band)
+    private void Start()
     {
-        var newBand = Instantiate(taskPrefab);
+        SpawnTask();
+    }
+
+    //TODO get band as a parameter here
+    void SpawnTask()
+    {
+        string name = "EBBA";
+        int lvl = 12;
+        
+        var newBand = Instantiate(taskPrefab, this.transform);
         currentlyActiveTasks.Add(newBand);
-        newBand.GetComponent<BandTask>().Setup(band.Name, GenerateTask(band.lvl)); 
-        newBand.OnRewardCollected += band.AwaitReward;
-    }*/
+        newBand.GetComponent<BandTask>().Setup(name, GenerateTask(lvl)); 
+        //newBand.OnRewardCollected += band.AwaitReward;
+    }
 
     BandTaskConfig GenerateTask(int tier)
     {
