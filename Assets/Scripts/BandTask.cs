@@ -8,6 +8,8 @@ public class BandTask : MonoBehaviour, IPointerClickHandler
     private string bandName;
     private float time;
     private bool owned;
+    private bool finished;
+    public event Action OnRewardCollected;
     public event Action OnTaskComplete;
     public event Action OnTaskStart;
 
@@ -27,15 +29,28 @@ public class BandTask : MonoBehaviour, IPointerClickHandler
             time -= Time.deltaTime;
         }
 
-        if (!(time < 0)) return;
+        if (time < 0)
+        {
+            OnTaskComplete?.Invoke();
+            finished = true;
+        }
+
+        if (!finished) return;
         task.Finish(bandName);
-        OnTaskComplete?.Invoke();
-        Destroy(this.gameObject);
+        OnRewardCollected?.Invoke();
+        Destroy(gameObject);
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        owned = true;
-        OnTaskStart?.Invoke();
+        if (!owned)
+        {
+            owned = true;
+            OnTaskStart?.Invoke(); 
+        }
+        if (!finished) return;
+            task.Finish(bandName);
+            OnRewardCollected?.Invoke();
+            Destroy(gameObject);
     }
 }
