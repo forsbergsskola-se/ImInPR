@@ -14,11 +14,12 @@ public class BandTask : MonoBehaviour, IPointerClickHandler
     public event Action OnTaskStart;
 
     //TODO implement band class
-    BandTask Setup(string bandName)
+    public BandTask Setup(string bandName, BandTaskConfig task)
     {
         this.bandName = bandName;
-        time = task.time;
         owned = true;
+        this.task = task;
+        time = task.time;
         return this;
     }
 

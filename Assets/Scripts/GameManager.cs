@@ -34,15 +34,23 @@ public class GameManager : MonoBehaviour
         
         if (Input.GetKeyDown(KeyCode.F2))
         {
-            FindObjectOfType<SoundManager>().PlaySound("BastardsOfSatan");
+            FindObjectOfType<SoundManager>().PlaySong("BastardsOfSatan");
         }
         if (Input.GetKeyDown(KeyCode.F3))
         {
-            FindObjectOfType<SoundManager>().PlaySound("ThePureHate-GrindCore");
+            FindObjectOfType<SoundManager>().PlaySong("ThePureHate-GrindCore");
         }
         if (Input.GetKeyDown(KeyCode.F4))
         {
-            FindObjectOfType<SoundManager>().PlaySound("80Funk_1");
+            FindObjectOfType<SoundManager>().PlaySong("80Funk_1");
+        }
+        if (Input.GetKeyDown(KeyCode.F5))
+        {
+            FindObjectOfType<SoundManager>().PlaySong("EBBA_Disco");
+        }
+        if (Input.GetKeyDown(KeyCode.F6))
+        {
+            FindObjectOfType<SoundManager>().PlaySong("HipHopBeat");
         }
         #endregion
     }

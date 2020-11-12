@@ -2,29 +2,37 @@
 using UnityEngine;
 public class SoundManager : MonoBehaviour
 {
+    [Header("Game Sounds")]
+    [SerializeField] private AudioSource gameSoundAudioSource;
     [SerializeField] private GameSoundController gameSoundController;
-
-    private AudioSource _audioSource;
-    [Range(0,1f)]
-    public float volume = 0.5f;
-
-    private void Awake()
+    [Range(0,1f)]public float gameSoundVolume = 0.5f;
+    
+    [Header("Game Music")]
+    [SerializeField] private AudioSource musicAudioSource;
+    [SerializeField] private GameSoundController musicController;
+    [Range(0,1f)] public float musicVolume = 0.5f;
+    
+    public void PlaySound(string soundName)
     {
-        _audioSource = FindObjectOfType<AudioSource>();
+        var sound = gameSoundController.FindGameSound(soundName);
+        Play(sound, gameSoundAudioSource, gameSoundVolume);
     }
 
-    public void PlaySound(string name)
+    public void PlaySong(string songName)
     {
-        var sound = gameSoundController.FindGameSound(name);
+        var sound = musicController.FindGameSound(songName);
+        Play(sound, musicAudioSource, musicVolume);
+    }
 
-        if (sound != null)
+    private void Play(AudioClip clip, AudioSource source, float volume)
+    {
+        if (clip != null)
         {
-            if(_audioSource.isPlaying)
-                _audioSource.Stop();
+            if(source.isPlaying)
+                source.Stop();
             
-            _audioSource.PlayOneShot(sound, volume);
-        
-            Debug.Log($"playing GameSound : {sound.name}");
+            source.PlayOneShot(clip, volume);
+            Debug.Log($"playing GameSound : {clip.name}");
         }
     }
 }

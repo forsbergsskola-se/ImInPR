@@ -547,6 +547,7 @@ GameObject:
   - component: {fileID: 379075619}
   - component: {fileID: 379075618}
   - component: {fileID: 379075617}
+  - component: {fileID: 379075621}
   m_Layer: 0
   m_Name: TaskList
   m_TagString: Untagged
@@ -659,6 +660,20 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &379075621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 379075615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3d41c13f41c74b1d827192fa1d588d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allTasks: []
+  taskPrefab: {fileID: 0}
 --- !u!1 &456627536
 GameObject:
   m_ObjectHideFlags: 0
@@ -2050,6 +2065,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameSoundController: {fileID: 0}
+  volume: 0.5
 --- !u!1 &1909260367
 GameObject:
   m_ObjectHideFlags: 0
