@@ -19,8 +19,9 @@ public class Experience : ScriptableObject
         var newXp = GetExperience(bandName) + amount;
         PlayerPrefs.SetInt($"{bandName}.{this.name}", newXp);
     }
-
-    public float GetPercentageOfLevelBar(string bandName, int baseAmountToLevel)
+    
+    // Tested some math functions
+    /*public float GetPercentageOfLevelBar(string bandName, int baseAmountToLevel)
     {
         var totalExp = GetExperience(name);
         var lvl = GetLevel(bandName, baseAmountToLevel);
@@ -37,5 +38,5 @@ public class Experience : ScriptableObject
     {
         var currentLvl = GetLevel(bandName, baseAmountToLevel);
         return Mathf.RoundToInt(baseAmountToLevel * currentLvl + Mathf.Pow(1.1f, currentLvl));
-    }
+    }*/
 }
