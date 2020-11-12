@@ -1,19 +1,24 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class BandTask : MonoBehaviour
+public class BandTask : MonoBehaviour, IPointerClickHandler
 {
     [SerializeField] private BandTaskConfig task;
-    //private Band band;
+    private string bandName;
     private float time;
     private bool owned;
+    public event Action OnTaskComplete;
+    public event Action OnTaskStart;
 
     //TODO implement band class
-    /*void Setup(ref Band band)
+    BandTask Setup(string bandName)
     {
-        this.band = band;
+        this.bandName = bandName;
         time = task.time;
         owned = true;
-    }*/
+        return this;
+    }
 
     private void Update()
     {
@@ -22,9 +27,15 @@ public class BandTask : MonoBehaviour
             time -= Time.deltaTime;
         }
 
-        /*if (time < 0)
-        {
-            task.Finish(band);
-        }*/
+        if (!(time < 0)) return;
+        task.Finish(bandName);
+        OnTaskComplete?.Invoke();
+        Destroy(this.gameObject);
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        owned = true;
+        OnTaskStart?.Invoke();
     }
 }

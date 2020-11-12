@@ -7,8 +7,11 @@ public class BandTaskConfig : ScriptableObject
     public int time;
     public int cost;
 
-    /*void Finish(Band band)
+    public void Finish(string bandName)
     {
-        
-    }*/
+        foreach (var reward in rewards)
+        {
+            reward.ApplyReward(bandName);
+        }
+    }
 }
