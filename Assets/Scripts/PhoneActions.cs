@@ -1,38 +1,61 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PhoneActions : MonoBehaviour
 {
     private Animator phoneAnimator;
+    private bool _incomingCall = false;
+    public int randomNumber;
+    public float repeatTime = 20f;
 
     [SerializeField] private GameObject callPanel;
+    
     void Start()
     {
         phoneAnimator = gameObject.GetComponent<Animator>();
+        InvokeRepeating("IsCalling",2f, repeatTime);
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+       IncomingCallMenu();
+    }
+    
+    private void IsCalling()
+    {
+        if (!_incomingCall)
+        {
+            if (NumberGenerator() == randomNumber - 1)
+            {
+                _incomingCall = true;
+            }
+        }
+    }
+
+    public void IncomingCallMenu()
+    {
+        if (_incomingCall) 
         {
             callPanel.SetActive(true);
         }
-    }
-    
-    private bool isCalling()
-    {
-        Debug.Log("Someone is calling..");
-        return true;
+        else
+        {
+            callPanel.SetActive(false); 
+        }
     }
 
-    public void onUserClickAcceptDecline(int choice) // 1 = Accept call, 0 = Decline call
+    public void AcceptCall()
     {
-        if (choice == 1)
-        {
-            //Give Task
-            callPanel.SetActive(false);
-        }
-        callPanel.SetActive(false); // Else
+        // Give task
+        _incomingCall = false;
+    }
+
+    public void endCall()
+    {
+        _incomingCall = false;
+    }
+    
+    public int NumberGenerator()
+    {
+        return Random.Range(0, randomNumber);
     }
 }
