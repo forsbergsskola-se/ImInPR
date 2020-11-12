@@ -10,11 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 0}
-  m_Name: New Band
+  m_Name: BastardsOfSatan
   m_EditorClassIdentifier: Assembly-CSharp::Bands
-  name: 
-  genre: 
-  tier: 0
-  bioText: 
-  thumbnail: {fileID: 0}
-  songName: 
+  name: Bastards of Satan
+  genre: Death Metal
+  Tier: 0
+  bioText: Mostly famous for the never appreciated gesture of throwing pig blood
+    on their audience on their live shows.
+  thumbnail: {fileID: 21300000, guid: a06acf52eaf2afe4d9c252def0b61bb6, type: 3}
+  songName: BastardsOfSatan

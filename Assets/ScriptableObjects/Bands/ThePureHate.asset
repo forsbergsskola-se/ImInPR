@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: ThePureHate
+  m_EditorClassIdentifier: Assembly-CSharp::Bands
+  name: The Pure Hate
+  genre: Grindcore
+  Tier: 0
+  bioText: "A group that despite their fans. A Pure Hate concert often starts with
+    them insulting the audience until there\u2019s no one left. Then they start to
+    play."
+  thumbnail: {fileID: 0}
+  songName: ThePureHate-GrindCore
