@@ -1,63 +1,57 @@
-﻿using System;
-using System.Collections;
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 
 public class NowPlaying : MonoBehaviour
 {
-    private enum State{ TransitionIn, Display, TransitionOut}
-    
     [SerializeField] private TextMeshProUGUI songTitle;
     [SerializeField] private TextMeshProUGUI soundDesignStudent;
     [SerializeField] private float distanceToMoveOnX = 500f;
     [SerializeField] private float transitionTime = 1.5f;
     [SerializeField] private float durationToLive = 3f;
 
-    private State currentState = State.TransitionIn;
-    private Vector2 startingPos;
-    private Vector2 endPos;
-    float timeElapsed = 0;
+    private enum State{ TransitionIn, Display, TransitionOut}
+    private State _currentState = State.TransitionIn;
+    private Vector2 _startingPos;
+    private Vector2 _endPos;
+    private float _timeElapsed = 0f;
     
     public void Setup(string bandName, string songName, string studentName)
     {
         songTitle.SetText($"{bandName} - {songName}");
         soundDesignStudent.SetText($"composed by: {studentName}");
-        //StartCoroutine(TransitionIn());
     }
     
     private void Start()
     {
-        startingPos = new Vector2(transform.position.x, transform.position.y);
-        endPos = new Vector2(startingPos.x + distanceToMoveOnX, startingPos.y);
-        Destroy(this.gameObject, 2*transitionTime+durationToLive);
+        _startingPos = transform.position; 
+        _endPos = new Vector2(_startingPos.x + distanceToMoveOnX, _startingPos.y);
+        Destroy(this.gameObject, 2 * transitionTime + durationToLive);
     }
 
     private void Update()
     {
-        
-        switch (currentState)
+        switch (_currentState)
         {
             case State.TransitionIn:
-                if (timeElapsed < transitionTime)
+                if (_timeElapsed < transitionTime)
                 {
-                    transform.position = Vector2.Lerp(startingPos, endPos, timeElapsed / transitionTime);
+                    transform.position = Vector2.Lerp(_startingPos, _endPos, _timeElapsed / transitionTime);
                 }
                 else
-                    currentState = State.Display;
+                    _currentState = State.Display;
                 break;
-                /*else if((timeElapsed < transitionTime + durationToLive) && (timeElapsed > transitionTime))
-                    currentState = State.Display;*/
-              
+               
             case State.Display:
-                if (timeElapsed > transitionTime + durationToLive)
-                    currentState = State.TransitionOut;
+                if (_timeElapsed > transitionTime + durationToLive)
+                    _currentState = State.TransitionOut;
                 break;
+            
             case State.TransitionOut:
-                timeElapsed = 0;
-                transform.position = Vector2.Lerp(endPos, startingPos, timeElapsed / transitionTime);
+                _timeElapsed = 0;
+                transform.position = Vector2.Lerp(_endPos, _startingPos, _timeElapsed / transitionTime);
                 break;
         }
-        timeElapsed += Time.deltaTime;
+        
+        _timeElapsed += Time.deltaTime;
     }
 }
-
