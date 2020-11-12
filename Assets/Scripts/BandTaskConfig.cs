@@ -6,6 +6,7 @@ public class BandTaskConfig : ScriptableObject
     [SerializeField] private ExperienceAmount[] rewards;
     public int time;
     public int cost;
+    public int tier;
     public string description;
     public string outComeText;
 
