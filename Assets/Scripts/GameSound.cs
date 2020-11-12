@@ -3,5 +3,5 @@
 [CreateAssetMenu(fileName = "New GameSound", menuName = "Sound/Game Sound")]
 public class GameSound : ScriptableObject
 {
-    [SerializeField] public AudioClip clip;
+    public AudioClip clip;
 }
