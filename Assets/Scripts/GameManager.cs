@@ -40,6 +40,10 @@ public class GameManager : MonoBehaviour
         {
             FindObjectOfType<SoundManager>().PlaySound("ThePureHate-GrindCore");
         }
+        if (Input.GetKeyDown(KeyCode.F4))
+        {
+            FindObjectOfType<SoundManager>().PlaySound("80Funk_1");
+        }
         #endregion
     }
 }
