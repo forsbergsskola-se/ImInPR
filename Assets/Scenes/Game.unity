@@ -1711,6 +1711,7 @@ GameObject:
   - component: {fileID: 930818504}
   - component: {fileID: 930818506}
   - component: {fileID: 930818507}
+  - component: {fileID: 930818509}
   - component: {fileID: 930818508}
   m_Layer: 0
   m_Name: Phone
@@ -1803,8 +1804,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   randomNumber: 3
-  repeatTime: 20
-  callPanel: {fileID: 367551774}
+  repeatTime: 2
 --- !u!95 &930818508
 Animator:
   serializedVersion: 3
@@ -1824,6 +1824,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &930818509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 930818502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99b47c36487eb31498edaa526fbc32eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PopUp: 0
+  PopUpPanel: {fileID: 367551774}
 --- !u!1 &937066198
 GameObject:
   m_ObjectHideFlags: 0
