@@ -9,18 +9,18 @@ public class Band : ScriptableObject
     public string name;
     public string genre;
 
-
-
-    public bandTier Tier;
+    public BandTier Tier;
     public string bioText;
 
     public Sprite thumbnail;
-    public string songName;
+    public GameSong song;
 
+    public bool isOwned;
 }
 
-public enum bandTier
+public enum BandTier
 {
-    Tier1, Tier2, Tier3
-    
+    Tier1, 
+    Tier2, 
+    Tier3
 }
