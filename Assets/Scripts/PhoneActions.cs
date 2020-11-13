@@ -3,12 +3,10 @@
 public class PhoneActions : MonoBehaviour
 {
     private Animator phoneAnimator;
-    private bool _incomingCall = false;
-    public int randomNumber;
+    public int randomNumberRange;
     public float repeatTime = 20f;
+    public PopUps popUpsScript;
 
-    [SerializeField] private GameObject callPanel;
-    
     void Start()
     {
         phoneAnimator = gameObject.GetComponent<Animator>();
@@ -16,46 +14,23 @@ public class PhoneActions : MonoBehaviour
     }
 
     void Update()
-    {
-       IncomingCallMenu();
+    { 
+        popUpsScript.Update();
     }
     
     private void IsCalling()
     {
-        if (!_incomingCall)
+        if (!popUpsScript.PopUp)
         {
-            if (NumberGenerator() == randomNumber - 1)
+            if (NumberGenerator() == randomNumberRange - 1)
             {
-                _incomingCall = true;
+                popUpsScript.PopUp = true;
             }
         }
     }
 
-    public void IncomingCallMenu()
+    private int NumberGenerator()
     {
-        if (_incomingCall) 
-        {
-            callPanel.SetActive(true);
-        }
-        else
-        {
-            callPanel.SetActive(false); 
-        }
-    }
-
-    public void AcceptCall()
-    {
-        // Give task
-        _incomingCall = false;
-    }
-
-    public void endCall()
-    {
-        _incomingCall = false;
-    }
-    
-    public int NumberGenerator()
-    {
-        return Random.Range(0, randomNumber);
+        return Random.Range(0, randomNumberRange);
     }
 }
