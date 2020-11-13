@@ -4,7 +4,7 @@ using UnityEngine;
 [RequireComponent(typeof(BandUI))]
 public class BandBehaviour : MonoBehaviour
 {
-    public Bands bandConfig;
+    public Band bandConfig;
     private int currentLevel;
     public Experience awareness;
     public Experience popularity;
