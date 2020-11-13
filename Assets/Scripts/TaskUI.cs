@@ -2,6 +2,7 @@
 using UnityEngine;
 using TMPro;
 
+[RequireComponent(typeof(BandTask))]
 public class TaskUI : MonoBehaviour
 {
     public TMP_Text taskName, outcome, timeCost;
