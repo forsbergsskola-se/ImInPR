@@ -13,13 +13,14 @@ public abstract class OfficeInteractable : MonoBehaviour, IPointerClickHandler
     private void Start()
     {
         gm = FindObjectOfType<GameManager>();
-        PlayerPrefs.GetInt($"{name}_Level", 0); //todo not sure this is working
+        Level = PlayerPrefs.GetInt($"{name}_Level", 0); //todo not sure this is working
     }
 
     public virtual void IncreaseLevel()
     {
         if (gm.cash.Spend(ActualCost()))
         {
+            Debug.Log($"Upgrade {name}");
             //SpawnFloating Text
             Level++;
             OnLevelUp?.Invoke();
@@ -38,7 +39,11 @@ public abstract class OfficeInteractable : MonoBehaviour, IPointerClickHandler
     public virtual void OnPointerClick(PointerEventData eventData)
     {
         //TODO Add Parameters To PopUpMenu
-        gm.popupManager.PopUpMenu();
+        if (gm.cash.CanAfford(ActualCost()))
+        { 
+            gm.popupManager.PopUpMenu(this.transform, this);  
+        }
+        Debug.Log($"Clicked on {name}");
     }
 
     private void OnDestroy() => SaveState();

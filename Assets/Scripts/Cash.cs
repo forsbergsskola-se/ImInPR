@@ -24,4 +24,9 @@ public class Cash
         OnCashChanged?.Invoke();
         return true;
     }
+
+    public bool CanAfford(int value)
+    {
+        return value < this.Amount;
+    }
 }

@@ -10,7 +10,8 @@ public class PopUpManager : MonoBehaviour
     {
         if (!isCreated) 
         {
-            instance = Instantiate(PopUpPrefab, objectTransform);
+            instance = Instantiate(PopUpPrefab, FindObjectOfType<GameManager>().transform);
+            instance.GetComponent<PopUpPanel>().SetUp(objectTransform, officeObject, this);
             isCreated = true;
         }
     }
