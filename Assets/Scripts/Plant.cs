@@ -5,8 +5,8 @@ public class Plant : OfficeInteractable
 {
     public override void OnPointerClick(PointerEventData eventData)
     {
-        this.IncreaseLevel();
+        base.OnPointerClick(eventData);
+        //TODO Add Plant Specific Logic
     }
-    
 }
 

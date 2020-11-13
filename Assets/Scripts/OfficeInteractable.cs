@@ -34,8 +34,12 @@ public abstract class OfficeInteractable : MonoBehaviour, IPointerClickHandler
     }
 
     public override string ToString() => $"{this.name} : Level {Level}, costs {ActualCost()} to upgrade.";
-    
-    public abstract void OnPointerClick(PointerEventData eventData);
+
+    public virtual void OnPointerClick(PointerEventData eventData)
+    {
+        //TODO Add Parameters To PopUpMenu
+        gm.popupManager.PopUpMenu();
+    }
 
     private void OnDestroy() => SaveState();
     

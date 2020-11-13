@@ -5,6 +5,7 @@ public class Phone : OfficeInteractable
 
     public override void OnPointerClick(PointerEventData eventData)
     {
-        gm.cash.Add(5);
+        base.OnPointerClick(eventData);
+        //TODO Add Phone Specific Logic?
     }
 }

@@ -11,7 +11,7 @@ public class Chair : OfficeInteractable
 
     public override void OnPointerClick(PointerEventData eventData)
     {
-        //todo
-        throw new System.NotImplementedException();
+        base.OnPointerClick(eventData);
+        //todo add chair specific logic?
     }
 }
