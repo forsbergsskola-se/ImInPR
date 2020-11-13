@@ -2,35 +2,29 @@
 
 public class PopUps : MonoBehaviour
 {
-    public bool PopUp = false;
+    public Vector2 PopUpPosition = new Vector2(0, 0);
+    public bool isCreated; 
 
 
-    [SerializeField] private GameObject PopUpPanel;
-    public void Update()
-    {
-        PopUpMenu();
-    }
-    
+    [SerializeField] private GameObject PopUpPrefab;
+
     public void PopUpMenu()
     {
-        if (PopUp) 
+        if (!isCreated) 
         {
-            PopUpPanel.SetActive(true);
-        }
-        else
-        {
-            PopUpPanel.SetActive(false); 
+            Instantiate(PopUpPrefab, FindObjectOfType<GameManager>().transform);
+            isCreated = true;
         }
     }
 
     public void AcceptPopUp()
     {
         // Give task
-        PopUp = false;
+        isCreated = false;
     }
 
     public void DeclinePopUp()
     {
-        PopUp = false;
+        isCreated = false;
     }
 }
