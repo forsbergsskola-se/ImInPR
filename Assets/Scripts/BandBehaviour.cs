@@ -24,8 +24,7 @@ public class BandBehaviour : MonoBehaviour
     {
         //TODO UpdateUI here, Do some Visual Effect?
     }
-
-    //TODO Decide whether to make the UI a separate class
+    
     void UpdateUI()
     {
         GetComponent<BandUI>().UpdateUI(1, 0.7f, 0.7f);

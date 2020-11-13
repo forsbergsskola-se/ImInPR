@@ -2128,7 +2128,6 @@ GameObject:
   - component: {fileID: 1469920147}
   - component: {fileID: 1469920150}
   - component: {fileID: 1469920151}
-  - component: {fileID: 1469920152}
   m_Layer: 0
   m_Name: UI
   m_TagString: Untagged
@@ -2239,7 +2238,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   taskGenerator: {fileID: 379075621}
-  popupManager: {fileID: 1469920152}
+  ConfirmationPrefab: {fileID: 9009883112067890, guid: dbf12bd1bf9334beabf35b8c0c0dfb5d, type: 3}
 --- !u!114 &1469920151
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2259,20 +2258,6 @@ MonoBehaviour:
   musicController: {fileID: 0}
   musicVolume: 0.5
   nowPlayingPrefab: {fileID: 0}
---- !u!114 &1469920152
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1469920145}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66c881787cb6b4ea08a278113576891b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isCreated: 0
-  PopUpPrefab: {fileID: 9009883112067890, guid: dbf12bd1bf9334beabf35b8c0c0dfb5d, type: 3}
 --- !u!1 &1909260367
 GameObject:
   m_ObjectHideFlags: 0

@@ -21,10 +21,10 @@ public class ConfirmationPanel : MonoBehaviour
         }
     }
 
-    public void SetUpOfficeUpgradeable(Transform destination, OfficeInteractable officeObject)
+    public void SetUpOfficeUpgradeable(OfficeInteractable officeObject, Transform destination = default)
     {
         //TODO Make UI Match The OfficeObjects Information
-        //this.parent.position = parent.position;
+        //this.transform.position = destination.position;
         confirmText.text = UpgradeString(officeObject.name);
     }
 
@@ -36,9 +36,17 @@ public class ConfirmationPanel : MonoBehaviour
         confirmText.text = text;
     }
 
-    public void Accept() => OnAccept?.Invoke();
+    public void Accept()
+    {
+       OnAccept?.Invoke();
+       Destroy(this.gameObject);
+    }
 
-    public void Decline() => OnDecline?.Invoke();
+    public void Decline()
+    {
+        OnDecline?.Invoke();
+        Destroy(this.gameObject);
+    }
 
     //todo
     public string UpgradeString(string objectName)
