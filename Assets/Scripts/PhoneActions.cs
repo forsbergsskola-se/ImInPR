@@ -15,16 +15,16 @@ public class PhoneActions : MonoBehaviour
 
     void Update()
     { 
-        popUpsScript.Update();
+        
     }
     
     private void IsCalling()
     {
-        if (!popUpsScript.PopUp)
+        if (!popUpsScript.isCreated)
         {
             if (NumberGenerator() == randomNumberRange - 1)
             {
-                popUpsScript.PopUp = true;
+                popUpsScript.PopUpMenu();
             }
         }
     }

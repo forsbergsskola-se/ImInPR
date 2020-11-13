@@ -309,7 +309,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -678,7 +678,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 165, y: -2.0998535}
+  m_AnchoredPosition: {x: 153, y: 85}
   m_SizeDelta: {x: -1635.0698, y: -1021.4337}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &367551776
@@ -1537,7 +1537,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1803,7 +1803,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 526bd3c702367fb46a603051dbefd6c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  randomNumberRange: 0
+  randomNumberRange: 2
   repeatTime: 2
   popUpsScript: {fileID: 930818509}
 --- !u!95 &930818508
@@ -1837,8 +1837,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99b47c36487eb31498edaa526fbc32eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PopUp: 0
-  PopUpPanel: {fileID: 367551774}
+  PopUpPosition: {x: 0, y: 0}
+  isCreated: 0
+  PopUpPrefab: {fileID: 9009883112067890, guid: 915685282e9cd784ea0cbbd44e20df65, type: 3}
 --- !u!1 &937066198
 GameObject:
   m_ObjectHideFlags: 0
