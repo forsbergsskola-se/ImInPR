@@ -2,6 +2,7 @@
 using UnityEngine;
 using TMPro;
 
+[RequireComponent(typeof(BandTask))]
 public class TaskUI : MonoBehaviour
 {
     public TMP_Text taskName, outcome, timeCost;
@@ -13,7 +14,7 @@ public class TaskUI : MonoBehaviour
         this.outcome.text = "";
         foreach (var outcome in outcomes)
         {
-            this.outcome.text += outcome.ToString() + "\n";
+            this.outcome.text += outcome + "\n";
         }
 
         var transform1 = progressBar.transform;

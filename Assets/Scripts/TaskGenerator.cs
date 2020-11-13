@@ -9,22 +9,16 @@ public class TaskGenerator : MonoBehaviour
     List<BandTask> currentlyActiveTasks = new List<BandTask>();
     public List<BandTaskConfig> allTasks;
     public BandTask taskPrefab;
-
-    private void Start()
-    {
-        SpawnTask();
-    }
-
-    //TODO get band as a parameter here
-    void SpawnTask()
+    
+    public void SpawnTask(BandBehaviour band)
     {
         string name = "EBBA";
         int lvl = 12;
         
         var newBand = Instantiate(taskPrefab, this.transform);
         currentlyActiveTasks.Add(newBand);
-        newBand.GetComponent<BandTask>().Setup(name, GenerateTask(lvl)); 
-        //newBand.OnRewardCollected += band.AwaitReward;
+        newBand.GetComponent<BandTask>().Setup(band.bandConfig.name, GenerateTask(lvl)); 
+        newBand.OnRewardCollected += band.OnReward;
     }
 
     BandTaskConfig GenerateTask(int tier)
