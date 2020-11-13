@@ -4,6 +4,7 @@ public class BoomBox : OfficeInteractable
 {
     public override void OnPointerClick(PointerEventData eventData)
     {
-        FindObjectOfType<SoundManager>().PlaySong("ThePureHate-GrindCore");
+        FindObjectOfType<SoundManager>().PlaySong("80Funk");
+        
     }
 }

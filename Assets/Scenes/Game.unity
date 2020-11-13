@@ -2581,7 +2581,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -2615,6 +2615,8 @@ MonoBehaviour:
   musicAudioSource: {fileID: 1469920152}
   musicController: {fileID: 11400000, guid: db9afdfc28fd190479b9f440cba44677, type: 2}
   musicVolume: 0.5
+  nowPlayingPrefab: {fileID: 6175721735365012748, guid: b3211122faad76246a0d70f1a28770c0, type: 3}
+  parent: {fileID: 1469920146}
 --- !u!82 &1469920152
 AudioSource:
   m_ObjectHideFlags: 0

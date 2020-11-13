@@ -38,11 +38,11 @@ public class GameManager : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.F3))
         {
-            FindObjectOfType<SoundManager>().PlaySong("ThePureHate-GrindCore");
+            FindObjectOfType<SoundManager>().PlaySong("GrindCore");
         }
         if (Input.GetKeyDown(KeyCode.F4))
         {
-            FindObjectOfType<SoundManager>().PlaySong("80Funk_1");
+            FindObjectOfType<SoundManager>().PlaySong("80Funk");
         }
         if (Input.GetKeyDown(KeyCode.F5))
         {

@@ -6,6 +6,11 @@ public struct ExperienceAmount
 
     public void ApplyReward(string bandName)
     {
-        type.SetBandExperience(bandName, amount);
+        type.SetExperience(bandName, amount);
+    }
+
+    public override string ToString()
+    {
+        return $"{type.name} {amount}";
     }
 }

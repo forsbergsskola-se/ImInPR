@@ -9,7 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fca6a1aa3f34817409e000cfee8f0ac8, type: 3}
-  m_Name: 80Funk_1
+  m_Script: {fileID: 11500000, guid: b9b932ae55ff31a4ab76d28c945d7419, type: 3}
+  m_Name: GrindCore
   m_EditorClassIdentifier: 
-  clip: {fileID: 8300000, guid: d360fb97437f47d41be6b79c4c103141, type: 3}
+  clip: {fileID: 8300000, guid: 653d32824a481c449be6d5cd46034db9, type: 3}
+  songName: GrindCore
+  BandName: The Pure Haters
+  soundDesignerName: Svante

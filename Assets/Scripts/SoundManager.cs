@@ -11,28 +11,32 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private AudioSource musicAudioSource;
     [SerializeField] private GameSoundController musicController;
     [Range(0,1f)] public float musicVolume = 0.5f;
+    [SerializeField] private GameObject nowPlayingPrefab;
+    [SerializeField] private Transform parent;
+    private GameSong currentSong;
     
-    public void PlaySound(string soundName)
+    /*public void PlaySound(string soundName)
     {
-        var sound = gameSoundController.FindGameSound(soundName);
+        var sound = gameSoundController.FindGameAudioClip(soundName);
         Play(sound, gameSoundAudioSource, gameSoundVolume);
-    }
+    }*/
 
     public void PlaySong(string songName)
     {
-        var sound = musicController.FindGameSound(songName);
+        var sound = (GameSong)musicController.FindGameSound(songName);
         Play(sound, musicAudioSource, musicVolume);
     }
 
-    private void Play(AudioClip clip, AudioSource source, float volume)
+    private void Play(GameSong sound, AudioSource source, float volume)
     {
-        if (clip != null)
+        if (sound != null)
         {
             if(source.isPlaying)
                 source.Stop();
             
-            source.PlayOneShot(clip, volume);
-            Debug.Log($"playing GameSound : {clip.name}");
+            source.PlayOneShot(sound.clip, volume);
+            var instance = Instantiate(nowPlayingPrefab, parent);
+            instance.GetComponent<NowPlaying>().Setup(sound.bandName, sound.songName, sound.soundDesignerName);
         }
     }
 }

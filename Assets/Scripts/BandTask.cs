@@ -7,6 +7,7 @@ public class BandTask : MonoBehaviour, IPointerClickHandler
     [SerializeField] private BandTaskConfig task;
     private string bandName;
     private float time;
+    private int cost;
     private bool owned;
     private bool finished;
     public event Action OnRewardCollected;
@@ -14,13 +15,12 @@ public class BandTask : MonoBehaviour, IPointerClickHandler
     public event Action OnTaskStart;
 
     //TODO implement band class
-    public BandTask Setup(string bandName, BandTaskConfig task)
+    public void Setup(string bandName, BandTaskConfig task)
     {
         this.bandName = bandName;
-        owned = true;
         this.task = task;
         time = task.time;
-        return this;
+        UpdateUI();
     }
 
     private void Update()
@@ -28,6 +28,7 @@ public class BandTask : MonoBehaviour, IPointerClickHandler
         if (owned)
         {
             time -= Time.deltaTime;
+            UpdateUI();
         }
 
         if (time < 0)
@@ -35,23 +36,32 @@ public class BandTask : MonoBehaviour, IPointerClickHandler
             OnTaskComplete?.Invoke();
             finished = true;
         }
-
-        if (!finished) return;
-        task.Finish(bandName);
-        OnRewardCollected?.Invoke();
-        Destroy(gameObject);
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
         if (!owned)
         {
-            owned = true;
-            OnTaskStart?.Invoke(); 
+            if (cost == 0)
+            {
+                owned = true;
+                OnTaskStart?.Invoke();
+            }
+
+            if (FindObjectOfType<GameManager>().cash.Spend(cost))
+            {
+                owned = true;
+                OnTaskStart?.Invoke();
+            }
         }
         if (!finished) return;
             task.Finish(bandName);
             OnRewardCollected?.Invoke();
             Destroy(gameObject);
+    }
+
+    void UpdateUI()
+    {
+        GetComponent<TaskUI>().UpdateUI(task.name, task.time, task.cost.ToString(), task.rewards, time);
     }
 }

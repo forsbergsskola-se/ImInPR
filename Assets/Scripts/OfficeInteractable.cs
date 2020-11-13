@@ -38,5 +38,6 @@ public abstract class OfficeInteractable : MonoBehaviour, IPointerClickHandler
     public abstract void OnPointerClick(PointerEventData eventData);
 
     private void OnDestroy() => SaveState();
+    
     void SaveState() => PlayerPrefs.SetInt($"{name}_Level", Level);
 }

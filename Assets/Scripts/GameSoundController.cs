@@ -5,16 +5,27 @@ public class GameSoundController : ScriptableObject
 {
     [SerializeField] private GameSound[] gameSounds;
     
-    public AudioClip FindGameSound(string name)
+    public AudioClip FindGameAudioClip(string value)
+    {
+        var sound = FindGameSound(value);
+        if (sound != null)
+        {
+            return sound.clip;
+        }
+        Debug.Log($"Sound clip {value} not found...");
+        return null;
+    }
+
+    public GameSound FindGameSound(string value)
     {
         foreach (var gameSound in gameSounds)
         {
-            if (gameSound.name.ToLower() == name.ToLower())
+            if (gameSound.name.ToLower() == value.ToLower())
             {
-                return gameSound.clip;
+                return gameSound;
             }
         }
-        Debug.Log($"Sound clip {name} not found...");
+        Debug.Log($"GameSound {value} not found");
         return null;
     }
 }
