@@ -119,5 +119,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: fb19bd737c2081642a2c8122e4be5164, type: 2}
   - {fileID: 11400000, guid: 25124984807de194694ee5acb04b2708, type: 2}
   - {fileID: 11400000, guid: 155949067b867b248bf4fd4a5fdb27c6, type: 2}
-  bandSelectorItem: {fileID: 0}
+  bandSelectorItem: {fileID: 8832443839545642261, guid: 586345645c66db34286e6f7fc2bfb7cb, type: 3}
   amountBandsToDisplay: 3
