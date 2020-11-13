@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 [CreateAssetMenu(fileName = "New Band", menuName = "Bands")]
-public class Bands : ScriptableObject
+public class Band : ScriptableObject
 
 
 {
