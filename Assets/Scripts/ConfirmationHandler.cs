@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class PopUpManager : MonoBehaviour
+public class ConfirmationHandler : MonoBehaviour
 {
     public bool isCreated;
     [SerializeField] private GameObject PopUpPrefab;
@@ -11,7 +11,7 @@ public class PopUpManager : MonoBehaviour
         if (!isCreated) 
         {
             instance = Instantiate(PopUpPrefab, FindObjectOfType<GameManager>().transform);
-            instance.GetComponent<PopUpPanel>().SetUp(objectTransform, officeObject, this);
+            instance.GetComponent<ConfirmationPanel>().SetUpOfficeUpgradeable(objectTransform, officeObject, this);
             isCreated = true;
         }
     }

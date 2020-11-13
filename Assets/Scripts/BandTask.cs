@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 [RequireComponent(typeof(TaskUI))]
 public class BandTask : MonoBehaviour, IPointerClickHandler
 {
-    [SerializeField] private BandTaskConfig task;
+    public BandTaskConfig task;
     private string bandName;
     private float time;
     private int cost;
@@ -43,14 +43,9 @@ public class BandTask : MonoBehaviour, IPointerClickHandler
     {
         if (!owned)
         {
-            if (cost == 0)
-            {
-                owned = true;
-                OnTaskStart?.Invoke();
-            }
-
             if (FindObjectOfType<GameManager>().cash.Spend(cost))
             {
+                
                 owned = true;
                 OnTaskStart?.Invoke();
             }

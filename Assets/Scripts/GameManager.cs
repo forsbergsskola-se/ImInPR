@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     public Cash cash;
     public static List<OfficeInteractable> officeEquipment;
     public TaskGenerator taskGenerator;
-    public PopUpManager popupManager;
+    public ConfirmationHandler popupManager;
 
     private void Awake()
     {
