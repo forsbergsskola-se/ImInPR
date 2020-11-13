@@ -1,4 +1,5 @@
-﻿using TMPro;
+﻿using System;
+using TMPro;
 using UnityEngine;
 
 public class NowPlaying : MonoBehaviour
@@ -20,7 +21,17 @@ public class NowPlaying : MonoBehaviour
         songTitle.SetText($"{bandName} - {songName}");
         soundDesignStudent.SetText($"composed by: {studentName}");
     }
-    
+
+    private void OnEnable()
+    {
+        var exists = FindObjectsOfType<NowPlaying>();
+        foreach (var instance in exists)
+        {
+            if(instance != this)
+                Destroy(instance);
+        }
+    }
+
     private void Start()
     {
         _startingPos = transform.position; 
@@ -43,12 +54,17 @@ public class NowPlaying : MonoBehaviour
                
             case State.Display:
                 if (_timeElapsed > transitionTime + durationToLive)
+                {
                     _currentState = State.TransitionOut;
+                    _timeElapsed = 0;
+                }
                 break;
             
             case State.TransitionOut:
-                _timeElapsed = 0;
-                transform.position = Vector2.Lerp(_endPos, _startingPos, _timeElapsed / transitionTime);
+                
+                
+                if(_timeElapsed < transitionTime)
+                    transform.position = Vector2.Lerp(_endPos, _startingPos, _timeElapsed / transitionTime);
                 break;
         }
         

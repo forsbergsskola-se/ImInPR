@@ -32,28 +32,6 @@ public class GameManager : MonoBehaviour
                 Debug.Log(value);
             }
         }
-        
-        if (Input.GetKeyDown(KeyCode.F2))
-        {
-            FindObjectOfType<SoundManager>().PlayMusic("BastardsOfSatan");
-        }
-        if (Input.GetKeyDown(KeyCode.F3))
-        {
-            FindObjectOfType<SoundManager>().PlayMusic("GrindCore");
-        }
-        if (Input.GetKeyDown(KeyCode.F4))
-        {
-            FindObjectOfType<SoundManager>().PlayMusic("80Funk");
-        }
-        if (Input.GetKeyDown(KeyCode.F5))
-        {
-            FindObjectOfType<SoundManager>().PlayMusic("EBBA_Disco");
-        }
-        if (Input.GetKeyDown(KeyCode.F6))
-        {
-            FindObjectOfType<SoundManager>().PlayMusic("HipHopBeat");
-        }
-        
-        #endregion
+       #endregion
     }
 }
