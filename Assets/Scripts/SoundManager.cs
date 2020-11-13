@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 public class SoundManager : MonoBehaviour
 {
     [Header("Game Sounds")]
@@ -12,31 +11,45 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private GameSoundController musicController;
     [Range(0,1f)] public float musicVolume = 0.5f;
     [SerializeField] private GameObject nowPlayingPrefab;
-    //[SerializeField] private Transform parent;
-    private GameSong _currentSong;
     
-    public void PlaySong(string songName)
+
+    #region GameSound Player
+    private void Play(GameSound sound, AudioSource source, float volume) => source.PlayOneShot(sound.clip, volume);
+    
+    #endregion
+    
+    
+    #region Music Player
+    public void PlayMusic(Band band) 
+    {
+        PlayMusic(band.song, musicVolume);
+    }
+    
+    public void PlayMusic(string songName)
     {
         var sound = (GameSong)musicController.FindGameSound(songName);
-        PlayMusic(sound, musicAudioSource, musicVolume);
+        PlayMusic(sound, musicVolume);
     }
-
-    private void PlayMusic(GameSong sound, AudioSource source, float volume)
+    
+    private void PlayMusic(GameSong sound, float volume)
     {
         if (sound != null)
         {
-            if(source.isPlaying)
-                source.Stop();
+            if(musicAudioSource.isPlaying)
+                musicAudioSource.Stop();
             
-            Play(sound, source, volume);
+            Play(sound, musicAudioSource, volume);
             var instance = Instantiate(nowPlayingPrefab, this.transform);
             instance.GetComponent<NowPlaying>().Setup(sound.bandName, sound.songName, sound.soundDesignerName);
         }
     }
-    private void Play(GameSound sound, AudioSource source, float volume)
-    {
-        source.PlayOneShot(sound.clip, volume);
-    }
 
-    
+    public void PauseToggleMusic()
+    {
+        if(musicAudioSource.isPlaying)
+            musicAudioSource.Pause();
+        else
+            musicAudioSource.UnPause();
+    }
+    #endregion
 }

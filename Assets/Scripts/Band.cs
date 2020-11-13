@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[CreateAssetMenu(fileName = "New Band", menuName = "Bands")]
+[CreateAssetMenu(fileName = "New Band", menuName = "Band/Bands")]
 public class Band : ScriptableObject
 {
     public string name;

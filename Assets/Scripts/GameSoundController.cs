@@ -3,7 +3,7 @@
 [CreateAssetMenu(fileName = "New GameSound Controller", menuName = "Sound/Sound Controller")]
 public class GameSoundController : ScriptableObject
 {
-    [SerializeField] private GameSound[] gameSounds;
+    public GameSound[] gameSounds;
     
     public AudioClip FindGameAudioClip(string value)
     {
@@ -25,7 +25,6 @@ public class GameSoundController : ScriptableObject
                 return gameSound;
             }
         }
-        Debug.Log($"GameSound {value} not found");
         return null;
     }
 }
