@@ -1365,7 +1365,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   phoneCallRarity: 2
-  repeatTime: 2
+  repeatTime: 0.5
 --- !u!1 &937066198
 GameObject:
   m_ObjectHideFlags: 0
@@ -2359,7 +2359,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   taskGenerator: {fileID: 0}
-  popupManager: {fileID: 0}
+  ConfirmationPrefab: {fileID: 9009883112067890, guid: dbf12bd1bf9334beabf35b8c0c0dfb5d, type: 3}
 --- !u!114 &1469920151
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2574,23 +2574,27 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1472145323792409420, guid: 3098c326676708d4f91f9bf3d6ac7086, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1472145323792409420, guid: 3098c326676708d4f91f9bf3d6ac7086, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1472145323792409420, guid: 3098c326676708d4f91f9bf3d6ac7086, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 1472145323792409420, guid: 3098c326676708d4f91f9bf3d6ac7086, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -175
       objectReference: {fileID: 0}
     - target: {fileID: 1472145324327981489, guid: 3098c326676708d4f91f9bf3d6ac7086, type: 3}
       propertyPath: m_Name
       value: BandSelectorPanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 1472145324327981489, guid: 3098c326676708d4f91f9bf3d6ac7086, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1472145324327981490, guid: 3098c326676708d4f91f9bf3d6ac7086, type: 3}
       propertyPath: m_LocalPosition.x

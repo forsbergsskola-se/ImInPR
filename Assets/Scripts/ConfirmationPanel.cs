@@ -7,34 +7,40 @@ public class ConfirmationPanel : MonoBehaviour
     public Text confirmText;
     public event Action OnAccept;
     public event Action OnDecline;
-    
-    public void SetUpOfficeUpgradeable(Transform parent, OfficeInteractable officeObject, ConfirmationHandler confirmationHandler)
+    [SerializeField] private float xOffset, yOffset;
+
+    private void Start()
+    {
+        var exists = FindObjectsOfType<ConfirmationPanel>();
+        foreach (var confirmation in exists)
+        {
+            if (confirmation != this)
+            {
+                Destroy(confirmation.gameObject);
+            }
+        }
+    }
+
+    public void SetUpOfficeUpgradeable(Transform destination, OfficeInteractable officeObject)
     {
         //TODO Make UI Match The OfficeObjects Information
         //this.parent.position = parent.position;
         confirmText.text = UpgradeString(officeObject.name);
-        OnAccept += officeObject.IncreaseLevel;
-        OnAccept += confirmationHandler.DealtWithPopUp;
-        OnDecline += confirmationHandler.DealtWithPopUp;
     }
 
-    public void SetUp(Transform parent, BandTask task, ConfirmationHandler confirmationHandler)
+    public void SetUp(Transform destination, BandTask task) => confirmText.text = task.task.description;
+
+    public void SetUp(Transform destination, String text)
     {
-        confirmText.text = task.task.description;
-        OnAccept += confirmationHandler.DealtWithPopUp;
-        OnDecline += confirmationHandler.DealtWithPopUp;
+        transform.position = destination.transform.position + new Vector3(xOffset, yOffset, 0f);
+        confirmText.text = text;
     }
 
-    public void Accept()
-    {
-        OnAccept?.Invoke();
-    }
+    public void Accept() => OnAccept?.Invoke();
 
-    public void Decline()
-    {
-        OnDecline?.Invoke();
-    }
+    public void Decline() => OnDecline?.Invoke();
 
+    //todo
     public string UpgradeString(string objectName)
     {
         return $"You are about to upgrade {objectName} \n" +

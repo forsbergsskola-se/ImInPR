@@ -17,6 +17,8 @@ public class PhoneCallGenerator : MonoBehaviour
         if (NumberGenerator() == phoneCallRarity - 1)
         {
                //Spawn Excalmation Mark 
+               var instance = Instantiate(FindObjectOfType<GameManager>().ConfirmationPrefab, FindObjectOfType<GameManager>().transform);
+               instance.GetComponent<ConfirmationPanel>().SetUp(this.transform, "This is a test message");
         }
     }
 

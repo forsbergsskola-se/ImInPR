@@ -41,7 +41,7 @@ public abstract class OfficeInteractable : MonoBehaviour, IPointerClickHandler
         //TODO Add Parameters To PopUpMenu
         if (gm.cash.CanAfford(ActualCost()))
         { 
-            gm.popupManager.PopUpMenu(this.transform, this);  
+            //todo
         }
         Debug.Log($"Clicked on {name}");
     }
