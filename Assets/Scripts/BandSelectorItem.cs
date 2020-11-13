@@ -18,7 +18,7 @@ public class BandSelectorItem : MonoBehaviour
         bandName.SetText(band.name);
         genre.SetText(band.genre);
         bioText.SetText(band.bioText);
-        if(thumbnail.sprite != null)
+        //if(thumbnail.sprite != null)
             thumbnail.sprite = band.thumbnail;
 
     }

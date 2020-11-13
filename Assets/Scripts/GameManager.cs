@@ -32,6 +32,12 @@ public class GameManager : MonoBehaviour
                 Debug.Log(value);
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.F2))
+        {
+            var instance = Instantiate(BandSelector, transform);
+            
+        }
        #endregion
     }
 }
