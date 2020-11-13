@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+[RequireComponent(typeof(TaskUI))]
 public class BandTask : MonoBehaviour, IPointerClickHandler
 {
     [SerializeField] private BandTaskConfig task;
