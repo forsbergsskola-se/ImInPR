@@ -563,6 +563,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   models: []
   levelUpCost: 50
+  boomBoxPlayList: {fileID: 11400000, guid: 2a09f248b5e251d4aa9dc12dcafc5dbe, type: 2}
 --- !u!224 &367551775 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5879723526258221091, guid: c7e30ba10370645a2ad9e942fdc73106, type: 3}
