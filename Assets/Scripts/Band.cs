@@ -3,16 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 [CreateAssetMenu(fileName = "New Band", menuName = "Bands")]
 public class Band : ScriptableObject
-
-
 {
     public string name;
     public string genre;
-
     public BandTier Tier;
     public string bioText;
-
     public Sprite thumbnail;
+    
     public GameSong song;
 
     public bool isOwned;

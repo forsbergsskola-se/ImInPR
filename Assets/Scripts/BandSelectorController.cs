@@ -10,8 +10,13 @@ public class BandSelectorController : MonoBehaviour
     [SerializeField] private int amountBandsToDisplay = 3;
     
     private List<Band> _eligibleBands;
-    
-    private void PopulateList(BandTier tier)
+
+    private void Start()
+    {
+        PopulateList(BandTier.Tier1);
+    }
+
+    public void PopulateList(BandTier tier)
     {
         _eligibleBands.Clear();
         
@@ -32,6 +37,7 @@ public class BandSelectorController : MonoBehaviour
         foreach (var band in itemsToDisplay)
         {
             var instance = Instantiate(bandSelectorItem, transform);
+            instance.GetComponent<BandSelectorItem>().Setup(band);
         }
     }
     
