@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72f816c7f2ce13a4ea39c9120427ea36, type: 3}
   m_Name: BastardsOfSatan
   m_EditorClassIdentifier: Assembly-CSharp::Bands
-  name: 
-  genre: 
+  name: Bastards of Satan
+  genre: sdfsdf
   Tier: 0
-  bioText: 
-  thumbnail: {fileID: 0}
-  songName: 
+  bioText: sdflksdf
+  thumbnail: {fileID: 21300000, guid: 1357f95828619ea43a34ac68ee6ed32c, type: 3}
+  song: {fileID: 11400000, guid: 9355f150944f8a14ebb4b86541d8472f, type: 2}
+  isOwned: 0

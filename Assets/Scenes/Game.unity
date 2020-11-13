@@ -865,6 +865,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1469920146}
     m_Modifications:
+    - target: {fileID: -2468223518250939737, guid: 3098c326676708d4f91f9bf3d6ac7086, type: 3}
+      propertyPath: bandSelectorItem
+      value: 
+      objectReference: {fileID: 8832443839545642261, guid: 586345645c66db34286e6f7fc2bfb7cb, type: 3}
     - target: {fileID: 1472145324327981489, guid: 3098c326676708d4f91f9bf3d6ac7086, type: 3}
       propertyPath: m_Name
       value: BandSelector

@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72f816c7f2ce13a4ea39c9120427ea36, type: 3}
   m_Name: TheThrowUps
   m_EditorClassIdentifier: Assembly-CSharp::Bands
-  name: 
-  genre: 
+  name: The Throw Ups
+  genre: asdasd
   Tier: 0
-  bioText: 
-  thumbnail: {fileID: 0}
-  songName: 
+  bioText: sdfsdfsdfsf
+  thumbnail: {fileID: 21300000, guid: 8fac955ff48f5014494ee5df6ab8040a, type: 3}
+  song: {fileID: 11400000, guid: 123f8290ffef99b4fbaf652fa53bf294, type: 2}
+  isOwned: 0

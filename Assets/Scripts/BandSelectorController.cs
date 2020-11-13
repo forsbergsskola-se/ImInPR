@@ -13,6 +13,7 @@ public class BandSelectorController : MonoBehaviour
 
     private void Start()
     {
+        _eligibleBands = new List<Band>();
         PopulateList(BandTier.Tier1);
     }
 
@@ -27,9 +28,10 @@ public class BandSelectorController : MonoBehaviour
                 _eligibleBands.Add(band);
             }
         }
-        
-        AddToBandSelector(SelectRandomBands(amountBandsToDisplay));
-        
+
+        var tmp = SelectRandomBands(amountBandsToDisplay);
+        PrintList(tmp);
+        AddToBandSelector(tmp);
     }
 
     private void AddToBandSelector(List<Band> itemsToDisplay)
@@ -50,17 +52,19 @@ public class BandSelectorController : MonoBehaviour
         
         List<Band> randomBands = new List<Band>();
         
-        for (int i = 0; i < amount; i++)
+        while(randomBands.Count < amount)
         {
-            randomBands.Add(_eligibleBands[Random.Range(0, _eligibleBands.Count)]);
+            var temp = _eligibleBands[Random.Range(0, _eligibleBands.Count)];
+            if(!randomBands.Contains(temp))
+                randomBands.Add(temp);
         }
 
         return randomBands;
     }
 
-    public void PrintList()
+    public void PrintList(List<Band> value)
     {
-        foreach (var VARIABLE in bands)
+        foreach (var VARIABLE in value)
         {
             Debug.Log(VARIABLE);
         }
