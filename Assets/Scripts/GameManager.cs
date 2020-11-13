@@ -6,8 +6,8 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public Cash cash;
-    
     public static List<OfficeInteractable> officeEquipment;
+    public TaskGenerator taskGenerator;
 
     private void Awake()
     {

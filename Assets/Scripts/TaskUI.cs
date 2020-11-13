@@ -13,7 +13,7 @@ public class TaskUI : MonoBehaviour
         this.outcome.text = "";
         foreach (var outcome in outcomes)
         {
-            this.outcome.text += outcome.ToString() + "\n";
+            this.outcome.text += outcome + "\n";
         }
 
         var transform1 = progressBar.transform;
