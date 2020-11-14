@@ -5,8 +5,9 @@ using UnityEngine.UI;
 public class ConfirmationPanel : MonoBehaviour
 {
     public Text confirmText;
-    public event Action OnAccept;
-    public event Action OnDecline;
+    public event Action OnConfirm;
+    public event Action OnCancel;
+    public event Action<ConfirmationPanel> OnDestroyed;
     [SerializeField] private float xOffset, yOffset;
 
     private void Start()
@@ -21,37 +22,31 @@ public class ConfirmationPanel : MonoBehaviour
         }
     }
 
-    public void SetUpOfficeUpgradeable(OfficeInteractable officeObject, Transform destination = default)
-    {
-        //TODO Make UI Match The OfficeObjects Information
-        //this.transform.position = destination.position;
-        confirmText.text = UpgradeString(officeObject.name);
-    }
-
-    public void SetUp(Transform destination, BandTask task) => confirmText.text = task.task.description;
-
-    public void SetUp(Transform destination, String text)
+    public void SetUp(Transform destination, string text)
     {
         transform.position = destination.transform.position + new Vector3(xOffset, yOffset, 0f);
         confirmText.text = text;
     }
-
-    public void Accept()
+    
+    public void SetUp(string text)
     {
-       OnAccept?.Invoke();
+        confirmText.text = text;
+    }
+
+    public void Confirm()
+    {
+       OnConfirm?.Invoke();
        Destroy(this.gameObject);
     }
 
-    public void Decline()
+    public void Cancel()
     {
-        OnDecline?.Invoke();
+        OnCancel?.Invoke();
         Destroy(this.gameObject);
     }
 
-    //todo
-    public string UpgradeString(string objectName)
+    private void OnDestroy()
     {
-        return $"You are about to upgrade {objectName} \n" +
-               "Are you sure you would like to upgrade this?";
+        OnDestroyed?.Invoke(this);
     }
 }

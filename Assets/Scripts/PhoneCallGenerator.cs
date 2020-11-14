@@ -18,12 +18,26 @@ public class PhoneCallGenerator : MonoBehaviour
         {
                //Spawn Excalmation Mark 
                var instance = Instantiate(FindObjectOfType<GameManager>().ConfirmationPrefab, FindObjectOfType<GameManager>().transform);
-               instance.GetComponent<ConfirmationPanel>().SetUp(this.transform, "This is a test message");
+               var confirmationPanel = instance.GetComponent<ConfirmationPanel>();
+               confirmationPanel.SetUp(this.transform, "Someone is calling");
+               confirmationPanel.OnConfirm += AcceptRandomEvent;
+               confirmationPanel.OnDestroyed += UnsubscribeFromConfirm;
         }
     }
 
     private int NumberGenerator()
     {
         return Random.Range(0, phoneCallRarity);
+    }
+
+    private void AcceptRandomEvent()
+    {
+        //TODO Spawn Random Event
+    }
+    
+    void UnsubscribeFromConfirm(ConfirmationPanel confirmationPanel)
+    {
+        confirmationPanel.OnConfirm -= AcceptRandomEvent;
+        confirmationPanel.OnDestroyed -= UnsubscribeFromConfirm;
     }
 }

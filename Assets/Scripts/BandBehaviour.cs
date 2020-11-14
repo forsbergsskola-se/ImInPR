@@ -5,7 +5,7 @@ using UnityEngine;
 public class BandBehaviour : MonoBehaviour
 {
     public Band bandConfig;
-    private int currentLevel;
+    public int currentLevel;
     public Experience awareness;
     public Experience popularity;
 
@@ -16,7 +16,9 @@ public class BandBehaviour : MonoBehaviour
 
     void GenerateTask()
     {
-        FindObjectOfType<GameManager>().taskGenerator.SpawnTask(this);
+        var newTask = FindObjectOfType<GameManager>().taskGenerator.SpawnTask(this);
+        newTask.OnRewardCollected += OnReward;
+        newTask.OnDestroyed += UnsubscribeFromTask;
     }
 
 
@@ -27,6 +29,12 @@ public class BandBehaviour : MonoBehaviour
     
     void UpdateUI()
     {
-        GetComponent<BandUI>().UpdateUI(1, 0.7f, 0.7f);
+        GetComponent<BandUI>().UpdateUI(currentLevel, 0.7f, 0.7f);
+    }
+    
+    void UnsubscribeFromTask(BandTask task)
+    {
+        task.OnDestroyed -= UnsubscribeFromTask;
+        task.OnRewardCollected -= OnReward;
     }
 }

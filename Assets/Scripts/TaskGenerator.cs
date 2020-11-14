@@ -10,15 +10,12 @@ public class TaskGenerator : MonoBehaviour
     public List<BandTaskConfig> allTasks;
     public BandTask taskPrefab;
     
-    public void SpawnTask(BandBehaviour band)
+    public BandTask SpawnTask(BandBehaviour band)
     {
-        string name = "EBBA";
-        int lvl = 12;
-        
-        var newBand = Instantiate(taskPrefab, this.transform);
-        currentlyActiveTasks.Add(newBand);
-        newBand.GetComponent<BandTask>().Setup(band.bandConfig.name, GenerateTask(lvl)); 
-        newBand.OnRewardCollected += band.OnReward;
+        var newTask = Instantiate(taskPrefab, this.transform);
+        currentlyActiveTasks.Add(newTask);
+        newTask.GetComponent<BandTask>().Setup(band.bandConfig.name, GenerateTask(band.currentLevel));
+        return newTask;
     }
 
     BandTaskConfig GenerateTask(int tier)

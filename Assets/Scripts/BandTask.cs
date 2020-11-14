@@ -14,6 +14,7 @@ public class BandTask : MonoBehaviour, IPointerClickHandler
     public event Action OnRewardCollected;
     public event Action OnTaskComplete;
     public event Action OnTaskStart;
+    public event Action<BandTask> OnDestroyed;
 
     //TODO implement band class
     public void Setup(string bandName, BandTaskConfig task)
@@ -59,5 +60,10 @@ public class BandTask : MonoBehaviour, IPointerClickHandler
     void UpdateUI()
     {
         GetComponent<TaskUI>().UpdateUI(task.name, task.time, task.cost.ToString(), task.rewards, time);
+    }
+
+    private void OnDestroy()
+    {
+        OnDestroyed?.Invoke(this);
     }
 }

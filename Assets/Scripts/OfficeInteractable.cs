@@ -8,7 +8,6 @@ public abstract class OfficeInteractable : MonoBehaviour, IPointerClickHandler
     public Sprite[] models; 
     public int Level { get; private set; }
     public int levelUpCost;
-    private ConfirmationPanel _confirmationPanel;
 
     public event Action OnLevelUp;
     private void Start()
@@ -19,10 +18,9 @@ public abstract class OfficeInteractable : MonoBehaviour, IPointerClickHandler
 
     public virtual void IncreaseLevel()
     {
-        _confirmationPanel.OnAccept -= IncreaseLevel;
         if (gm.cash.Spend(ActualCost()))
         {
-            Debug.Log($"Upgrade {name}");
+            Debug.Log($"Upgraded {name}");
             //SpawnFloating Text
             Level++;
             OnLevelUp?.Invoke();
@@ -44,14 +42,24 @@ public abstract class OfficeInteractable : MonoBehaviour, IPointerClickHandler
         if (gm.cash.CanAfford(ActualCost()))
         {
             var confirmInstance= Instantiate(gm.ConfirmationPrefab, gm.transform);
-            _confirmationPanel = confirmInstance.GetComponent<ConfirmationPanel>();
-            _confirmationPanel.SetUpOfficeUpgradeable(this);
-            _confirmationPanel.OnAccept += IncreaseLevel;
+            var confirmationPanel = confirmInstance.GetComponent<ConfirmationPanel>();
+            confirmationPanel.SetUp(this.UpgradeText());
+            confirmationPanel.OnConfirm += IncreaseLevel;
+            confirmationPanel.OnDestroyed += UnsubscribeFromConfirm;
         }
-        Debug.Log($"Clicked on {name}");
     }
+    
+    private string UpgradeText() => $"You Are About To Upgrade {this.name} To \n" +
+                                    $"Level {Level + 1} : Costs {ActualCost()}";
 
     private void OnDestroy() => SaveState();
     
     void SaveState() => PlayerPrefs.SetInt($"{name}_Level", Level);
+
+    void UnsubscribeFromConfirm(ConfirmationPanel confirmationPanel)
+    {
+        confirmationPanel.OnConfirm -= IncreaseLevel;
+        confirmationPanel.OnDestroyed -= UnsubscribeFromConfirm;
+        Debug.Log($"{this.name} unsubscribed from {confirmationPanel.GetHashCode()}");
+    }
 }
