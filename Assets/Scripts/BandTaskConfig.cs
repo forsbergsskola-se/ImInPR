@@ -3,7 +3,7 @@
 public class BandTaskConfig : ScriptableObject
 {
     //TODO Add EXP class 
-    public ExperienceAmount[] rewards;
+    public RewardAmount[] rewards;
     public int time;
     public int cost;
     public int tier;

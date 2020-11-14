@@ -1,5 +1,5 @@
 ﻿[System.Serializable]
-public struct ExperienceAmount
+public struct RewardAmount
 {
     public Experience type;
     public int amount;

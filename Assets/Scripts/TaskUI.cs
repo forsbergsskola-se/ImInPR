@@ -7,7 +7,7 @@ public class TaskUI : MonoBehaviour
 {
     public TMP_Text taskName, outcome, timeCost;
     public Image progressBar;
-    public void UpdateUI(string taskName, float time, string cost, ExperienceAmount[] outcomes, float currentTime)
+    public void UpdateUI(string taskName, float time, string cost, RewardAmount[] outcomes, float currentTime)
     {
         this.taskName.text = taskName;
         this.timeCost.text = $"Time {time} | Cost {cost}";
