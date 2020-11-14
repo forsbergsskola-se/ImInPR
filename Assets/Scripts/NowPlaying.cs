@@ -22,7 +22,7 @@ public class NowPlaying : MonoBehaviour
         soundDesignStudent.SetText($"composed by: {studentName}");
     }
 
-    private void OnEnable()
+    private void Start()
     {
         var exists = FindObjectsOfType<NowPlaying>();
         foreach (var instance in exists)
@@ -30,13 +30,10 @@ public class NowPlaying : MonoBehaviour
             if(instance != this)
                 Destroy(instance);
         }
-    }
-
-    private void Start()
-    {
         _startingPos = transform.position; 
         _endPos = new Vector2(_startingPos.x + distanceToMoveOnX, _startingPos.y);
         Destroy(this.gameObject, 2 * transitionTime + durationToLive);
+        
     }
 
     private void Update()
