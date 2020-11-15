@@ -1,43 +1,51 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class PhoneCallGenerator : MonoBehaviour
 {
     //private Animator phoneAnimator;
     public int phoneCallRarity;
     public float repeatTime = 20f;
+    public List<PhoneEvent> phoneEvents;
+    private bool _isSpawned;
 
     //TODO Implement a exclamation mark spawner
     void Start()
     {
-        InvokeRepeating("IsCalling",2f, repeatTime);
+        InvokeRepeating(nameof(IsCalling),2f, repeatTime);
     }
 
     private void IsCalling()
     {
-        if (NumberGenerator() == phoneCallRarity - 1)
-        {
-               //Spawn Excalmation Mark 
-               var instance = Instantiate(FindObjectOfType<GameManager>().ConfirmationPrefab, FindObjectOfType<GameManager>().transform);
-               var confirmationPanel = instance.GetComponent<ConfirmationPanel>();
-               confirmationPanel.SetUp(this.transform, "Someone is calling");
-               confirmationPanel.OnConfirm += AcceptRandomEvent;
-               confirmationPanel.OnDestroyed += UnsubscribeFromConfirm;
+        if (NumberCallGenerator() == phoneCallRarity - 1 && !_isSpawned)
+        { 
+            //Spawn Excalmation Mark 
+            var instance = Instantiate(FindObjectOfType<GameManager>().PhoneEventPrefab, FindObjectOfType<GameManager>().transform);
+            var confirmationPanel = instance.GetComponent<PhoneEventBehaviour>();
+            confirmationPanel.SetUp(GeneratePhoneEvent());
+            confirmationPanel.OnDestroyed += UnsubscribeFromConfirm;
+            _isSpawned = !_isSpawned;
         }
     }
 
-    private int NumberGenerator()
+    private int NumberCallGenerator()
     {
         return Random.Range(0, phoneCallRarity);
     }
 
-    private void AcceptRandomEvent()
+    PhoneEvent GeneratePhoneEvent()
     {
-        //TODO Spawn Random Event
+        var index = 0;
+        do
+        {
+            index = Random.Range(0, phoneEvents.Count);
+        } while (5 < phoneEvents[index].level); // TODO Change 1 To OfficeLevel
+        return phoneEvents[index];
     }
     
     void UnsubscribeFromConfirm(ConfirmationPanel confirmationPanel)
     {
-        confirmationPanel.OnConfirm -= AcceptRandomEvent;
         confirmationPanel.OnDestroyed -= UnsubscribeFromConfirm;
+        _isSpawned = !_isSpawned;
     }
 }

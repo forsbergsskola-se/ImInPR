@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public TaskGenerator taskGenerator;
     public GameObject ConfirmationPrefab;
     public GameObject BandSelector;
+    public GameObject PhoneEventPrefab;
     private void Awake()
     {
         cash = new Cash();

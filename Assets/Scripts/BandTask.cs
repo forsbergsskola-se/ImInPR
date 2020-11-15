@@ -11,17 +11,20 @@ public class BandTask : MonoBehaviour, IPointerClickHandler
     private int cost;
     private bool owned;
     private bool finished;
+    private int bandLevel;
     public event Action OnRewardCollected;
     public event Action OnTaskComplete;
     public event Action OnTaskStart;
     public event Action<BandTask> OnDestroyed;
 
     //TODO implement band class
-    public void Setup(string bandName, BandTaskConfig task)
+    public void Setup(string bandName, BandTaskConfig task, int bandLevel)
     {
         this.bandName = bandName;
+        this.bandLevel = bandLevel;
         this.task = task;
         time = task.time;
+        cost = task.cost;
         UpdateUI();
     }
 
@@ -44,7 +47,7 @@ public class BandTask : MonoBehaviour, IPointerClickHandler
     {
         if (!owned)
         {
-            if (FindObjectOfType<GameManager>().cash.Spend(cost))
+            if (FindObjectOfType<GameManager>().cash.Spend(ActualCost()))
             {
                 
                 owned = true;
@@ -57,9 +60,19 @@ public class BandTask : MonoBehaviour, IPointerClickHandler
             Destroy(gameObject);
     }
 
+    int ActualCost()
+    {
+        return cost + Mathf.RoundToInt(cost * 0.2f) * (bandLevel - 1);
+    }
+    
+    float ActualTime()
+    {
+        return time + time * 0.2f * (bandLevel - 1);
+    }
+
     void UpdateUI()
     {
-        GetComponent<TaskUI>().UpdateUI(task.name, task.time, task.cost.ToString(), task.rewards, time);
+        GetComponent<TaskUI>().UpdateUI(task.name, task.time, ActualCost().ToString(), task.rewards, ActualTime());
     }
 
     private void OnDestroy()

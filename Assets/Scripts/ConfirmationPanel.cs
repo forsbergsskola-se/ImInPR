@@ -33,13 +33,13 @@ public class ConfirmationPanel : MonoBehaviour
         confirmText.text = text;
     }
 
-    public void Confirm()
+    public virtual void Confirm()
     {
        OnConfirm?.Invoke();
        Destroy(this.gameObject);
     }
 
-    public void Cancel()
+    public virtual void Cancel()
     {
         OnCancel?.Invoke();
         Destroy(this.gameObject);

@@ -34,6 +34,7 @@ public class BandBehaviour : MonoBehaviour
     void GenerateTask()
     {
         var newTask = FindObjectOfType<GameManager>().taskGenerator.SpawnTask(this);
+        if (newTask == null) return;
         newTask.OnRewardCollected += OnReward;
         newTask.OnDestroyed += UnsubscribeFromTask;
     }
