@@ -1,17 +1,34 @@
 ﻿using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 [RequireComponent(typeof(BandUI))]
 public class BandBehaviour : MonoBehaviour
 {
     public Band bandConfig;
-    public int currentLevel;
+    public int currentLevel, baseCashGenerated;
+    public float generateInterval = 12f;
+    [Range(0f, 1f)] public float likelyHoodToGenerateTask;
     public Experience awareness;
     public Experience popularity;
+    private float _elapsedTime;
 
     private void Start()
     {
-        UpdateUI();
+        
+    }
+
+    private void Update()
+    {
+        _elapsedTime += Time.deltaTime;
+        if (_elapsedTime < generateInterval) return;
+        FindObjectOfType<GameManager>().cash.Add(baseCashGenerated * currentLevel);
+        _elapsedTime -= generateInterval;
+        if (Random.Range(0f, 1f) < likelyHoodToGenerateTask)
+        {
+            GenerateTask();
+        }
+
     }
 
     void GenerateTask()

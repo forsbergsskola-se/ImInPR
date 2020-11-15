@@ -171,6 +171,8 @@ GameObject:
   - component: {fileID: 3209107493401124879}
   - component: {fileID: 3209107493401124877}
   - component: {fileID: 3209107493401124878}
+  - component: {fileID: 5862142853958117072}
+  - component: {fileID: 7582226903107280800}
   m_Layer: 0
   m_Name: BandCell1
   m_TagString: Untagged
@@ -246,6 +248,40 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 
+--- !u!114 &5862142853958117072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3209107493401124872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab8ccb8072ec14bedae6d6064e369369, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lvl: {fileID: 0}
+  popularity: {fileID: 3209107494054462237}
+  awareness: {fileID: 0}
+--- !u!114 &7582226903107280800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3209107493401124872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e8944c9bda36412297221b5f976085d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bandConfig: {fileID: 11400000, guid: fb19bd737c2081642a2c8122e4be5164, type: 2}
+  currentLevel: 1
+  baseCashGenerated: 1
+  generateInterval: 12
+  likelyHoodToGenerateTask: 0.2
+  awareness: {fileID: 11400000, guid: 2317ffa7f55ed034da87eccb05142651, type: 2}
+  popularity: {fileID: 11400000, guid: f768b680bc22ac24591c6f0e7f8d44de, type: 2}
 --- !u!1 &3209107493967962281
 GameObject:
   m_ObjectHideFlags: 0
