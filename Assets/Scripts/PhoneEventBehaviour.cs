@@ -1,10 +1,13 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 public class PhoneEventBehaviour : ConfirmationPanel
 {
     public PhoneEvent phoneEvent;
     private float _elapsedTime;
+    private bool accepted;
     public void SetUp(PhoneEvent phoneEvent)
     {
         this.phoneEvent = phoneEvent;
@@ -13,7 +16,14 @@ public class PhoneEventBehaviour : ConfirmationPanel
 
     public override void Confirm()
     {
-        gameObject.SetActive(false);
+        var myList = new List<Behaviour>();
+        myList.AddRange(GetComponentsInChildren<Image>());
+        myList.AddRange(GetComponentsInChildren<Text>());
+        foreach (var image in myList)
+        {
+            image.enabled = false;
+        }
+        accepted = true;
     }
 
 
@@ -24,18 +34,21 @@ public class PhoneEventBehaviour : ConfirmationPanel
 
         private void Update()
     {
-        _elapsedTime += Time.deltaTime;
-        if (_elapsedTime >= phoneEvent.time)
+        if (accepted)
         {
-            if (Random.Range(0f, 1f) < phoneEvent.successChance)
+            _elapsedTime += Time.deltaTime;
+            if (_elapsedTime >= phoneEvent.time)
             {
-                //Apply Positive Outcome
+                if (Random.Range(0f, 1f) < phoneEvent.successChance)
+                {
+                    phoneEvent.ApplyPositiveOutcome();   
+                }
+                else
+                {
+                    phoneEvent.ApplyNegativeOutcome();
+                }
+                Destroy(this.gameObject);
             }
-            else
-            {
-                //Apply Negative Outcome
-            }
-            Destroy(this.gameObject);
         }
     }
 }
