@@ -27,8 +27,9 @@ public class NowPlaying : MonoBehaviour
         var exists = FindObjectsOfType<NowPlaying>();
         foreach (var instance in exists)
         {
+            Debug.Log(instance);
             if(instance != this)
-                Destroy(instance);
+                Destroy(instance.gameObject);
         }
         _startingPos = transform.position; 
         _endPos = new Vector2(_startingPos.x + distanceToMoveOnX, _startingPos.y);
@@ -58,8 +59,6 @@ public class NowPlaying : MonoBehaviour
                 break;
             
             case State.TransitionOut:
-                
-                
                 if(_timeElapsed < transitionTime)
                     transform.position = Vector2.Lerp(_endPos, _startingPos, _timeElapsed / transitionTime);
                 break;
