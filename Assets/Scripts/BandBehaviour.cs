@@ -13,9 +13,10 @@ public class BandBehaviour : MonoBehaviour
     public Experience popularity;
     private float _elapsedTime;
 
-    private void Start()
+    public void SetUp(Band band)
     {
-        
+        bandConfig = band;
+        GetComponent<BandUI>().SetUp(band);
     }
 
     private void Update()

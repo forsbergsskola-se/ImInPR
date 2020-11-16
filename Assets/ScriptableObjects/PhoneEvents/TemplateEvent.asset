@@ -10,13 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f0e564175ef544e4c8e5bb5a17b3d9fb, type: 3}
-  m_Name: Go To Party
+  m_Name: TemplateEvent
   m_EditorClassIdentifier: 
   dialogue: Yo I wanted to invite you to a lit party tonight you wanna come?
-  negativeOutcomeMessage: You became a little too drunk and was thrown out, you lost
-    you wallet
-  positiveOutcomeMessage: You made some new contacts in the industry and improved
-    your reputation
   level: 3
   successChance: 0.7
-  time: 30
+  time: 15
+  negativeOutcome:
+    expAmount: -50
+    cashAmount: 0
+    message: You were kicked out
+  positiveOutcome:
+    expAmount: 75
+    cashAmount: 0
+    message: You made some new friends
