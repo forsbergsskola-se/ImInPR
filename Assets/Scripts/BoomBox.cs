@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class BoomBox : OfficeInteractable
+public class BoomBox : MonoBehaviour, IPointerClickHandler
 {
     private SoundManager _soundManager;
     [SerializeField] private BandList boomBoxPlayList;
@@ -10,9 +10,8 @@ public class BoomBox : OfficeInteractable
     
     private void Start() => _soundManager = FindObjectOfType<SoundManager>();
 
-    public override void OnPointerClick(PointerEventData eventData)
+    public void OnPointerClick(PointerEventData eventData)
     {
-        //FindObjectOfType<SoundManager>().PlaySong("80Funk");
         NextTrack();
     }
 

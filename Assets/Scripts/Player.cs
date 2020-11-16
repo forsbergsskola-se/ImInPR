@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     private Image _playerSprites;
     public Sprite[] images;
     
+    
     public int Level { get; private set; } 
     
     //(int)Mathf.Floor(xp.ExperienceAmount / xpPerLevel);
