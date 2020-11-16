@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public GameObject ConfirmationPrefab;
     public GameObject BandSelector;
     public GameObject PhoneEventPrefab;
+   
     private void Awake()
     {
         cash = new Cash();
