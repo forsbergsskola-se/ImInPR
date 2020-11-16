@@ -260,9 +260,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab8ccb8072ec14bedae6d6064e369369, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lvl: {fileID: 0}
+  lvl: {fileID: 3209107492758099221}
+  genre: {fileID: 3209107494403865673}
+  bandName: {fileID: 3209107494087573523}
+  bio: {fileID: 0}
   popularity: {fileID: 3209107494054462237}
   awareness: {fileID: 0}
+  logo: {fileID: 3209107493967962287}
 --- !u!114 &7582226903107280800
 MonoBehaviour:
   m_ObjectHideFlags: 0

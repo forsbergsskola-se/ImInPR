@@ -582,6 +582,7 @@ GameObject:
   - component: {fileID: 379075617}
   - component: {fileID: 379075622}
   - component: {fileID: 379075621}
+  - component: {fileID: 379075623}
   m_Layer: 0
   m_Name: TaskList
   m_TagString: Untagged
@@ -732,6 +733,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 379075615}
   m_CullTransparentMesh: 0
+--- !u!114 &379075623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 379075615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3d41c13f41c74b1d827192fa1d588d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allTasks:
+  - {fileID: 11400000, guid: 5473a13f224c64663bd880c1d296a1b3, type: 2}
+  - {fileID: 11400000, guid: bc75716265a950f4cbc676b2a0fbfa21, type: 2}
+  taskPrefab: {fileID: 6579990887761473589, guid: 3ef7d74e1c9144f1caa94ebdf7181030, type: 3}
 --- !u!224 &419586262 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3209107493401124879, guid: f7d4e03972fac2c46853b73d1296f361, type: 3}
@@ -1561,8 +1578,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   phoneCallRarity: 3
-  repeatTime: 5
-  phoneEvents: []
+  repeatTime: 20
+  phoneEvents:
+  - {fileID: 11400000, guid: 212ecafb286e94b449a75d86e848fd52, type: 2}
 --- !u!1 &937066198
 GameObject:
   m_ObjectHideFlags: 0
@@ -2694,9 +2712,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad4f707495325cc4d8e57e73c16f3875, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  taskGenerator: {fileID: 0}
+  taskGenerator: {fileID: 379075623}
   ConfirmationPrefab: {fileID: 9009883112067890, guid: dbf12bd1bf9334beabf35b8c0c0dfb5d, type: 3}
-  PhoneEventPrefab: {fileID: 0}
+  PhoneEventPrefab: {fileID: 9009883112067890, guid: 93ce36cec96c3ac40997ac3095413d72, type: 3}
   BandUIContainer: {fileID: 1350114307}
   BandUIElement: {fileID: 3209107493401124872, guid: f7d4e03972fac2c46853b73d1296f361, type: 3}
   BandSelector: {fileID: 1472145324327981489, guid: 3098c326676708d4f91f9bf3d6ac7086, type: 3}
