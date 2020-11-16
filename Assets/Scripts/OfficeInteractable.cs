@@ -13,7 +13,7 @@ public abstract class OfficeInteractable : MonoBehaviour, IPointerClickHandler
     private void Start()
     {
         gm = FindObjectOfType<GameManager>();
-        Level = PlayerPrefs.GetInt($"{name}_Level", 0); //todo not sure this is working
+        Level = PlayerPrefs.GetInt($"{name}_Level", 1); //todo not sure this is working
     }
 
     public virtual void IncreaseLevel()
@@ -51,11 +51,9 @@ public abstract class OfficeInteractable : MonoBehaviour, IPointerClickHandler
     
     private string UpgradeText() => $"You Are About To Upgrade {this.name} To \n" +
                                     $"Level {Level + 1} : Costs {ActualCost()}";
-
-    private void OnDestroy() => SaveState();
     
-    void SaveState() => PlayerPrefs.SetInt($"{name}_Level", Level);
-
+    private void OnDestroy() => PlayerPrefs.SetInt($"{name}_Level", Level);
+    
     void UnsubscribeFromConfirm(ConfirmationPanel confirmationPanel)
     {
         confirmationPanel.OnConfirm -= IncreaseLevel;

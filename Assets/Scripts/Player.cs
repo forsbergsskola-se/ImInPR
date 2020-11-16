@@ -4,21 +4,22 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
+    //This levels up the player when all OfficeInteractables are upgraded. 
+    
     public Experience xp;
     public int xpPerLevel;
-    private Image playerSprite;
+    private Image _playerSprites;
     public Sprite[] images;
     
-    public int Level => (int)Mathf.Floor(xp.ExperienceAmount / xpPerLevel);
-
+    public int Level { get; private set; } 
+    
+    //(int)Mathf.Floor(xp.ExperienceAmount / xpPerLevel);
     private void Start()
     {
-        playerSprite = GetComponent<Image>();
-        
+        _playerSprites = GetComponent<Image>();
     }
-
-    private void FixedUpdate()
+    public void LevelUp()
     {
-        playerSprite.sprite = images[Level];
+        Level = (int)Mathf.Floor(xp.ExperienceAmount / xpPerLevel);
     }
 }
