@@ -4,6 +4,7 @@ public class Computer : OfficeInteractable
 {
    public override void OnPointerClick(PointerEventData eventData)
    {
-      Instantiate(gm.BandSelector, gm.transform);
+      base.OnPointerClick(eventData);
+      //Instantiate(gm.BandSelector, gm.transform);
    }
 }
