@@ -37,6 +37,7 @@ public class GameManager : MonoBehaviour
             {
                 Debug.Log(value);
             }
+            Debug.Log($"{FindObjectOfType<Player>().GetLowestLevel()} is the level of the lowest item");;
         }
 
         if (Input.GetKeyDown(KeyCode.F2))
