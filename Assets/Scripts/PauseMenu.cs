@@ -2,7 +2,7 @@
 
 public class PauseMenu : MonoBehaviour
 {
-    public static bool GameIsPaused;
+    public static bool GameIsPaused; 
     public GameObject pauseMenuUI;
 
     private void Update()
@@ -36,12 +36,12 @@ public class PauseMenu : MonoBehaviour
     
     public void SFXVolume()
     {
-        
+        // TODO Add reference to SFX audio player, add playerprefs, make slider actually change the volume
     }
 
-    public void Volume()
+    public void MusicVolume()
     {
-        
+        // TODO Add reference to music audio player, add playerprefs, make slider actually change the volume 
     }
 
     public void QuitGame()
