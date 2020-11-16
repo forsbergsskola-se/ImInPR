@@ -1,14 +1,12 @@
-﻿public class Desk : OfficeInteractable
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+﻿using UnityEngine.EventSystems;
 
-    // Update is called once per frame
-    void Update()
+public class Desk : OfficeInteractable
+{
+   
+    
+    public override void OnPointerClick(PointerEventData eventData)
     {
-        
+        base.OnPointerClick(eventData);
+        //TODO Add Plant Specific Logic
     }
 }
