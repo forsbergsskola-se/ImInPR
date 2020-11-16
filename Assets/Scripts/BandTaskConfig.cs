@@ -2,7 +2,6 @@
 [CreateAssetMenu(fileName = "NewTask", menuName = "Task")]
 public class BandTaskConfig : ScriptableObject
 {
-    //TODO Add EXP class 
     public RewardAmount[] rewards;
     public int time;
     public int cost;
