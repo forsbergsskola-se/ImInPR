@@ -13,7 +13,7 @@ public abstract class OfficeInteractable : MonoBehaviour, IPointerClickHandler
     private void Start()
     {
         gm = FindObjectOfType<GameManager>();
-        Level = PlayerPrefs.GetInt($"{name}_Level", 1); //todo not sure this is working
+        Level = PlayerPrefs.GetInt($"{name}_Level", 1);
     }
 
     public virtual void IncreaseLevel()
@@ -23,14 +23,13 @@ public abstract class OfficeInteractable : MonoBehaviour, IPointerClickHandler
             Debug.Log($"Upgraded {name}");
             Level++;
             OnLevelUp?.Invoke();
-            FindObjectOfType<Player>().LevelUp();
+            FindObjectOfType<Background>().LevelUp();
         }
     }
 
     public int ActualCost()
     {
-        //todo implement proper costIncrease per levelUp
-        return levelUpCost * Level;
+        return levelUpCost * Level * 3;
     }
 
     public override string ToString() => $"{this.name} : Level {Level}, costs {ActualCost()} to upgrade.";

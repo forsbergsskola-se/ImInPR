@@ -43,7 +43,7 @@ public class BandBehaviour : MonoBehaviour
 
     public void OnReward()
     {
-        //TODO UpdateUI here, Do some Visual Effect?
+        UpdateUI();
     }
     
     void UpdateUI()
