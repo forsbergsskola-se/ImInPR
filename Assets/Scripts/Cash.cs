@@ -7,7 +7,7 @@ public class Cash
     public int Amount
     {
         get => PlayerPrefs.GetInt("Cash", 1000);
-        private set => PlayerPrefs.SetInt("Cash", value);
+        private set => PlayerPrefs.SetInt("Cash", Mathf.Clamp(value, 0, int.MaxValue));
     }
 
     public void Add(int value)

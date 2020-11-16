@@ -19,3 +19,4 @@ MonoBehaviour:
     your reputation
   level: 3
   successChance: 0.7
+  time: 30

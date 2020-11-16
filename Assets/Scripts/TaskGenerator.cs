@@ -9,11 +9,11 @@ public class TaskGenerator : MonoBehaviour
     List<BandTask> currentlyActiveTasks = new List<BandTask>();
     public List<BandTaskConfig> allTasks;
     public BandTask taskPrefab;
-    private int maxAmountOfTasks = 3;
-    
+    private int MaxAmountOfTasks => FindObjectOfType<Computer>().Level * 3;
+
     public BandTask SpawnTask(BandBehaviour band)
     {
-        if (currentlyActiveTasks.Count >= maxAmountOfTasks) return default;
+        if (currentlyActiveTasks.Count >= MaxAmountOfTasks) return default;
         var newTask = Instantiate(taskPrefab, this.transform);
         currentlyActiveTasks.Add(newTask);
         newTask.GetComponent<BandTask>().Setup(band.bandConfig.name, GenerateTask(band.currentLevel), band.currentLevel);
@@ -22,7 +22,7 @@ public class TaskGenerator : MonoBehaviour
 
     BandTaskConfig GenerateTask(int level)
     {
-        var index = 0;
+        int index;
         do
         {
             index = Random.Range(0, allTasks.Count);
