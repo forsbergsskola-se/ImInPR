@@ -9,9 +9,13 @@ public class GameManager : MonoBehaviour
     public static List<OfficeInteractable> officeEquipment;
     public TaskGenerator taskGenerator;
     public GameObject ConfirmationPrefab;
-    public GameObject BandSelector;
     public GameObject PhoneEventPrefab;
-   
+    
+    [Header("Bands UI")]
+    public Transform BandUIContainer;
+    public GameObject BandUIElement;
+    public GameObject BandSelector;
+
     private void Awake()
     {
         cash = new Cash();

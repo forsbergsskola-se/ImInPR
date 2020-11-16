@@ -174,7 +174,7 @@ GameObject:
   - component: {fileID: 5862142853958117072}
   - component: {fileID: 7582226903107280800}
   m_Layer: 0
-  m_Name: BandCell1
+  m_Name: BandCell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -347,7 +347,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5a4c21fc95f164b4e83a3cca6b595f6f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1357f95828619ea43a34ac68ee6ed32c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

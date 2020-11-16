@@ -229,8 +229,8 @@ MonoBehaviour:
   songTitle: {fileID: 6175721736448940435}
   soundDesignStudent: {fileID: 6175721735266250303}
   distanceToMoveOnX: 400
-  transitionTime: 1
-  durationToLive: 3
+  transitionTime: 5
+  durationToLive: 10
 --- !u!1 &6175721736448940445
 GameObject:
   m_ObjectHideFlags: 0

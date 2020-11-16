@@ -1,16 +1,24 @@
-﻿using TMPro;
+﻿using System;
+using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class BandSelectorItem : MonoBehaviour
+public class BandSelectorItem : MonoBehaviour, IPointerClickHandler
 {
     private Band band;
+    private GameManager _gm;
 
     [SerializeField] private TextMeshProUGUI bandName;
     [SerializeField] private TextMeshProUGUI genre;
     [SerializeField] private TextMeshProUGUI bioText;
     [SerializeField] private Image thumbnail;
-    
+
+    private void Start()
+    {
+        _gm = FindObjectOfType<GameManager>();
+    }
+
     public void Setup(Band value)
     {
         band = value;
@@ -20,6 +28,12 @@ public class BandSelectorItem : MonoBehaviour
         bioText.SetText(band.bioText);
         //if(thumbnail.sprite != null)
             thumbnail.sprite = band.thumbnail;
+
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        Instantiate(_gm.BandUIElement, _gm.BandUIContainer);
 
     }
 }

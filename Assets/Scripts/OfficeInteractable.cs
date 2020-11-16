@@ -38,7 +38,6 @@ public abstract class OfficeInteractable : MonoBehaviour, IPointerClickHandler
 
     public virtual void OnPointerClick(PointerEventData eventData)
     {
-        //TODO Add Parameters To PopUpMenu
         if (gm.cash.CanAfford(ActualCost()))
         {
             var confirmInstance= Instantiate(gm.ConfirmationPrefab, gm.transform);
