@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: EBBA_Disco
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: d0a1a564ea96c194a8bcce4990189a66, type: 3}
-  songName: Disco
-  BandName: EBBA
+  songName: Dancing queen
+  bandName: Ebba
   soundDesignerName: Erik
