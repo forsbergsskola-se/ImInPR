@@ -4,6 +4,7 @@
 public class PhoneEvent : ScriptableObject
 {
     [TextArea] public string dialogue;
+    [Range(1, 5)] [Tooltip("A Level Value Between 1 And 5")] 
     public int level;
     [Range(0, 1)] [Tooltip("A Percentage Value Between 0 And 1")] 
     public float successChance;

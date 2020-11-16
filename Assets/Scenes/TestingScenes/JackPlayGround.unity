@@ -1406,6 +1406,7 @@ GameObject:
   - component: {fileID: 930818505}
   - component: {fileID: 930818504}
   - component: {fileID: 930818506}
+  - component: {fileID: 930818507}
   m_Layer: 0
   m_Name: Phone
   m_TagString: Untagged
@@ -1483,11 +1484,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   phoneCallRarity: 2
-  repeatTime: 5
+  repeatTime: 3
   phoneEvents:
   - {fileID: 11400000, guid: 212ecafb286e94b449a75d86e848fd52, type: 2}
   - {fileID: 11400000, guid: 212ecafb286e94b449a75d86e848fd52, type: 2}
   - {fileID: 11400000, guid: 212ecafb286e94b449a75d86e848fd52, type: 2}
+--- !u!114 &930818507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 930818502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da4d5554eb9fd9744bd0b33e1d72c8b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  models: []
+  levelUpCost: 20
 --- !u!1 &937066198
 GameObject:
   m_ObjectHideFlags: 0
@@ -2028,8 +2043,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lvl: {fileID: 0}
+  genre: {fileID: 0}
+  bandName: {fileID: 0}
   popularity: {fileID: 0}
   awareness: {fileID: 986025861}
+  logo: {fileID: 0}
 --- !u!114 &1320396350
 MonoBehaviour:
   m_ObjectHideFlags: 0

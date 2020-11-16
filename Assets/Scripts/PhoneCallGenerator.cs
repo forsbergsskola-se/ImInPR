@@ -25,6 +25,8 @@ public class PhoneCallGenerator : MonoBehaviour
             confirmationPanel.SetUp(GeneratePhoneEvent());
             confirmationPanel.OnDestroyed += UnsubscribeFromConfirm;
             _isSpawned = !_isSpawned;
+            instance.SetActive(false);
+            GetComponent<Phone>().IncomingCall(instance);
         }
     }
 
@@ -39,7 +41,7 @@ public class PhoneCallGenerator : MonoBehaviour
         do
         {
             index = Random.Range(0, phoneEvents.Count);
-        } while (5 < phoneEvents[index].level); // TODO Change 1 To OfficeLevel
+        } while (1 != phoneEvents[index].level); //TODO Integrate BG Level Correctly
         return phoneEvents[index];
     }
     

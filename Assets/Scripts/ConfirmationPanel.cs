@@ -15,7 +15,7 @@ public class ConfirmationPanel : MonoBehaviour
         var exists = FindObjectsOfType<ConfirmationPanel>();
         foreach (var confirmation in exists)
         {
-            if (confirmation != this)
+            if (confirmation != this && !(confirmation is PhoneEventBehaviour))
             {
                 Destroy(confirmation.gameObject);
             }

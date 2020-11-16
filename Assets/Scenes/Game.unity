@@ -1933,10 +1933,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 526bd3c702367fb46a603051dbefd6c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  phoneCallRarity: 3
-  repeatTime: 20
+  phoneCallRarity: 1
+  repeatTime: 1
   phoneEvents:
-  - {fileID: 11400000, guid: 212ecafb286e94b449a75d86e848fd52, type: 2}
+  - {fileID: 11400000, guid: e52cee2572204414291ef05c3cdfd958, type: 2}
+  - {fileID: 11400000, guid: df839a96b681e8f4f9fe01c3c5ce859e, type: 2}
+  - {fileID: 11400000, guid: 837481b91b0992b41bba151b98bf0304, type: 2}
+  - {fileID: 11400000, guid: bdaf6ef53632ef94099492aa27128a29, type: 2}
+  - {fileID: 11400000, guid: eef86a7a50a0d594a9c9f1f55ca2efb3, type: 2}
 --- !u!1 &937066198
 GameObject:
   m_ObjectHideFlags: 0
