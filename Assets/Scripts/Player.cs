@@ -24,7 +24,8 @@ public class Player : MonoBehaviour
     {
         //Level = (int) Mathf.Floor(xp.ExperienceAmount / xpPerLevel);
         Level = GetLowestLevel();
-        GetComponent<Image>().sprite = images[Mathf.Clamp(0, 5, Level - 1)];
+        GetComponent<Image>().sprite = images[Mathf.Clamp(Level - 1, 0, 4)];
+        
     }
 
     public int GetLowestLevel()
