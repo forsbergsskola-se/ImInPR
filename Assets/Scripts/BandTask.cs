@@ -17,7 +17,7 @@ public class BandTask : MonoBehaviour, IPointerClickHandler
     public event Action OnTaskStart;
     public event Action<BandTask> OnDestroyed;
 
-    //TODO implement band class
+
     public void Setup(string bandName, BandTaskConfig task, int bandLevel)
     {
         this.bandName = bandName;
