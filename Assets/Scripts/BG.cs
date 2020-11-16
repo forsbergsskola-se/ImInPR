@@ -3,7 +3,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Background : MonoBehaviour
+public class BG : MonoBehaviour
 {
     [SerializeField] private Sprite[] images;
 

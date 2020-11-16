@@ -23,7 +23,7 @@ public abstract class OfficeInteractable : MonoBehaviour, IPointerClickHandler
             Debug.Log($"Upgraded {name}");
             Level++;
             OnLevelUp?.Invoke();
-            FindObjectOfType<Background>().LevelUp();
+            FindObjectOfType<BG>().LevelUp();
         }
     }
 
