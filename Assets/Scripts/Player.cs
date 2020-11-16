@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,13 +11,20 @@ public class Player : MonoBehaviour
     [SerializeField] private int xpPerLevel;
     [SerializeField] private Sprite[] images;
 
+    
+    //subscribe to event that levels up OfficeInteractables
+    private void Start()
+    {
+        
+    }
+
     public int Level { get; private set; }
 
     public void LevelUp()
     {
         //Level = (int) Mathf.Floor(xp.ExperienceAmount / xpPerLevel);
         Level = GetLowestLevel();
-        GetComponent<Image>().sprite = images[Level - 1];
+        GetComponent<Image>().sprite = images[Mathf.Clamp(0, 4, Level - 1)];
     }
 
     public int GetLowestLevel()

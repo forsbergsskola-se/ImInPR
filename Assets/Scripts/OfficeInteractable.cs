@@ -21,10 +21,9 @@ public abstract class OfficeInteractable : MonoBehaviour, IPointerClickHandler
         if (gm.cash.Spend(ActualCost()))
         {
             Debug.Log($"Upgraded {name}");
-            //SpawnFloating Text
             Level++;
             OnLevelUp?.Invoke();
-            //Increase levelUpCost??
+            FindObjectOfType<Player>().LevelUp();
         }
     }
 
