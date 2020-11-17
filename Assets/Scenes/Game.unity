@@ -797,7 +797,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &379075616
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2782,6 +2782,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BandCell
       objectReference: {fileID: 0}
+    - target: {fileID: 3209107493401124872, guid: f7d4e03972fac2c46853b73d1296f361, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3209107493401124879, guid: f7d4e03972fac2c46853b73d1296f361, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2828,19 +2832,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3209107493401124879, guid: f7d4e03972fac2c46853b73d1296f361, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 240
       objectReference: {fileID: 0}
     - target: {fileID: 3209107493401124879, guid: f7d4e03972fac2c46853b73d1296f361, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -62.5
       objectReference: {fileID: 0}
     - target: {fileID: 3209107493401124879, guid: f7d4e03972fac2c46853b73d1296f361, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 480
       objectReference: {fileID: 0}
     - target: {fileID: 3209107493401124879, guid: f7d4e03972fac2c46853b73d1296f361, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 125
       objectReference: {fileID: 0}
     - target: {fileID: 3209107493401124879, guid: f7d4e03972fac2c46853b73d1296f361, type: 3}
       propertyPath: m_AnchorMin.x
@@ -2848,7 +2852,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3209107493401124879, guid: f7d4e03972fac2c46853b73d1296f361, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3209107493401124879, guid: f7d4e03972fac2c46853b73d1296f361, type: 3}
       propertyPath: m_AnchorMax.x
@@ -2856,7 +2860,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3209107493401124879, guid: f7d4e03972fac2c46853b73d1296f361, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3209107493401124879, guid: f7d4e03972fac2c46853b73d1296f361, type: 3}
       propertyPath: m_Pivot.x

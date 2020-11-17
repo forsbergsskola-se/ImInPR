@@ -17,7 +17,7 @@ public class BandExperience
         get => PlayerPrefs.GetInt($"{key}.{type}", 0);
         set
         {
-            PlayerPrefs.SetInt($"{key}.{this.type}", Mathf.Clamp(value, band.RequiredExp - 105, band.RequiredExp));
+            PlayerPrefs.SetInt($"{key}.{this.type}", Mathf.Clamp(value, 0, band.RequiredExp));
             band.CheckIfLeveledUp();
         }
     }

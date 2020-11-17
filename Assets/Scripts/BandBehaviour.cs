@@ -13,7 +13,7 @@ public class BandBehaviour : MonoBehaviour
     private BandExperience popularity;
     private float _elapsedTime;
 
-    public int RequiredExp => 100 + (5 * (currentLevel + 1));
+    public int RequiredExp => 100 + (5 * (currentLevel - 1));
 
     public void SetUp(Band band)
     {
@@ -56,13 +56,14 @@ public class BandBehaviour : MonoBehaviour
     void LevelUp()
     {
         currentLevel++;
+        awareness.Amount = 0;
+        popularity.Amount = 0;
         UpdateUI();
     }
 
 
     public void OnReward(RewardAmount[] rewardAmounts)
     {
-        UpdateUI();
         foreach (var rewardAmount in rewardAmounts)
         {
             switch (rewardAmount.type.name)
@@ -75,6 +76,7 @@ public class BandBehaviour : MonoBehaviour
                     break;
             }
         }
+        UpdateUI();
     }
     
     void UpdateUI()
@@ -84,9 +86,9 @@ public class BandBehaviour : MonoBehaviour
 
     float CalculateDistanceToNextLevel(BandExperience experience)
     {
-        return (float)(RequiredExp - experience.Amount) / 105;
+        return (float)experience.Amount / RequiredExp;
     }
-    
+
     void UnsubscribeFromTask(BandTask task)
     {
         task.OnDestroyed -= UnsubscribeFromTask;
