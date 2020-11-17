@@ -1,12 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class BusinessCard : MonoBehaviour
 {
-    [SerializeField] private Image logo;
+    public Sprite logo;
+    public Sprite notification; 
     [SerializeField] private TextMeshProUGUI playerHeader;
     [SerializeField] private TextMeshProUGUI playerLevelText;
     [SerializeField] private TextMeshProUGUI playerTitleText;

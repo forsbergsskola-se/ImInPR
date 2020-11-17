@@ -2,15 +2,10 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-/// <summary>
-/// The player model should level up when his XP bar is full, and a player has interacted with it.
-/// Deduct the amount of XP required to level, and update the player Model to the relevant model.
-/// </summary>
 public class Player : MonoBehaviour
 {
     [SerializeField] private Experience playerXP;
     [SerializeField] private int xpReqToLevel = 100;
-    [SerializeField] private Text playerLvlText;
     [SerializeField] private Image playerModel;
     [SerializeField] private Sprite[] models;
     public int Level
@@ -19,7 +14,7 @@ public class Player : MonoBehaviour
         private set
         {
             PlayerPrefs.SetInt($"{this.name}_Level", value);
-            playerLvlText.text = Level.ToString();
+            //playerLvlText.text = Level.ToString();
         }
     } 
 
