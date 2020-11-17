@@ -1,8 +1,11 @@
-﻿using TMPro;
+﻿using System;
+using TMPro;
 using UnityEngine;
 
 public class BusinessCard : MonoBehaviour
 {
+    [SerializeField] private Player player;
+    
     public Sprite logo;
     public Sprite notification; 
     [SerializeField] private TextMeshProUGUI playerHeader;
@@ -11,8 +14,8 @@ public class BusinessCard : MonoBehaviour
     
     //[SerializeField] private ProgressBar XpBar;
 
-    public void UpdateLevelText()
-    {
-        
-    }
+    public void UpdateLevelText() => playerLevelText.SetText(player.Level.ToString());
+
+    private void Awake() => player.OnLevelUp += UpdateLevelText;
+    private void OnDestroy() => player.OnLevelUp -= UpdateLevelText;
 }
