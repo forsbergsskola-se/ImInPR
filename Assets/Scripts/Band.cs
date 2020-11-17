@@ -7,7 +7,7 @@ public class Band : ScriptableObject
     public string name;
     public string genre;
     public BandTier Tier;
-    public string bioText;
+    [TextArea] public string bioText;
     public Sprite thumbnail;
     
     public GameSong song;

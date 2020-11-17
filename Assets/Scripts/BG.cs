@@ -9,6 +9,11 @@ public class BG : MonoBehaviour
 
     public int Level { get; private set; }
 
+    private void Start()
+    {
+        LevelUp();
+    }
+
     public void LevelUp()
     {
         Level = GetLowestLevel();
