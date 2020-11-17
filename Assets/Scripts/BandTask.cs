@@ -12,7 +12,7 @@ public class BandTask : MonoBehaviour, IPointerClickHandler
     private bool owned;
     private bool finished;
     private int bandLevel;
-    public event Action OnRewardCollected;
+    public event Action<RewardAmount[]> OnRewardCollected;
     public event Action OnTaskComplete;
     public event Action OnTaskStart;
     public event Action<BandTask> OnDestroyed;
@@ -55,8 +55,7 @@ public class BandTask : MonoBehaviour, IPointerClickHandler
             }
         }
         if (!finished) return;
-            task.Finish(bandName);
-            OnRewardCollected?.Invoke();
+            OnRewardCollected?.Invoke(task.rewards);
             Destroy(gameObject);
     }
 
