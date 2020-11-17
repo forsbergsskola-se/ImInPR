@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(TaskUI))]
 public class BandTask : MonoBehaviour, IPointerClickHandler
@@ -12,10 +13,14 @@ public class BandTask : MonoBehaviour, IPointerClickHandler
     private bool owned;
     private bool finished;
     private int bandLevel;
+    private ProgressCircle progressBar;
     public event Action<RewardAmount[]> OnRewardCollected;
     public event Action OnTaskComplete;
     public event Action OnTaskStart;
     public event Action<BandTask> OnDestroyed;
+    
+    private float ActualTime => time + time * 0.2f * (bandLevel - 1);
+    private float ActualFill => ActualTime / task.time;
 
 
     public void Setup(string bandName, BandTaskConfig task, int bandLevel)
@@ -40,6 +45,8 @@ public class BandTask : MonoBehaviour, IPointerClickHandler
         {
             OnTaskComplete?.Invoke();
             finished = true;
+            progressBar.Done();
+            progressBar.OnCollect += RewardCollected;
         }
     }
 
@@ -47,31 +54,40 @@ public class BandTask : MonoBehaviour, IPointerClickHandler
     {
         if (!owned)
         {
+            var progressCircles = FindObjectsOfType<ProgressCircle>();
+            foreach (var progressCircle in progressCircles)
+            {
+                if (progressCircle.isUnlocked && !progressCircle.isBeingUsed)
+                {
+                    progressBar = progressCircle;
+                }
+            }
+            if (progressBar == null || !progressBar.isUnlocked || progressBar.isBeingUsed) return;
             if (FindObjectOfType<GameManager>().cash.Spend(ActualCost()))
             {
-                
                 owned = true;
                 OnTaskStart?.Invoke();
             }
         }
-        if (!finished) return;
-            OnRewardCollected?.Invoke(task.rewards);
-            Destroy(gameObject);
+    }
+
+    void RewardCollected()
+    {
+        OnRewardCollected?.Invoke(task.rewards);
+        progressBar.OnCollect -= RewardCollected;
+        progressBar = null;
+        Destroy(gameObject);
     }
 
     int ActualCost()
     {
         return cost + Mathf.RoundToInt(cost * 0.2f) * (bandLevel - 1);
     }
-    
-    float ActualTime()
-    {
-        return time + time * 0.2f * (bandLevel - 1);
-    }
 
     void UpdateUI()
     {
-        GetComponent<TaskUI>().UpdateUI(task.name, task.time, ActualCost().ToString(), task.rewards, ActualTime());
+        GetComponent<TaskUI>().UpdateUI(task.name, task.time, ActualCost().ToString(), task.rewards);
+        progressBar.UpdateFill(ActualFill);
     }
 
     private void OnDestroy()
