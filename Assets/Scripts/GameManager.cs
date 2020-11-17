@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public TaskGenerator taskGenerator;
     public GameObject ConfirmationPrefab;
     public GameObject PhoneEventPrefab;
+    public GameObject CannotAffordPrefab;
     
     [Header("Bands UI")]
     public Transform BandUIContainer;
