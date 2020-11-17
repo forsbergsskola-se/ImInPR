@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
+using UnityEngine.Audio;
 
 public class PauseMenu : MonoBehaviour
 {
+    private SoundManager soundManager;
     public static bool GameIsPaused; 
     public GameObject pauseMenuUI;
 
@@ -34,14 +36,16 @@ public class PauseMenu : MonoBehaviour
         GameIsPaused = true;
     }
     
-    public void SFXVolume()
+    public void SFXVolume(float volume)
     {
         // TODO Add reference to SFX audio player, add playerprefs, make slider actually change the volume
+        soundManager.gameSoundVolume = volume;
     }
 
-    public void MusicVolume()
+    public void MusicVolume(float volume)
     {
         // TODO Add reference to music audio player, add playerprefs, make slider actually change the volume 
+        soundManager.musicVolume = volume;
     }
 
     public void QuitGame()
