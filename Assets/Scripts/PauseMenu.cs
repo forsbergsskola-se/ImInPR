@@ -38,13 +38,13 @@ public class PauseMenu : MonoBehaviour
     
     public void SFXVolume(float volume)
     {
-        // TODO Add reference to SFX audio player, add playerprefs, make slider actually change the volume
+        // TODO add playerprefs, make slider actually change the volume
         soundManager.gameSoundVolume = volume;
     }
 
     public void MusicVolume(float volume)
     {
-        // TODO Add reference to music audio player, add playerprefs, make slider actually change the volume 
+        // TODO add playerprefs, make slider actually change the volume 
         soundManager.musicVolume = volume;
     }
 
