@@ -9,14 +9,19 @@ public class BandBehaviour : MonoBehaviour
     public int currentLevel, baseCashGenerated;
     public float generateInterval = 12f;
     [Range(0f, 1f)] public float likelyHoodToGenerateTask;
-    public Experience awareness;
-    public Experience popularity;
+    private BandExperience awareness;
+    private BandExperience popularity;
     private float _elapsedTime;
+
+    public int RequiredExp => 100 + (5 * (currentLevel + 1));
 
     public void SetUp(Band band)
     {
         bandConfig = band;
+        awareness = new BandExperience(this, "Awareness", bandConfig.name);
+        popularity = new BandExperience(this, "Popularity", bandConfig.name);
         GetComponent<BandUI>().SetUp(band);
+        UpdateUI();
     }
 
     private void Update()
@@ -40,15 +45,46 @@ public class BandBehaviour : MonoBehaviour
         newTask.OnDestroyed += UnsubscribeFromTask;
     }
 
+    public void CheckIfLeveledUp()
+    {
+        if (awareness.Amount == RequiredExp && popularity.Amount == RequiredExp)
+        {
+            LevelUp();
+        }
+    }
 
-    public void OnReward()
+    void LevelUp()
+    {
+        currentLevel++;
+        UpdateUI();
+    }
+
+
+    public void OnReward(RewardAmount[] rewardAmounts)
     {
         UpdateUI();
+        foreach (var rewardAmount in rewardAmounts)
+        {
+            switch (rewardAmount.type.name)
+            {
+                case "Awareness":
+                    awareness.Amount += rewardAmount.amount;
+                    break;
+                case "Popularity":
+                    popularity.Amount += rewardAmount.amount;
+                    break;
+            }
+        }
     }
     
     void UpdateUI()
     {
-        GetComponent<BandUI>().UpdateUI(currentLevel, 0.7f, 0.7f);
+        GetComponent<BandUI>().UpdateUI(currentLevel, CalculateDistanceToNextLevel(popularity), CalculateDistanceToNextLevel(awareness));
+    }
+
+    float CalculateDistanceToNextLevel(BandExperience experience)
+    {
+        return (float)(RequiredExp - experience.Amount) / 105;
     }
     
     void UnsubscribeFromTask(BandTask task)

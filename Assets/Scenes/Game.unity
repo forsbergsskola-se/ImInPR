@@ -1632,6 +1632,7 @@ GameObject:
   - component: {fileID: 860214018}
   - component: {fileID: 860214020}
   - component: {fileID: 860214019}
+  - component: {fileID: 860214021}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1696,6 +1697,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 860214017}
   m_CullTransparentMesh: 0
+--- !u!114 &860214021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 860214017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a292f469e961a894b869437568465f38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerXP: {fileID: 11400000, guid: 93ef48ff0c7404c48b3343b670cdc78a, type: 2}
+  xpReqToLevel: 100
+  playerModel: {fileID: 0}
+  models: []
+  xpBar: {fileID: 0}
 --- !u!1 &880080208
 GameObject:
   m_ObjectHideFlags: 0
@@ -2987,6 +3005,7 @@ GameObject:
   - component: {fileID: 1315222420}
   - component: {fileID: 1315222423}
   - component: {fileID: 1315222421}
+  - component: {fileID: 1315222424}
   m_Layer: 0
   m_Name: BusinessCard
   m_TagString: Untagged
@@ -3095,6 +3114,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1315222418}
   m_CullTransparentMesh: 0
+--- !u!114 &1315222424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1315222418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95eae8a210c90294b9e1d79a4445e7c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 860214021}
+  logo: {fileID: 1091746208}
+  notification: {fileID: 21300000, guid: 0344e9506808ca3439f73bd4fb779a45, type: 3}
+  playerHeader: {fileID: 816678489}
+  playerLevelText: {fileID: 818728208}
+  playerTitleText: {fileID: 880080210}
 --- !u!1 &1336708354
 GameObject:
   m_ObjectHideFlags: 0

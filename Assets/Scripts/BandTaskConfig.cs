@@ -8,12 +8,4 @@ public class BandTaskConfig : ScriptableObject
     public int tier;
     public string description;
     public string outComeText;
-
-    public void Finish(string bandName)
-    {
-        foreach (var reward in rewards)
-        {
-            reward.ApplyReward(bandName);
-        }
-    }
 }

@@ -18,5 +18,7 @@ public class BandUI : MonoBehaviour
     public void UpdateUI(int currentLvl, float popularity, float awareness)
     {
         this.awareness.fillAmount = awareness;
+        this.popularity.fillAmount = popularity;
+        this.lvl.text = currentLvl.ToString();
     }
 }
