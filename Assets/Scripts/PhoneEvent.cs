@@ -25,4 +25,9 @@ public class PhoneEvent : ScriptableObject
         gm.cash.Add(negativeOutcome.cashAmount);
         //TODO Connect This To Player API To Apply Exp As Well
     }
+
+    public override string ToString()
+    {
+        return $"Chance to succeed; {Mathf.RoundToInt(successChance * 100)}% \n Time away; {time} seconds";
+    }
 }

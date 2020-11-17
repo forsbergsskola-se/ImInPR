@@ -6,12 +6,14 @@ using Random = UnityEngine.Random;
 public class PhoneEventBehaviour : ConfirmationPanel
 {
     public PhoneEvent phoneEvent;
+    public Text chanceText;
     private float _elapsedTime;
     private bool accepted;
     public void SetUp(PhoneEvent phoneEvent)
     {
         this.phoneEvent = phoneEvent;
         confirmText.text = phoneEvent.dialogue;
+        chanceText.text = phoneEvent.ToString();
     }
 
     public override void Confirm()

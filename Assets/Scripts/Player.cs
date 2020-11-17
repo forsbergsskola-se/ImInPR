@@ -2,24 +2,22 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-/// <summary>
-/// The player model should level up when his XP bar is full, and a player has interacted with it.
-/// Deduct the amount of XP required to level, and update the player Model to the relevant model.
-/// </summary>
 public class Player : MonoBehaviour
 {
     [SerializeField] private Experience playerXP;
     [SerializeField] private int xpReqToLevel = 100;
-    [SerializeField] private Text playerLvlText;
     [SerializeField] private Image playerModel;
     [SerializeField] private Sprite[] models;
+    [SerializeField] private Image xpBar;
+    
+    public event Action OnLevelUp;
+    //public event Action OnXPChanged;
     public int Level
     {
         get => PlayerPrefs.GetInt($"{this.name}_Level");
         private set
         {
             PlayerPrefs.SetInt($"{this.name}_Level", value);
-            playerLvlText.text = Level.ToString();
         }
     } 
 
@@ -27,20 +25,42 @@ public class Player : MonoBehaviour
     {
         playerModel.sprite = models[++Level];
         playerXP.ExperienceAmount -= xpReqToLevel;
+        OnLevelUp?.Invoke();
     }
 
-    public void AddXP(int value)
+    public void AddXp(int value)
     {
         if (value <= 0) return;
         
+        updateXpBar(playerXP.ExperienceAmount, playerXP.ExperienceAmount + value);
         playerXP.ExperienceAmount += value;
+        
         if (playerXP.ExperienceAmount >= xpReqToLevel)
         {
             //todo Notification that LevelUp is ready.
-            //perhaps Add levelUp to an onAcceptClicked Event on Notification?
-            
             
             LevelUp();
+        }
+    }
+
+    public void LoseXp(int value)
+    {
+        updateXpBar(playerXP.ExperienceAmount, playerXP.ExperienceAmount - value);
+        playerXP.ExperienceAmount -= value;
+        
+    }
+
+    public float xpPercentage() => playerXP.ExperienceAmount / xpReqToLevel;
+
+    private void updateXpBar(float start, float end)
+    {
+        float elapsedTime = 0;
+        float timeToComplete = 1f;
+        
+        while (elapsedTime < timeToComplete)
+        {
+            elapsedTime += Time.deltaTime;
+            xpBar.fillAmount = Mathf.Lerp(start, end, elapsedTime);
         }
     }
 }
