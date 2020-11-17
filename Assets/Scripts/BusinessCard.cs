@@ -1,13 +1,14 @@
 ﻿using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BusinessCard : MonoBehaviour
 {
     [SerializeField] private Player player;
     
-    public Sprite logo;
-    public Sprite notification; 
+    public Image logo;
+    [SerializeField] private Sprite notification; 
     [SerializeField] private TextMeshProUGUI playerHeader;
     [SerializeField] private TextMeshProUGUI playerLevelText;
     [SerializeField] private TextMeshProUGUI playerTitleText;

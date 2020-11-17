@@ -28,7 +28,7 @@ public class Player : MonoBehaviour
         OnLevelUp?.Invoke();
     }
 
-    public void AddXP(int value)
+    public void AddXp(int value)
     {
         if (value <= 0) return;
         
@@ -43,7 +43,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void LoseXP(int value)
+    public void LoseXp(int value)
     {
         updateXpBar(playerXP.ExperienceAmount, playerXP.ExperienceAmount - value);
         playerXP.ExperienceAmount -= value;
