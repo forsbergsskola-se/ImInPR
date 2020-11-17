@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -51,10 +50,7 @@ public class Player : MonoBehaviour
         
     }
 
-    public float xpPercentage()
-    {
-        return playerXP.ExperienceAmount / xpReqToLevel;
-    }
+    public float xpPercentage() => playerXP.ExperienceAmount / xpReqToLevel;
 
     private void updateXpBar(float start, float end)
     {

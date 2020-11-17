@@ -16,6 +16,6 @@ public class BusinessCard : MonoBehaviour
 
     public void UpdateLevelText() => playerLevelText.SetText(player.Level.ToString());
 
-    private void Start() => player.OnLevelUp += UpdateLevelText;
+    private void Awake() => player.OnLevelUp += UpdateLevelText;
     private void OnDestroy() => player.OnLevelUp -= UpdateLevelText;
 }
