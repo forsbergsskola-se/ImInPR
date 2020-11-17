@@ -2807,6 +2807,22 @@ PrefabInstance:
       propertyPath: m_ChildAlignment
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 6772623725637609729, guid: fdcb28fd3917be7498440fe7d1596cf3, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6772623725637609729, guid: fdcb28fd3917be7498440fe7d1596cf3, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6772623725637609729, guid: fdcb28fd3917be7498440fe7d1596cf3, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6772623725637609729, guid: fdcb28fd3917be7498440fe7d1596cf3, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6772623725637609738, guid: fdcb28fd3917be7498440fe7d1596cf3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
