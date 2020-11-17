@@ -14,6 +14,8 @@ public class BandSelectorItem : MonoBehaviour, IPointerClickHandler
     [SerializeField] private TextMeshProUGUI bioText;
     [SerializeField] private Image thumbnail;
 
+    public event Action<BandSelectorController> OnItemSelected;
+    
     private void Start()
     {
         _gm = FindObjectOfType<GameManager>();
@@ -35,5 +37,10 @@ public class BandSelectorItem : MonoBehaviour, IPointerClickHandler
     {
         var instance = Instantiate(_gm.BandUIElement, _gm.BandUIContainer);
         instance.GetComponent<BandBehaviour>().SetUp(band);
+        OnItemSelected?.Invoke(transform.parent.GetComponent<BandSelectorController>());
+        
+        //Close bandSelectorController
+        //Destroy(FindObjectOfType<BandSelectorController>().gameObject);
     }
+
 }
