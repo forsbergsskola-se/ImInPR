@@ -8,13 +8,15 @@ public class Player : MonoBehaviour
     [SerializeField] private int xpReqToLevel = 100;
     [SerializeField] private Image playerModel;
     [SerializeField] private Sprite[] models;
+
+    public event Action OnLevelUp;
     public int Level
     {
         get => PlayerPrefs.GetInt($"{this.name}_Level");
         private set
         {
             PlayerPrefs.SetInt($"{this.name}_Level", value);
-            //playerLvlText.text = Level.ToString();
+            
         }
     } 
 
@@ -22,6 +24,7 @@ public class Player : MonoBehaviour
     {
         playerModel.sprite = models[++Level];
         playerXP.ExperienceAmount -= xpReqToLevel;
+        OnLevelUp?.Invoke();
     }
 
     public void AddXP(int value)
