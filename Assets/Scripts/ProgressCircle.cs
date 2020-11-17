@@ -8,7 +8,7 @@ public class ProgressCircle : MonoBehaviour, IPointerClickHandler
     public bool isUnlocked;
     public bool isBeingUsed;
     private bool canCollect;
-    public Action OnCollect;
+    public Action<ProgressCircle> OnCollect;
     public Image image;
 
 
@@ -17,8 +17,9 @@ public class ProgressCircle : MonoBehaviour, IPointerClickHandler
         if (canCollect)
         {
             canCollect = false;
-            OnCollect?.Invoke();
+            OnCollect?.Invoke(this);
             isBeingUsed = false;
+            image.fillAmount = 0;
         }
     }
 

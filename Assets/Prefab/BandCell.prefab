@@ -167,7 +167,7 @@ MonoBehaviour:
   bandName: {fileID: 4933462669066368667}
   popularity: {fileID: 2515399495657085470}
   awareness: {fileID: 6502953261640359028}
-  logo: {fileID: 0}
+  logo: {fileID: 7119948980024923922}
 --- !u!114 &6579157941141120872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -184,7 +184,7 @@ MonoBehaviour:
   currentLevel: 0
   baseCashGenerated: 0
   generateInterval: 12
-  likelyHoodToGenerateTask: 0
+  likelyHoodToGenerateTask: 1
 --- !u!114 &1092023036551039587
 MonoBehaviour:
   m_ObjectHideFlags: 0

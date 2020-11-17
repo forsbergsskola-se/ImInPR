@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8843859749638826879}
   - component: {fileID: 8507644258998027629}
   - component: {fileID: 7743975277429587327}
+  - component: {fileID: 3459414272665796398}
   m_Layer: 0
   m_Name: ProgressCircle
   m_TagString: Untagged
@@ -75,3 +76,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &3459414272665796398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1941365183718756782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 376a6c928ffde4967a1aba1c6717f917, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isUnlocked: 1
+  isBeingUsed: 0
+  image: {fileID: 7743975277429587327}

@@ -3,80 +3,89 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-[RequireComponent(typeof(TaskUI))]
 public class BandTask : MonoBehaviour, IPointerClickHandler
 {
     public BandTaskConfig task;
     private string bandName;
-    private float time;
+    private float time, startTime;
     private int cost;
-    private bool owned;
-    private bool finished;
+    public TaskState _taskState = TaskState.Inactive;
     private int bandLevel;
     private ProgressCircle progressBar;
+    private TaskGenerator _taskGenerator;
     public event Action<RewardAmount[]> OnRewardCollected;
     public event Action OnTaskComplete;
     public event Action OnTaskStart;
     public event Action<BandTask> OnDestroyed;
     
-    private float ActualTime => time + time * 0.2f * (bandLevel - 1);
-    private float ActualFill => ActualTime / task.time;
+    private float ActualTime => startTime + startTime * 0.2f * (bandLevel);
+    private float ActualFill => time / ActualTime;
 
 
-    public void Setup(string bandName, BandTaskConfig task, int bandLevel)
+    public void Setup(string bandName, BandTaskConfig task, int bandLevel, TaskGenerator taskGenerator)
     {
         this.bandName = bandName;
         this.bandLevel = bandLevel;
         this.task = task;
-        time = task.time;
         cost = task.cost;
-        UpdateUI();
+        startTime = task.time;
+        _taskGenerator = taskGenerator;
+        SetUpUI();
     }
 
     private void Update()
     {
-        if (owned)
+        if (_taskState == TaskState.Active)
         {
-            time -= Time.deltaTime;
+            time += Time.deltaTime;
             UpdateUI();
         }
 
-        if (time < 0)
+        if (time >= ActualTime)
         {
             OnTaskComplete?.Invoke();
-            finished = true;
+            _taskState = TaskState.Done;
             progressBar.Done();
-            progressBar.OnCollect += RewardCollected;
+            UpdateUI();
         }
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (!owned)
+        if (_taskState != TaskState.Active && _taskGenerator.CanActivateTask)
         {
-            var progressCircles = FindObjectsOfType<ProgressCircle>();
-            foreach (var progressCircle in progressCircles)
-            {
-                if (progressCircle.isUnlocked && !progressCircle.isBeingUsed)
-                {
-                    progressBar = progressCircle;
-                }
-            }
-            if (progressBar == null || !progressBar.isUnlocked || progressBar.isBeingUsed) return;
             if (FindObjectOfType<GameManager>().cash.Spend(ActualCost()))
             {
-                owned = true;
                 OnTaskStart?.Invoke();
+                _taskState = TaskState.Active;
+                var progressCircles = FindObjectsOfType<ProgressCircle>();
+                foreach (var progressCircle in progressCircles)
+                {
+                    if (progressCircle.isUnlocked && !progressCircle.isBeingUsed)
+                    { 
+                        progressBar = progressCircle;
+                        Debug.Log("There's an available circle");
+                        progressBar.isBeingUsed = true;
+                        progressCircle.OnCollect += RewardCollected;
+                    }
+                }
+                UpdateUI();
             }
+        }
+
+        if (_taskState == TaskState.Done)
+        {
+            progressBar.OnPointerClick(eventData);
+            //RewardCollected();
         }
     }
 
-    void RewardCollected()
+    void RewardCollected(ProgressCircle circle)
     {
+        circle.OnCollect -= this.RewardCollected;
         OnRewardCollected?.Invoke(task.rewards);
-        progressBar.OnCollect -= RewardCollected;
         progressBar = null;
-        Destroy(gameObject);
+        Destroy(GetComponentInParent<TaskUI>().gameObject);
     }
 
     int ActualCost()
@@ -84,9 +93,14 @@ public class BandTask : MonoBehaviour, IPointerClickHandler
         return cost + Mathf.RoundToInt(cost * 0.2f) * (bandLevel - 1);
     }
 
+    void SetUpUI()
+    {
+        GetComponentInParent<TaskUI>().SetUpUI(task, ActualTime, bandName,ActualCost().ToString(), task.rewards, (int)_taskState, _taskGenerator.active);
+    }
+
     void UpdateUI()
     {
-        GetComponent<TaskUI>().UpdateUI(task.name, task.time, ActualCost().ToString(), task.rewards);
+        GetComponentInParent<TaskUI>().UpdateUI((int)_taskState);
         progressBar.UpdateFill(ActualFill);
     }
 
@@ -94,4 +108,11 @@ public class BandTask : MonoBehaviour, IPointerClickHandler
     {
         OnDestroyed?.Invoke(this);
     }
+}
+
+public enum TaskState
+{
+    Inactive = 0,
+    Active = 1,
+    Done = 2
 }

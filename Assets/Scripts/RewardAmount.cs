@@ -11,6 +11,6 @@ public struct RewardAmount
 
     public override string ToString()
     {
-        return $"{type.name} {amount}";
+        return $"{type.name.ToCharArray()[0]} {amount}";
     }
 }
