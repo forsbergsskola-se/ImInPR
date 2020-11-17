@@ -2,12 +2,12 @@
 public class SoundManager : MonoBehaviour
 {
     [Header("Game Sounds")]
-    [SerializeField] private AudioSource gameSoundAudioSource;
+    [SerializeField] public AudioSource gameSoundAudioSource;
     [SerializeField] private GameSoundController gameSoundController;
     [Range(0,1f)]public float gameSoundVolume = 0.5f;
     
     [Header("Game Music")]
-    [SerializeField] private AudioSource musicAudioSource;
+    [SerializeField] public AudioSource musicAudioSource;
     [SerializeField] private GameSoundController musicController;
     [Range(0,1f)] public float musicVolume = 0.5f;
     [SerializeField] private GameObject nowPlayingPrefab;

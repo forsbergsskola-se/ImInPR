@@ -44,6 +44,10 @@ public abstract class OfficeInteractable : MonoBehaviour, IPointerClickHandler
             confirmationPanel.OnConfirm += IncreaseLevel;
             confirmationPanel.OnDestroyed += UnsubscribeFromConfirm;
         }
+        else
+        {
+            var cannotAffordInstance = Instantiate(gm.CannotAffordPrefab, gm.transform);
+        }
     }
     
     private string UpgradeText() => $"You Are About To Upgrade {this.name} To \n" +
