@@ -40,6 +40,7 @@ public class BandSelectorController : MonoBehaviour
         {
             var instance = Instantiate(bandSelectorItem, transform);
             instance.GetComponent<BandSelectorItem>().Setup(band);
+            instance.GetComponent<BandSelectorItem>().OnItemSelected += killmepls;
         }
     }
     
@@ -68,5 +69,15 @@ public class BandSelectorController : MonoBehaviour
         {
             Debug.Log(VARIABLE);
         }
+    }
+
+    private void OnDestroy()
+    {
+        
+    }
+
+    public void killmepls(BandSelectorController bsc)
+    {
+        Destroy(this.gameObject);
     }
 }
