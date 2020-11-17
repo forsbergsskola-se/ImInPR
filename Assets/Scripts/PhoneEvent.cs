@@ -16,6 +16,7 @@ public class PhoneEvent : ScriptableObject
     {
         var gm = FindObjectOfType<GameManager>();
         gm.cash.Add(positiveOutcome.cashAmount);
+        FindObjectOfType<Player>().AddXp(positiveOutcome.expAmount);
         //TODO Connect This To Player API To Apply Exp As Well
     }
     
@@ -23,6 +24,7 @@ public class PhoneEvent : ScriptableObject
     {
         var gm = FindObjectOfType<GameManager>();
         gm.cash.Add(negativeOutcome.cashAmount);
+        FindObjectOfType<Player>().LoseXp(negativeOutcome.expAmount);
         //TODO Connect This To Player API To Apply Exp As Well
     }
 
