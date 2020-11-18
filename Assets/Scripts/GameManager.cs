@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -54,6 +55,13 @@ public class GameManager : MonoBehaviour
             player.AddXp(5);
             Debug.Log($"Adding 5 xp to {player.name}");
         }
-       #endregion
+        #endregion
+    }
+
+    [ContextMenu("Delete Save Game")]
+    public void DeleteSaveGame()
+    {
+        PlayerPrefs.DeleteAll();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
