@@ -41,8 +41,6 @@ public class BandSelectorController : MonoBehaviour
             var instance = Instantiate(bandSelectorItem, transform);
             instance.GetComponent<BandSelectorItem>().Setup(band, this);
             instance.GetComponent<BandSelectorItem>().OnItemSelected += killmepls;
-            
-            
         }
     }
     
@@ -74,7 +72,6 @@ public class BandSelectorController : MonoBehaviour
     }
     public void killmepls(BandSelectorItem bsi)
     {
-        //todo unsubscribe this method from OnItemSelected on 
         bsi.GetComponent<BandSelectorItem>().OnItemSelected -= killmepls;
         Destroy(gameObject);
     }

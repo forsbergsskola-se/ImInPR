@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
     
     
     public event Action OnLevelUp;
-    public event Action<int, int> OnXPChanged;
+    public event Action<float> OnXPChanged;
     public int Level
     {
         get => PlayerPrefs.GetInt($"{this.name}_Level");
@@ -21,27 +21,9 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        switch (Level)
-        {
-            case 1: 
-                break;
-            case 2: 
-                break;
-            case 3: 
-                break;
-            case 4: 
-                break;
-            case 5: 
-                break;
-        }
-
-    }
-
     public void LevelUp()
     {
-        playerModel.sprite = models[++Level];
+        playerModel.sprite = models[Mathf.Clamp(++Level, 0, models.Length - 1)];
         playerXP.ExperienceAmount -= xpReqToLevel;
         OnLevelUp?.Invoke();
     }
@@ -50,23 +32,23 @@ public class Player : MonoBehaviour
     {
         if (value <= 0) return;
         
-        OnXPChanged?.Invoke(playerXP.ExperienceAmount, value);
+        OnXPChanged?.Invoke(XpPercentage());
         
         playerXP.ExperienceAmount += value;
         
         if (playerXP.ExperienceAmount >= xpReqToLevel)
         {
             //todo Notification that LevelUp is ready.
-            
-            LevelUp();
+            //Exclamation Mark?
+            //Tell Business Card
         }
     }
 
     public void LoseXp(int value)
     {
         //updateXpBar(playerXP.ExperienceAmount, playerXP.ExperienceAmount - value);
-        playerXP.ExperienceAmount -= value;
+        playerXP.ExperienceAmount = Mathf.Clamp(playerXP.ExperienceAmount - value, 0, xpReqToLevel);
     }
 
-    public float xpPercentage(int xp) => xp / xpReqToLevel;
+    public float XpPercentage() => playerXP.ExperienceAmount / xpReqToLevel;
 }

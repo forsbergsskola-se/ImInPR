@@ -12,19 +12,9 @@ public class BusinessCard : MonoBehaviour
     [SerializeField] private TextMeshProUGUI playerHeader;
     [SerializeField] private TextMeshProUGUI playerLevelText;
     [SerializeField] private TextMeshProUGUI playerTitleText;
-    [SerializeField] private Image xpBar;
+    [SerializeField] private ProgressBar xpBar;
     
-    private void updateXpBar(float start, float end)
-    {
-        float elapsedTime = 0;
-        float timeToComplete = 1f;
-        
-        while (elapsedTime < timeToComplete)
-        {
-            elapsedTime += Time.deltaTime;
-            xpBar.fillAmount = Mathf.Lerp(start, end, elapsedTime);
-        }
-    }
+   
 
     public void XPChanged()
     {
