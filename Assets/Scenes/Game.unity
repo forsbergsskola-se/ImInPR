@@ -437,7 +437,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 25.6, y: 34}
+  m_AnchoredPosition: {x: 25.599976, y: 34}
   m_SizeDelta: {x: 241.08142, y: 28.16687}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &295070410
@@ -1524,7 +1524,6 @@ MonoBehaviour:
   xpReqToLevel: 100
   playerModel: {fileID: 0}
   models: []
-  xpBar: {fileID: 0}
 --- !u!1 &880080208
 GameObject:
   m_ObjectHideFlags: 0
@@ -2481,8 +2480,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -100.1, y: -80.298}
-  m_SizeDelta: {x: 150.56055, y: 130.59552}
+  m_AnchoredPosition: {x: -116.57, y: -107.6}
+  m_SizeDelta: {x: 183.4989, y: 185.19977}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1091746208
 MonoBehaviour:
@@ -2610,7 +2609,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0460588dddf3c0f43885bf3b4f480b0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  models: []
+  models:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   levelUpCost: 5
 --- !u!1001 &1175562964
 PrefabInstance:
@@ -2876,8 +2880,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 22.4, y: 15.8}
-  m_SizeDelta: {x: 355.80298, y: 15.411743}
+  m_AnchoredPosition: {x: 25.6, y: 22.57}
+  m_SizeDelta: {x: 424.5802, y: 19.922546}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1238880044
 MonoBehaviour:
@@ -3056,7 +3060,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 400, y: 185.26599}
+  m_SizeDelta: {x: 475, y: 250}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1315222420
 MonoBehaviour:
@@ -3152,6 +3156,7 @@ MonoBehaviour:
   playerHeader: {fileID: 816678489}
   playerLevelText: {fileID: 818728208}
   playerTitleText: {fileID: 880080210}
+  xpBar: {fileID: 0}
 --- !u!1 &1336708354
 GameObject:
   m_ObjectHideFlags: 0
@@ -3482,7 +3487,7 @@ MonoBehaviour:
   taskGenerator: {fileID: 1739512338}
   ConfirmationPrefab: {fileID: 9009883112067890, guid: dbf12bd1bf9334beabf35b8c0c0dfb5d, type: 3}
   PhoneEventPrefab: {fileID: 9009883112067890, guid: 93ce36cec96c3ac40997ac3095413d72, type: 3}
-  CannotAffordPrefab: {fileID: 9009883112067890, guid: 8527f93a6b7b07d44a5b565eda9aa224, type: 3}
+  CannotAffordPrefab: {fileID: 9009883112067890, guid: f606e8cb9631fe64b89b98e307808e12, type: 3}
   BandUIContainer: {fileID: 1585710785}
   BandUIElement: {fileID: 674370227573115301, guid: becd76af845b5834c83bb92f26704246, type: 3}
   BandSelector: {fileID: 1472145324327981489, guid: 3098c326676708d4f91f9bf3d6ac7086, type: 3}

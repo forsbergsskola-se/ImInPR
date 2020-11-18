@@ -18,6 +18,7 @@ public class BandBehaviour : MonoBehaviour
     public void SetUp(Band band)
     {
         bandConfig = band;
+        
         awareness = new BandExperience(this, "Awareness", bandConfig.name);
         popularity = new BandExperience(this, "Popularity", bandConfig.name);
         GetComponent<BandUI>().SetUp(band);

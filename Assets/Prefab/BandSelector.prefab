@@ -115,9 +115,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38994688b3d2549498dc2224e7aa6bc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bands:
-  - {fileID: 11400000, guid: fb19bd737c2081642a2c8122e4be5164, type: 2}
-  - {fileID: 11400000, guid: 25124984807de194694ee5acb04b2708, type: 2}
-  - {fileID: 11400000, guid: 155949067b867b248bf4fd4a5fdb27c6, type: 2}
+  bands: {fileID: 11400000, guid: 2a09f248b5e251d4aa9dc12dcafc5dbe, type: 2}
   bandSelectorItem: {fileID: 8832443839545642261, guid: 586345645c66db34286e6f7fc2bfb7cb, type: 3}
   amountBandsToDisplay: 3
