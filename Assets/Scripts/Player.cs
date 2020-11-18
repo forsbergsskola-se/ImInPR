@@ -4,50 +4,60 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] private Experience playerXP;
-    [SerializeField] private int xpReqToLevel = 100;
+    
     [SerializeField] private Image playerModel;
     [SerializeField] private Sprite[] models;
-    
+    [SerializeField] private ProgressBar xpBar;
     public event Action OnLevelUp;
-    public event Action<float> OnXPChanged;
+    
+    public float XpPercentage => Convert.ToSingle(ExperienceAmount / xpReqToLevel);
+    [SerializeField] private int xpReqToLevel = 100;
+    public int ExperienceAmount
+    {
+        get => PlayerPrefs.GetInt(this.name, 0);
+        set => PlayerPrefs.SetInt(this.name, value); 
+    }
+    
     public int Level
     {
         get => PlayerPrefs.GetInt($"{this.name}_Level", 1);
-        private set => PlayerPrefs.SetInt($"{this.name}_Level", value);
-    }
-
-    public void Start()
-    {
-        Debug.Log(playerXP.ExperienceAmount);
-    }
-
-    public void LevelUp()
-    {
-        playerModel.sprite = models[Mathf.Clamp(++Level, 0, models.Length - 1)];
-        playerXP.ExperienceAmount -= xpReqToLevel;
-        OnXPChanged?.Invoke(XpPercentage());
-        OnLevelUp?.Invoke();
+        private set
+        {
+            PlayerPrefs.SetInt($"{this.name}_Level", value);
+            OnLevelUp?.Invoke();
+        }
     }
 
     public void AddXp(int value)
     {
         if (value <= 0) return;
         
-        playerXP.ExperienceAmount += value;
-        OnXPChanged?.Invoke(XpPercentage());
+        ExperienceAmount += value;
         
-        if (playerXP.ExperienceAmount >= xpReqToLevel)
+        if (ExperienceAmount >= xpReqToLevel)
         {
             LevelUp();
         }
+        Debug.Log($"current player XP: {ExperienceAmount}");
+        xpBar.UpdateBar(ExperienceAmount);
     }
 
     public void LoseXp(int value)
     {
-        playerXP.ExperienceAmount = Mathf.Clamp(playerXP.ExperienceAmount - value, 0, xpReqToLevel);
-        OnXPChanged?.Invoke(XpPercentage());
+        if (value <= 0) return;
+        ExperienceAmount = Mathf.Clamp(ExperienceAmount - value, 0, xpReqToLevel);
     }
-
-    public float XpPercentage() => (playerXP.ExperienceAmount / xpReqToLevel) * 100;
+    
+    public void LevelUp()
+    {
+        Level++;
+        playerModel.sprite = models[Mathf.Clamp(Level, 0, models.Length - 1)];
+        ExperienceAmount -= xpReqToLevel;
+    }
+    
+    private void Start() 
+    {
+        playerModel.sprite = models[Mathf.Clamp(Level - 1, 0, models.Length - 1)];
+        xpBar.UpdateBar(ExperienceAmount);
+    }
 }
