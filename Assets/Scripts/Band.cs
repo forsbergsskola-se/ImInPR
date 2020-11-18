@@ -12,7 +12,37 @@ public class Band : ScriptableObject
     
     public GameSong song;
 
-    public bool isOwned;
+    private int isOwned
+    {
+        get => PlayerPrefs.GetInt($"{name}_owned", 0);
+        set => PlayerPrefs.SetInt($"{name}_owned", value);
+    }
+
+    public void SetOwned(bool owned)
+    {
+        switch (owned)
+        {
+            case false:
+                isOwned = 0;
+                break;
+            case true:
+                isOwned = 1;
+               break;
+        }
+    }
+
+    public bool GetOwned()
+    {
+        switch (isOwned)
+        {
+            case 0:
+                return false;
+                break;
+            case 1: return true;
+                break;
+        }
+        return false;
+    }
 }
 
 public enum BandTier

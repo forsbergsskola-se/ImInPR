@@ -5,7 +5,7 @@ using Random = UnityEngine.Random;
 
 public class BandSelectorController : MonoBehaviour
 {
-    [SerializeField] private Band[] bands;
+    [SerializeField] private BandList bands;
     [SerializeField] private GameObject bandSelectorItem;
     [SerializeField] private int amountBandsToDisplay = 3;
     
@@ -21,16 +21,16 @@ public class BandSelectorController : MonoBehaviour
     {
         _eligibleBands.Clear();
         
-        foreach (var band in bands)
+        foreach (var band in bands.bands)
         {
-            if (band.Tier <= tier && !band.isOwned)
+            if (band.Tier <= tier && !band.GetOwned())
             {
                 _eligibleBands.Add(band);
             }
         }
 
         var tmp = SelectRandomBands(amountBandsToDisplay);
-        PrintList(tmp);
+        //PrintList(tmp);
         AddToBandSelector(tmp);
     }
 
@@ -39,8 +39,10 @@ public class BandSelectorController : MonoBehaviour
         foreach (var band in itemsToDisplay)
         {
             var instance = Instantiate(bandSelectorItem, transform);
-            instance.GetComponent<BandSelectorItem>().Setup(band);
+            instance.GetComponent<BandSelectorItem>().Setup(band, this);
             instance.GetComponent<BandSelectorItem>().OnItemSelected += killmepls;
+            
+            
         }
     }
     
@@ -63,21 +65,17 @@ public class BandSelectorController : MonoBehaviour
         return randomBands;
     }
 
-    public void PrintList(List<Band> value)
+    public void PrintList(List<Band> value) //todo cleanup, remove this method and the reference to it.
     {
         foreach (var VARIABLE in value)
         {
             Debug.Log(VARIABLE);
         }
     }
-
-    private void OnDestroy()
+    public void killmepls(BandSelectorItem bsi)
     {
-        
-    }
-
-    public void killmepls(BandSelectorController bsc)
-    {
-        Destroy(this.gameObject);
+        //todo unsubscribe this method from OnItemSelected on 
+        bsi.GetComponent<BandSelectorItem>().OnItemSelected -= killmepls;
+        Destroy(gameObject);
     }
 }
