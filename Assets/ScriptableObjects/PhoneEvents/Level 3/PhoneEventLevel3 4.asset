@@ -19,13 +19,13 @@ MonoBehaviour:
   successChance: 0.5
   time: 60
   negativeOutcome:
-    expAmount: 0
-    cashAmount: -1500
+    expAmount: -15
+    cashAmount: 0
     message: The security guard was hard to impress. And had big hard muscles. He
       beat you up good. Getting that nose fixed will cost you.
   positiveOutcome:
-    expAmount: 55
-    cashAmount: 0
+    expAmount: 0
+    cashAmount: 350
     message: The security guard was a big fan of a band you got. You was let true
       with the promise of him meeting them. Well, that chance of that ever happening,
       but you did get to talk to a lot of impressive people.
