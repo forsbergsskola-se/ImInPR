@@ -10,7 +10,7 @@ public abstract class OfficeInteractable : MonoBehaviour, IPointerClickHandler
     public int levelUpCost;
 
     public event Action OnLevelUp;
-    private void Start()
+    protected virtual void Start()
     {
         gm = FindObjectOfType<GameManager>();
         Level = PlayerPrefs.GetInt($"{name}_Level", 1);
