@@ -10,8 +10,10 @@ using Random = UnityEngine.Random;
 public class TaskGenerator : MonoBehaviour
 {
     public List<BandTaskConfig> allTasks;
+    public List<ProgressCircle> progressCircles;
     public GameObject taskPrefab;
     public bool active;
+    public TMP_Text message;
     private int MaxAmountOfTasks => FindObjectOfType<Computer>().Level * 3;
     private bool CanGenerateTask => GetComponentsInChildren<BandTask>().Length < MaxAmountOfTasks;
     
@@ -44,6 +46,15 @@ public class TaskGenerator : MonoBehaviour
         
         return allTasks[index];
     }
+
+    public void UpdateProgressCircles()
+    {
+        for (int i = 0; i < FindObjectOfType<Computer>().Level; i++)
+        {
+            progressCircles[i].isUnlocked = true;
+        }
+    }
+    
     [ContextMenu("ToggleTaskList")]
     public void ToggleGraphics()
     {
