@@ -19,8 +19,6 @@ MonoBehaviour:
     amount: 20
   time: 1
   cost: 50
-  tier: 0
-  popularity: 20
-  awareness: 0
+  levelRequirement: 1
   description: Print band merch to increase awareness
   outComeText: More people now know who the ... are
