@@ -4,10 +4,11 @@ using UnityEngine.UI;
 public class ProgressBar : MonoBehaviour
 {
     [SerializeField] private Player player;
-    [SerializeField] private Image bar;
+    private Image bar;
 
     private void Start()
     {
+        bar = GetComponent<Image>();
         player.OnXPChanged += UpdateBar;
     }
 
