@@ -5,7 +5,7 @@ using Random = UnityEngine.Random;
 
 public class BandSelectorController : MonoBehaviour
 {
-    [SerializeField] private Band[] bands;
+    [SerializeField] private BandList bands;
     [SerializeField] private GameObject bandSelectorItem;
     [SerializeField] private int amountBandsToDisplay = 3;
     
@@ -21,16 +21,16 @@ public class BandSelectorController : MonoBehaviour
     {
         _eligibleBands.Clear();
         
-        foreach (var band in bands)
+        foreach (var band in bands.bands)
         {
-            if (band.Tier <= tier && !band.isOwned)
+            if (band.Tier <= tier && !band.GetOwned())
             {
                 _eligibleBands.Add(band);
             }
         }
 
         var tmp = SelectRandomBands(amountBandsToDisplay);
-        PrintList(tmp);
+        //PrintList(tmp);
         AddToBandSelector(tmp);
     }
 
@@ -39,8 +39,10 @@ public class BandSelectorController : MonoBehaviour
         foreach (var band in itemsToDisplay)
         {
             var instance = Instantiate(bandSelectorItem, transform);
-            instance.GetComponent<BandSelectorItem>().Setup(band);
+            instance.GetComponent<BandSelectorItem>().Setup(band, this);
             instance.GetComponent<BandSelectorItem>().OnItemSelected += killmepls;
+            
+            
         }
     }
     
@@ -70,11 +72,10 @@ public class BandSelectorController : MonoBehaviour
             Debug.Log(VARIABLE);
         }
     }
-
-    public void killmepls(BandSelectorController bsc)
+    public void killmepls(BandSelectorItem bsi)
     {
         //todo unsubscribe this method from OnItemSelected on 
-        //bsc.GetComponent<BandSelectorItem>().OnItemSelected -= killmepls;
-        Destroy(bsc.gameObject);
+        bsi.GetComponent<BandSelectorItem>().OnItemSelected -= killmepls;
+        Destroy(gameObject);
     }
 }

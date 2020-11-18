@@ -18,4 +18,3 @@ MonoBehaviour:
   bioText: sdflksdf
   thumbnail: {fileID: 21300000, guid: 1357f95828619ea43a34ac68ee6ed32c, type: 3}
   song: {fileID: 11400000, guid: 9355f150944f8a14ebb4b86541d8472f, type: 2}
-  isOwned: 0
