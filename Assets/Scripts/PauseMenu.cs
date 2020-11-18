@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.Audio;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -61,5 +60,9 @@ public class PauseMenu : MonoBehaviour
         //Stop playing the scene
         UnityEditor.EditorApplication.isPlaying = false;
         #endif
+    }
+    public void ResetGame()
+    {
+        PlayerPrefs.DeleteAll();
     }
 }
