@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public abstract class OfficeInteractable : MonoBehaviour, IPointerClickHandler
 {
@@ -14,6 +15,7 @@ public abstract class OfficeInteractable : MonoBehaviour, IPointerClickHandler
     {
         gm = FindObjectOfType<GameManager>();
         Level = PlayerPrefs.GetInt($"{name}_Level", 1);
+        GetComponent<Image>().sprite = models[Mathf.Clamp(Level - 1, 0, models.Length - 1)];
     }
 
     public virtual void IncreaseLevel()
@@ -25,6 +27,8 @@ public abstract class OfficeInteractable : MonoBehaviour, IPointerClickHandler
             OnLevelUp?.Invoke();
             FindObjectOfType<BG>().LevelUp();
         }
+
+        GetComponent<Image>().sprite = models[Mathf.Clamp(Level - 1, 0, models.Length - 1)];
     }
 
     public int ActualCost()
