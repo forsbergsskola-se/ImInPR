@@ -17,7 +17,8 @@ public class PhoneEvent : ScriptableObject
         var gm = FindObjectOfType<GameManager>();
         gm.cash.Add(positiveOutcome.cashAmount);
         FindObjectOfType<Player>().AddXp(positiveOutcome.expAmount);
-        //TODO Connect This To Player API To Apply Exp As Well
+        var outcomeMessage = Instantiate(gm.OutcomeMessage, gm.transform);
+        outcomeMessage.GetComponent<OutcomeMessage>().SetUp(positiveOutcome.message, positiveOutcome.ToString());
     }
     
     public void ApplyNegativeOutcome()
@@ -25,7 +26,8 @@ public class PhoneEvent : ScriptableObject
         var gm = FindObjectOfType<GameManager>();
         gm.cash.Add(negativeOutcome.cashAmount);
         FindObjectOfType<Player>().LoseXp(negativeOutcome.expAmount);
-        //TODO Connect This To Player API To Apply Exp As Well
+        var outcomeMessage = Instantiate(gm.OutcomeMessage, gm.transform);
+        outcomeMessage.GetComponent<OutcomeMessage>().SetUp(negativeOutcome.message, negativeOutcome.ToString());
     }
 
     public override string ToString()

@@ -20,8 +20,6 @@ public class BandBehaviour : MonoBehaviour
     }
 
     public int RequiredExp => 100 + (5 * (CurrentLevel - 1));
-    
-    
 
     public void SetUp(Band band)
     {
