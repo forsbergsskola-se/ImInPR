@@ -3487,7 +3487,7 @@ MonoBehaviour:
   taskGenerator: {fileID: 1739512338}
   ConfirmationPrefab: {fileID: 9009883112067890, guid: dbf12bd1bf9334beabf35b8c0c0dfb5d, type: 3}
   PhoneEventPrefab: {fileID: 9009883112067890, guid: 93ce36cec96c3ac40997ac3095413d72, type: 3}
-  CannotAffordPrefab: {fileID: 9009883112067890, guid: 8527f93a6b7b07d44a5b565eda9aa224, type: 3}
+  CannotAffordPrefab: {fileID: 9009883112067890, guid: f606e8cb9631fe64b89b98e307808e12, type: 3}
   BandUIContainer: {fileID: 1585710785}
   BandUIElement: {fileID: 674370227573115301, guid: becd76af845b5834c83bb92f26704246, type: 3}
   BandSelector: {fileID: 1472145324327981489, guid: 3098c326676708d4f91f9bf3d6ac7086, type: 3}
