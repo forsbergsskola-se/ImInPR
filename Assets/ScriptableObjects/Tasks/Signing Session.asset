@@ -17,8 +17,10 @@ MonoBehaviour:
     amount: 20
   - type: {fileID: 11400000, guid: 2317ffa7f55ed034da87eccb05142651, type: 2}
     amount: 20
-  time: 12
-  cost: 0
+  time: 7
+  cost: 150
   tier: 0
+  popularity: 20
+  awareness: 20
   description: 
   outComeText: 

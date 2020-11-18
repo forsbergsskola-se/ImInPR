@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: BastardsOfSatan
   m_EditorClassIdentifier: Assembly-CSharp::Bands
   name: Bastards of Satan
-  genre: sdfsdf
+  genre: Deth Metal
   Tier: 0
-  bioText: sdflksdf
+  bioText: Mostly famous for the never appreciated gesture of throwing pig blood
+    on their audience on their live shows. But they can play really fast, really
+    loud and they don't thank God for their minor success, they thank satan.
   thumbnail: {fileID: 21300000, guid: 1357f95828619ea43a34ac68ee6ed32c, type: 3}
   song: {fileID: 11400000, guid: 9355f150944f8a14ebb4b86541d8472f, type: 2}
