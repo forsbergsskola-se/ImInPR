@@ -10,14 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e5a5c54164fa4eb4898b42281d392afd, type: 3}
-  m_Name: Signing Session
+  m_Name: Festival Gig
   m_EditorClassIdentifier: 
-  rewards:
-  - type: {fileID: 11400000, guid: f768b680bc22ac24591c6f0e7f8d44de, type: 2}
-    amount: 20
-  - type: {fileID: 11400000, guid: 2317ffa7f55ed034da87eccb05142651, type: 2}
-    amount: 20
-  time: 7
+  rewards: []
+  time: 6
   cost: 150
   tier: 0
   popularity: 20

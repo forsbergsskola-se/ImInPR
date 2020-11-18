@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72f816c7f2ce13a4ea39c9120427ea36, type: 3}
+  m_Name: BlueBlueBlue
+  m_EditorClassIdentifier: 
+  name: Blue, Blue & Blue
+  genre: Slick Jazz
+  Tier: 1
+  bioText: "Blue, Blue & Blue or triple Blue as some people call them have their
+    roots in Harlem's jazz scene and have been doing jazz clubs in the neighbourhood
+    for ages. They got a small break when one of their tunes \u201CBlue midnight
+    sky over Manhattan\u201D was heard in the film \u201CDeadly Love\u201D starring
+    the wrestler Brett Branton.\n"
+  thumbnail: {fileID: 0}
+  song: {fileID: 0}
+  isOwned: 0

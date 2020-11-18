@@ -50,7 +50,7 @@ public abstract class OfficeInteractable : MonoBehaviour, IPointerClickHandler
         }
     }
     
-    private string UpgradeText() => $"You Are About To Upgrade {this.name} To \n" +
+    private string UpgradeText() => $"Upgrade {this.name} To \n" +
                                     $"Level {Level + 1} : Costs {ActualCost()}";
     
     private void OnDestroy() => PlayerPrefs.SetInt($"{name}_Level", Level);

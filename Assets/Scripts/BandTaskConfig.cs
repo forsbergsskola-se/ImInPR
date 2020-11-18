@@ -6,6 +6,8 @@ public class BandTaskConfig : ScriptableObject
     public int time;
     public int cost;
     public int tier;
+    public int popularity;
+    public int awareness;
     public string description;
     public string outComeText;
 }
