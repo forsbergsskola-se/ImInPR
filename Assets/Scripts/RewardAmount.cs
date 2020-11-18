@@ -21,6 +21,8 @@ public struct RewardAmount
             case 20: return "+";
             case 40: return "++";
             case 60: return "+++";
+            case -20: return "-";
+            case -40: return "--";
         }
 
         return "+";

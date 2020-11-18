@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public GameObject PhoneEventPrefab;
     public GameObject CannotAffordPrefab;
     public GameObject OutcomeMessage;
+    public GameObject MaxLevelPrefab;
     
     [Header("Bands UI")]
     public Transform BandUIContainer;

@@ -41,7 +41,7 @@ public class PhoneCallGenerator : MonoBehaviour
         do
         {
             index = Random.Range(0, phoneEvents.Count);
-        } while (1 != phoneEvents[index].level); //TODO Integrate BG Level Correctly
+        } while (FindObjectOfType<BG>().Level != phoneEvents[index].level); //TODO Integrate BG Level Correctly
         return phoneEvents[index];
     }
     

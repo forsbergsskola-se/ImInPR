@@ -3882,6 +3882,7 @@ MonoBehaviour:
   PhoneEventPrefab: {fileID: 9009883112067890, guid: 93ce36cec96c3ac40997ac3095413d72, type: 3}
   CannotAffordPrefab: {fileID: 9009883112067890, guid: f606e8cb9631fe64b89b98e307808e12, type: 3}
   OutcomeMessage: {fileID: 8220346330683465956, guid: b4631234e268b42ee84bb669d9727f80, type: 3}
+  MaxLevelPrefab: {fileID: 9009883112067890, guid: cf08a8947aea26946a73cb7a2ac17205, type: 3}
   BandUIContainer: {fileID: 1585710785}
   BandUIElement: {fileID: 674370227573115301, guid: becd76af845b5834c83bb92f26704246, type: 3}
   BandSelector: {fileID: 1472145324327981489, guid: 3098c326676708d4f91f9bf3d6ac7086, type: 3}

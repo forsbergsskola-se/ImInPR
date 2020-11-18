@@ -1,9 +1,10 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using Random = UnityEngine.Random;
 
 [RequireComponent(typeof(BandUI))]
-public class BandBehaviour : MonoBehaviour
+public class BandBehaviour : MonoBehaviour, IPointerClickHandler
 {
     public Band bandConfig;
     public int baseCashGenerated;
@@ -12,6 +13,15 @@ public class BandBehaviour : MonoBehaviour
     private BandExperience awareness;
     private BandExperience popularity;
     private float _elapsedTime;
+
+    [Header("Click Attributes")] [SerializeField] [Range(0f, 1f)]
+    private float chanceForMoney;
+    [SerializeField] [Range(0f, 1f)]
+    private float chanceForPlayerExp;
+    [SerializeField] [Range(0f, 1f)]
+    private float chanceForBandAwareness;
+    [SerializeField] [Range(0f, 1f)]
+    private float chanceForBandPopularity;
 
     public int CurrentLevel
     {
@@ -99,5 +109,26 @@ public class BandBehaviour : MonoBehaviour
     {
         task.OnDestroyed -= UnsubscribeFromTask;
         task.OnRewardCollected -= OnReward;
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        var randomNum = Random.Range(0.0f, 1.0f);
+        if (randomNum < chanceForMoney)
+        {
+            FindObjectOfType<GameManager>().cash.Add(1);
+        }
+        if (randomNum > Mathf.Lerp(1, 0, chanceForPlayerExp))
+        {
+            FindObjectOfType<Player>().AddXp(1);
+        }
+        if (randomNum < chanceForBandAwareness)
+        {
+            awareness.Amount++;
+            UpdateUI();
+        }
+        if (randomNum < Mathf.Lerp(1, 0, chanceForBandPopularity)) return;
+        popularity.Amount++;
+        UpdateUI();
     }
 }
