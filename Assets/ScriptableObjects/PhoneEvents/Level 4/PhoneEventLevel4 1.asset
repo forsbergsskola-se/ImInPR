@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0e564175ef544e4c8e5bb5a17b3d9fb, type: 3}
+  m_Name: PhoneEventLevel4 1
+  m_EditorClassIdentifier: 
+  dialogue: Man! Elton John just passed your office. Run after him.
+  level: 4
+  successChance: 0.4
+  time: 75
+  negativeOutcome:
+    expAmount: 0
+    cashAmount: -1000
+    message: Jackpot! You got his number and called it right away. Kind of strange
+      that it went  to a charity aid. But. You were in such a good mood that you
+      gave them 1000 $!
+  positiveOutcome:
+    expAmount: 45
+    cashAmount: 0
+    message: Jackpot! You got his number. Probably best to wait an hour or two before
+      you call him. You're not a stalker.

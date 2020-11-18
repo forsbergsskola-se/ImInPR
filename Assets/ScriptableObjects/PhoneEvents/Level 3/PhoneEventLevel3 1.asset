@@ -10,17 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f0e564175ef544e4c8e5bb5a17b3d9fb, type: 3}
-  m_Name: TemplateEvent 4
+  m_Name: PhoneEventLevel3 1
   m_EditorClassIdentifier: 
-  dialogue: Yo I wanted to invite you to a lit party tonight you wanna come?
-  level: 5
-  successChance: 0.7
-  time: 15
+  dialogue: Tom Waits is sitting in a coffee shop nearby. Go talk to him!
+  level: 3
+  successChance: 0.5
+  time: 60
   negativeOutcome:
-    expAmount: -50
-    cashAmount: 0
-    message: You were kicked out
+    expAmount: 0
+    cashAmount: -500
+    message: 'He was gone when I got there. You ate an expensive brunch to get in
+      a better mood. '
   positiveOutcome:
-    expAmount: 75
+    expAmount: 35
     cashAmount: 0
-    message: You made some new friends
+    message: He was great! A real artist. You didn't get him at all but... yeah!

@@ -10,17 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f0e564175ef544e4c8e5bb5a17b3d9fb, type: 3}
-  m_Name: TemplateEvent
+  m_Name: PhoneEventLevel5 2
   m_EditorClassIdentifier: 
-  dialogue: Yo I wanted to invite you to a lit party tonight you wanna come?
-  level: 1
-  successChance: 0.7
-  time: 15
+  dialogue: Paul Simon want a private chat with you at Chelsea Hotel. Wanna go?
+  level: 5
+  successChance: 0.3
+  time: 90
   negativeOutcome:
-    expAmount: -50
-    cashAmount: 0
-    message: You were kicked out
+    expAmount: 0
+    cashAmount: -1750
+    message: You got a biit to exited and did'nt listned to the diirections. You
+      flew to Chelsea, England.
   positiveOutcome:
     expAmount: 75
     cashAmount: 0
-    message: You made some new friends
+    message: Nice talk. All he wanted was your grandmas chili recipy. But anyway.
+      Paul Simon. Wow!

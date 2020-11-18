@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0e564175ef544e4c8e5bb5a17b3d9fb, type: 3}
+  m_Name: PhoneEventLevel2 2
+  m_EditorClassIdentifier: 
+  dialogue: Rumors says theres a private party tonight and guess who's gonna be there?
+    Everyone! Wanna try to sneak in?
+  level: 2
+  successChance: 0.6
+  time: 45
+  negativeOutcome:
+    expAmount: 0
+    cashAmount: -250
+    message: Police cought you trying too climb in trough an open window. A friend
+      bailed you out of jail.
+  positiveOutcome:
+    expAmount: 30
+    cashAmount: 0
+    message: My god what a party! You don't remember much but you did meet a lot
+      of celebs. You think.

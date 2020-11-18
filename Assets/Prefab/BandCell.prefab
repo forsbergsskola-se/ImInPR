@@ -181,10 +181,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bandConfig: {fileID: 0}
-  currentLevel: 0
-  baseCashGenerated: 0
+  baseCashGenerated: 1
   generateInterval: 12
-  likelyHoodToGenerateTask: 1
+  likelyHoodToGenerateTask: 0.33
 --- !u!114 &1092023036551039587
 MonoBehaviour:
   m_ObjectHideFlags: 0

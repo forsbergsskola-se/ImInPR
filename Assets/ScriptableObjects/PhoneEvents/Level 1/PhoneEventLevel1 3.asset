@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0e564175ef544e4c8e5bb5a17b3d9fb, type: 3}
+  m_Name: PhoneEventLevel1 3
+  m_EditorClassIdentifier: 
+  dialogue: 'Want to attend to a meeting where there might be some interesting people. '
+  level: 1
+  successChance: 0.7
+  time: 30
+  negativeOutcome:
+    expAmount: 0
+    cashAmount: -200
+    message: 'Interesting poeple? Maybe if you are in the sleeping pill bussiness.
+      Good coffee though - sadly It ended up on your bill. '
+  positiveOutcome:
+    expAmount: 25
+    cashAmount: 0
+    message: Great meeting, good talk. An upcoming rap artist promised to not throw
+      away your bussniss card.

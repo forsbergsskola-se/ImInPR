@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f0e564175ef544e4c8e5bb5a17b3d9fb, type: 3}
-  m_Name: TemplateEvent 5
+  m_Name: PhoneEventLevel5 1
   m_EditorClassIdentifier: 
-  dialogue: Yo I wanted to invite you to a lit party tonight you wanna come?
-  level: 1
-  successChance: 0.7
-  time: 15
+  dialogue: Madonna is asking for you at Hilton hotel bar. Get there quick!
+  level: 5
+  successChance: 0.3
+  time: 90
   negativeOutcome:
-    expAmount: -50
-    cashAmount: 0
-    message: You were kicked out
+    expAmount: 0
+    cashAmount: -1500
+    message: You wer'nt quick enough. But she did left you a note. Her bar check.
   positiveOutcome:
-    expAmount: 75
+    expAmount: 60
     cashAmount: 0
-    message: You made some new friends
+    message: It really was her! And she laught at one of your jokes.
