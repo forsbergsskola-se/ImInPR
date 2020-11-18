@@ -14,14 +14,14 @@ public class BandSelectorItem : MonoBehaviour, IPointerClickHandler
     [SerializeField] private TextMeshProUGUI bioText;
     [SerializeField] private Image thumbnail;
 
-    public event Action<BandSelectorController> OnItemSelected;
+    public event Action<BandSelectorItem> OnItemSelected;
     
     private void Start()
     {
         _gm = FindObjectOfType<GameManager>();
     }
 
-    public void Setup(Band value)
+    public void Setup(Band value, BandSelectorController bsc)
     {
         band = value;
 
@@ -30,17 +30,22 @@ public class BandSelectorItem : MonoBehaviour, IPointerClickHandler
         bioText.SetText(band.bioText);
         //if(thumbnail.sprite != null)
             thumbnail.sprite = band.thumbnail;
-
+            
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
         var instance = Instantiate(_gm.BandUIElement, _gm.BandUIContainer);
         instance.GetComponent<BandBehaviour>().SetUp(band);
-        OnItemSelected?.Invoke(transform.parent.GetComponent<BandSelectorController>());
+        OnItemSelected?.Invoke(this);
         
         //Close bandSelectorController
-        //Destroy(FindObjectOfType<BandSelectorController>().gameObject);
+        Destroy(FindObjectOfType<BandSelectorController>().gameObject);
+        
     }
 
+    private void OnDestroy()
+    {
+        OnItemSelected?.Invoke(this);
+    }
 }

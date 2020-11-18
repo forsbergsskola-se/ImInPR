@@ -8,10 +8,10 @@ public class Player : MonoBehaviour
     [SerializeField] private int xpReqToLevel = 100;
     [SerializeField] private Image playerModel;
     [SerializeField] private Sprite[] models;
-    [SerializeField] private Image xpBar;
+    
     
     public event Action OnLevelUp;
-    //public event Action OnXPChanged;
+    public event Action<float> OnXPChanged;
     public int Level
     {
         get => PlayerPrefs.GetInt($"{this.name}_Level");
@@ -19,11 +19,11 @@ public class Player : MonoBehaviour
         {
             PlayerPrefs.SetInt($"{this.name}_Level", value);
         }
-    } 
+    }
 
     public void LevelUp()
     {
-        playerModel.sprite = models[++Level];
+        playerModel.sprite = models[Mathf.Clamp(++Level, 0, models.Length - 1)];
         playerXP.ExperienceAmount -= xpReqToLevel;
         OnLevelUp?.Invoke();
     }
@@ -32,35 +32,23 @@ public class Player : MonoBehaviour
     {
         if (value <= 0) return;
         
-        updateXpBar(playerXP.ExperienceAmount, playerXP.ExperienceAmount + value);
+        OnXPChanged?.Invoke(XpPercentage());
+        
         playerXP.ExperienceAmount += value;
         
         if (playerXP.ExperienceAmount >= xpReqToLevel)
         {
             //todo Notification that LevelUp is ready.
-            
-            LevelUp();
+            //Exclamation Mark?
+            //Tell Business Card
         }
     }
 
     public void LoseXp(int value)
     {
-        updateXpBar(playerXP.ExperienceAmount, playerXP.ExperienceAmount - value);
-        playerXP.ExperienceAmount -= value;
-        
+        //updateXpBar(playerXP.ExperienceAmount, playerXP.ExperienceAmount - value);
+        playerXP.ExperienceAmount = Mathf.Clamp(playerXP.ExperienceAmount - value, 0, xpReqToLevel);
     }
 
-    public float xpPercentage() => playerXP.ExperienceAmount / xpReqToLevel;
-
-    private void updateXpBar(float start, float end)
-    {
-        float elapsedTime = 0;
-        float timeToComplete = 1f;
-        
-        while (elapsedTime < timeToComplete)
-        {
-            elapsedTime += Time.deltaTime;
-            xpBar.fillAmount = Mathf.Lerp(start, end, elapsedTime);
-        }
-    }
+    public float XpPercentage() => playerXP.ExperienceAmount / xpReqToLevel;
 }
