@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -52,6 +53,13 @@ public class GameManager : MonoBehaviour
         {
             FindObjectOfType<Player>().AddXp(5);
         }
-       #endregion
+        #endregion
+    }
+
+    [ContextMenu("Delete Save Game")]
+    public void DeleteSaveGame()
+    {
+        PlayerPrefs.DeleteAll();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

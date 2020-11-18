@@ -53,7 +53,12 @@ public class BandTask : MonoBehaviour, IPointerClickHandler, IPointerEnterHandle
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (_taskState != TaskState.Active && _taskGenerator.CanActivateTask)
+        if (_taskState == TaskState.Done)
+        {
+            progressBar.OnPointerClick(eventData);
+        }
+        
+        else if (_taskState != TaskState.Active && _taskGenerator.CanActivateTask)
         {
             if (FindObjectOfType<GameManager>().cash.Spend(ActualCost()))
             {
@@ -73,12 +78,6 @@ public class BandTask : MonoBehaviour, IPointerClickHandler, IPointerEnterHandle
                 }
                 UpdateUI();
             }
-        }
-
-        if (_taskState == TaskState.Done)
-        {
-            progressBar.OnPointerClick(eventData);
-            //RewardCollected();
         }
     }
 
