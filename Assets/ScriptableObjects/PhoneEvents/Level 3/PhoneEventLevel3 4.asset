@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0e564175ef544e4c8e5bb5a17b3d9fb, type: 3}
+  m_Name: PhoneEventLevel3 4
+  m_EditorClassIdentifier: 
+  dialogue: Dude! There is a big PR event happening right now at the Garlie Tower.
+    You're not invited but people are talking about you. Maybe you can use your charm
+    and try to get in!
+  level: 3
+  successChance: 0.5
+  time: 60
+  negativeOutcome:
+    expAmount: 0
+    cashAmount: -1500
+    message: The security guard was hard to impress. And had big hard muscles. He
+      beat you up good. Getting that nose fixed will cost you.
+  positiveOutcome:
+    expAmount: 55
+    cashAmount: 0
+    message: The security guard was a big fan of a band you got. You was let true
+      with the promise of him meeting them. Well, that chance of that ever happening,
+      but you did get to talk to a lot of impressive people.
