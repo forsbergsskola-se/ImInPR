@@ -654,9 +654,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3d41c13f41c74b1d827192fa1d588d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  allTasks:
-  - {fileID: 11400000, guid: 5473a13f224c64663bd880c1d296a1b3, type: 2}
-  - {fileID: 11400000, guid: bc75716265a950f4cbc676b2a0fbfa21, type: 2}
+  allTasks: {fileID: 11400000, guid: a6ebc49d10fc94b25951b773bb4fbf4f, type: 2}
   progressCircles:
   - {fileID: 1219637756879863292}
   - {fileID: 3459414273103190159}
@@ -829,6 +827,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ProgressCircle (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 3459414272665796398, guid: c68682cc3c47f4100a87a4ca2fe92ac8, type: 3}
+      propertyPath: isUnlocked
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7743975277429587327, guid: c68682cc3c47f4100a87a4ca2fe92ac8, type: 3}
       propertyPath: m_Type
       value: 3
@@ -945,6 +947,10 @@ PrefabInstance:
     - target: {fileID: 1941365183718756782, guid: c68682cc3c47f4100a87a4ca2fe92ac8, type: 3}
       propertyPath: m_Name
       value: ProgressCircle (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3459414272665796398, guid: c68682cc3c47f4100a87a4ca2fe92ac8, type: 3}
+      propertyPath: isUnlocked
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7743975277429587327, guid: c68682cc3c47f4100a87a4ca2fe92ac8, type: 3}
       propertyPath: m_Type
@@ -1063,6 +1069,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ProgressCircle (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3459414272665796398, guid: c68682cc3c47f4100a87a4ca2fe92ac8, type: 3}
+      propertyPath: isUnlocked
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7743975277429587327, guid: c68682cc3c47f4100a87a4ca2fe92ac8, type: 3}
       propertyPath: m_Type
       value: 3
@@ -1180,6 +1190,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ProgressCircle (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 3459414272665796398, guid: c68682cc3c47f4100a87a4ca2fe92ac8, type: 3}
+      propertyPath: isUnlocked
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7743975277429587327, guid: c68682cc3c47f4100a87a4ca2fe92ac8, type: 3}
       propertyPath: m_Type
       value: 3
@@ -1296,6 +1310,10 @@ PrefabInstance:
     - target: {fileID: 1941365183718756782, guid: c68682cc3c47f4100a87a4ca2fe92ac8, type: 3}
       propertyPath: m_Name
       value: ProgressCircle
+      objectReference: {fileID: 0}
+    - target: {fileID: 3459414272665796398, guid: c68682cc3c47f4100a87a4ca2fe92ac8, type: 3}
+      propertyPath: isUnlocked
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7743975277429587327, guid: c68682cc3c47f4100a87a4ca2fe92ac8, type: 3}
       propertyPath: m_Type

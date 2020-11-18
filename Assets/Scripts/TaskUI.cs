@@ -19,7 +19,7 @@ public class TaskUI : MonoBehaviour
         this.taskName.text = taskConfig.name;
         this.timeCost.text = $"Time {taskTime} | Cost {cost}";
         this.bandName.text = bandName;
-        this.taskLevel.text = taskConfig.tier.ToString();
+        this.taskLevel.text = taskConfig.levelRequirement.ToString();
         foreach (var outcome in outcomes)
         {
             this.outcome.text += outcome + "\n";

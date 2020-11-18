@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5a5c54164fa4eb4898b42281d392afd, type: 3}
   m_Name: Singing Lessons
   m_EditorClassIdentifier: 
-  rewards: []
+  rewards:
+  - type: {fileID: 11400000, guid: f768b680bc22ac24591c6f0e7f8d44de, type: 2}
+    amount: 20
   time: 2
   cost: 20
   tier: 0
-  popularity: 20
-  awareness: 0
   description: 
   outComeText: 
