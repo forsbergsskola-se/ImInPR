@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0e564175ef544e4c8e5bb5a17b3d9fb, type: 3}
+  m_Name: PhoneEventLevel2 5
+  m_EditorClassIdentifier: 
+  dialogue: Paul Simon want a private chat with you at Chelsea Hotel. Wanna go?
+  level: 2
+  successChance: 0.6
+  time: 45
+  negativeOutcome:
+    expAmount: -15
+    cashAmount: 0
+    message: You got a bit too excited and didn't listen to the directions. You flew
+      to Chelsea, England.
+  positiveOutcome:
+    expAmount: 0
+    cashAmount: 200
+    message: Nice talk. All he wanted was your grandmas chili recipe. But anyway.
+      Paul Simon. Wow!
