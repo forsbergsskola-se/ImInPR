@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0e564175ef544e4c8e5bb5a17b3d9fb, type: 3}
+  m_Name: PhoneEventLevel2 4
+  m_EditorClassIdentifier: 
+  dialogue: Wanna go to a charity auction? Some prominent people are supposed to
+    show up.
+  level: 2
+  successChance: 0.6
+  time: 45
+  negativeOutcome:
+    expAmount: -10
+    cashAmount: 0
+    message: No one talked to you. Not even when you bid a 1200$ jar of sand from
+      Tibet.
+  positiveOutcome:
+    expAmount: 0
+    cashAmount: 150
+    message: 'What a ball! You managed to get on the same photo as Rick Astley. '

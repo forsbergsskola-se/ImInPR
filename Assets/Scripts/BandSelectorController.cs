@@ -30,7 +30,6 @@ public class BandSelectorController : MonoBehaviour
         }
 
         var tmp = SelectRandomBands(amountBandsToDisplay);
-        //PrintList(tmp);
         AddToBandSelector(tmp);
     }
 
@@ -63,13 +62,6 @@ public class BandSelectorController : MonoBehaviour
         return randomBands;
     }
 
-    public void PrintList(List<Band> value) //todo cleanup, remove this method and the reference to it.
-    {
-        foreach (var VARIABLE in value)
-        {
-            Debug.Log(VARIABLE);
-        }
-    }
     public void killmepls(BandSelectorItem bsi)
     {
         bsi.GetComponent<BandSelectorItem>().OnItemSelected -= killmepls;
