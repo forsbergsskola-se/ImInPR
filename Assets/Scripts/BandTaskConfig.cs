@@ -1,11 +1,12 @@
 ﻿using UnityEngine;
+using UnityEngine.Serialization;
 [CreateAssetMenu(fileName = "NewTask", menuName = "Tasks/Task")]
 public class BandTaskConfig : ScriptableObject
 {
     public RewardAmount[] rewards;
     public int time;
     public int cost;
-    public int levelRequirement;
+    [FormerlySerializedAs("tier")] public int levelRequirement;
     public string description;
     public string outComeText;
 }

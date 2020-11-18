@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public GameObject ConfirmationPrefab;
     public GameObject PhoneEventPrefab;
     public GameObject CannotAffordPrefab;
+    public GameObject OutcomeMessage;
     
     [Header("Bands UI")]
     public Transform BandUIContainer;

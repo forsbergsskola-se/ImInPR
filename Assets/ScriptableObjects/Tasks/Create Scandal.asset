@@ -19,6 +19,6 @@ MonoBehaviour:
     amount: 40
   time: 5
   cost: 100
-  tier: 0
+  levelRequirement: 8
   description: 
   outComeText: 

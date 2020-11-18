@@ -19,6 +19,6 @@ MonoBehaviour:
     amount: 60
   time: 60
   cost: 75000
-  levelRequirement: 0
+  levelRequirement: 10
   description: 
   outComeText: 
