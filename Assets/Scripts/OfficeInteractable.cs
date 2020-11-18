@@ -6,11 +6,11 @@ public abstract class OfficeInteractable : MonoBehaviour, IPointerClickHandler
 {
     protected GameManager gm;
     public Sprite[] models; 
-    public int Level { get; private set; }
+    public int Level { get; protected set; }
     public int levelUpCost;
 
     public event Action OnLevelUp;
-    private void Start()
+    protected virtual void Start()
     {
         gm = FindObjectOfType<GameManager>();
         Level = PlayerPrefs.GetInt($"{name}_Level", 1);
@@ -32,7 +32,8 @@ public abstract class OfficeInteractable : MonoBehaviour, IPointerClickHandler
         return levelUpCost * Level * 3;
     }
 
-    public override string ToString() => $"{this.name} : Level {Level}, costs {ActualCost()} to upgrade.";
+    public override string ToString() => $"You Are About To Upgrade {this.name} To \n" +
+                                         $"Level {Level + 1} : Costs {ActualCost()}";
 
     public virtual void OnPointerClick(PointerEventData eventData)
     {
@@ -40,7 +41,7 @@ public abstract class OfficeInteractable : MonoBehaviour, IPointerClickHandler
         {
             var confirmInstance= Instantiate(gm.ConfirmationPrefab, gm.transform);
             var confirmationPanel = confirmInstance.GetComponent<ConfirmationPanel>();
-            confirmationPanel.SetUp(this.UpgradeText());
+            confirmationPanel.SetUp(this.ToString());
             confirmationPanel.OnConfirm += IncreaseLevel;
             confirmationPanel.OnDestroyed += UnsubscribeFromConfirm;
         }
@@ -49,10 +50,7 @@ public abstract class OfficeInteractable : MonoBehaviour, IPointerClickHandler
             var cannotAffordInstance = Instantiate(gm.CannotAffordPrefab, gm.transform);
         }
     }
-    
-    private string UpgradeText() => $"You Are About To Upgrade {this.name} To \n" +
-                                    $"Level {Level + 1} : Costs {ActualCost()}";
-    
+
     private void OnDestroy() => PlayerPrefs.SetInt($"{name}_Level", Level);
     
     void UnsubscribeFromConfirm(ConfirmationPanel confirmationPanel)

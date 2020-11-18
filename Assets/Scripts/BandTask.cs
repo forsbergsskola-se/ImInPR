@@ -1,9 +1,10 @@
 ﻿using System;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class BandTask : MonoBehaviour, IPointerClickHandler
+public class BandTask : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
     public BandTaskConfig task;
     private string bandName;
@@ -59,7 +60,7 @@ public class BandTask : MonoBehaviour, IPointerClickHandler
                 OnTaskStart?.Invoke();
                 _taskState = TaskState.Active;
                 var progressCircles = FindObjectsOfType<ProgressCircle>();
-                foreach (var progressCircle in progressCircles)
+                foreach (var progressCircle in progressCircles.Reverse())
                 {
                     if (progressCircle.isUnlocked && !progressCircle.isBeingUsed)
                     { 
@@ -67,6 +68,7 @@ public class BandTask : MonoBehaviour, IPointerClickHandler
                         Debug.Log("There's an available circle");
                         progressBar.isBeingUsed = true;
                         progressCircle.OnCollect += RewardCollected;
+                        break;
                     }
                 }
                 UpdateUI();
@@ -107,6 +109,16 @@ public class BandTask : MonoBehaviour, IPointerClickHandler
     private void OnDestroy()
     {
         OnDestroyed?.Invoke(this);
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        _taskGenerator.message.text = this.task.description;
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        _taskGenerator.message.text = "";
     }
 }
 
