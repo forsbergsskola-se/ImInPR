@@ -10,17 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f0e564175ef544e4c8e5bb5a17b3d9fb, type: 3}
-  m_Name: TemplateEvent 2
+  m_Name: PhoneEventLevel1 2
   m_EditorClassIdentifier: 
-  dialogue: Yo I wanted to invite you to a lit party tonight you wanna come?
-  level: 2
+  dialogue: Hello! Come to my party tonight! I know someone who know someone who
+    know that guy who had that hit song... what was the persons name?
+  level: 1
   successChance: 0.7
-  time: 15
+  time: 30
   negativeOutcome:
-    expAmount: -50
-    cashAmount: 0
-    message: You were kicked out
+    expAmount: 0
+    cashAmount: -150
+    message: A boring party with nothing to gain for you. You took an expensive taxi
+      home!
   positiveOutcome:
-    expAmount: 75
+    expAmount: 20
     cashAmount: 0
-    message: You made some new friends
+    message: Strike! They acually knew someone who knew someone. You've got a number!

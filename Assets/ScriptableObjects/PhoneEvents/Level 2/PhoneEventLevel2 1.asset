@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0e564175ef544e4c8e5bb5a17b3d9fb, type: 3}
+  m_Name: PhoneEventLevel2 1
+  m_EditorClassIdentifier: 
+  dialogue: Samantha Fox is hiring someone to watch her dog. Maybe you should take
+    the job to get near famous people.
+  level: 2
+  successChance: 0.6
+  time: 45
+  negativeOutcome:
+    expAmount: 0
+    cashAmount: -200
+    message: You never got to meet anyone of dignity but her dog took some big chunks
+      of your clothes. You needed to buy new ones.
+  positiveOutcome:
+    expAmount: 25
+    cashAmount: 0
+    message: You never got to meet her but You become friend with her dog. That's
+      something!

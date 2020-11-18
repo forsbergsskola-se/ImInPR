@@ -1764,11 +1764,24 @@ MonoBehaviour:
   phoneCallRarity: 1
   repeatTime: 1
   phoneEvents:
-  - {fileID: 11400000, guid: e52cee2572204414291ef05c3cdfd958, type: 2}
-  - {fileID: 11400000, guid: df839a96b681e8f4f9fe01c3c5ce859e, type: 2}
-  - {fileID: 11400000, guid: 837481b91b0992b41bba151b98bf0304, type: 2}
-  - {fileID: 11400000, guid: bdaf6ef53632ef94099492aa27128a29, type: 2}
-  - {fileID: 11400000, guid: eef86a7a50a0d594a9c9f1f55ca2efb3, type: 2}
+  - {fileID: 11400000, guid: cf90bf7449fcf2d4fb1bad1f9fcce1cc, type: 2}
+  - {fileID: 11400000, guid: 92649ea6b5b1a224abcdf1835bbc5448, type: 2}
+  - {fileID: 11400000, guid: 112d809e5c5ff7140984f9c504fea9b0, type: 2}
+  - {fileID: 11400000, guid: 601e5a43515c61c47920deaccc2332b7, type: 2}
+  - {fileID: 11400000, guid: 9c03abc3bb3f9914eaf273c4cce42af1, type: 2}
+  - {fileID: 11400000, guid: 702bcf458fedf684f9f647712e2a2baf, type: 2}
+  - {fileID: 11400000, guid: ae7ccb4f4cff62a4b9cc1c186bca978a, type: 2}
+  - {fileID: 11400000, guid: 49b6a1e4002a106468cdcce5536e2545, type: 2}
+  - {fileID: 11400000, guid: c7757290c6757ef4d82e25746cbe2f7a, type: 2}
+  - {fileID: 11400000, guid: e5c997cebb7734a4987786e39e3566b8, type: 2}
+  - {fileID: 11400000, guid: abde66e80875eb04da347b28af26548d, type: 2}
+  - {fileID: 11400000, guid: 2f5a2ccb2f99f53419fc0a1d9ef494e5, type: 2}
+  - {fileID: 11400000, guid: c9de34e4e7a07d849aeee92fdbb88e6a, type: 2}
+  - {fileID: 11400000, guid: c93fbd0974d217d429ca5a108e91eed8, type: 2}
+  - {fileID: 11400000, guid: 3e668196fcbbec44ebafdb87dc110814, type: 2}
+  - {fileID: 11400000, guid: fbcc65ea24d6ce849a7af0a092e484ff, type: 2}
+  - {fileID: 11400000, guid: 2afdc92e2e84508468205c786299d629, type: 2}
+  - {fileID: 11400000, guid: 36e0ee1c57c4bd24d85a732121bd4e1d, type: 2}
 --- !u!1 &937066198
 GameObject:
   m_ObjectHideFlags: 0
@@ -2623,9 +2636,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1469920146}
     m_Modifications:
+    - target: {fileID: 3850106504495977093, guid: a1918ce6c7e30405c8a96acfe5a555ff, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3850106505972407708, guid: a1918ce6c7e30405c8a96acfe5a555ff, type: 3}
       propertyPath: m_Name
       value: ComputerList
+      objectReference: {fileID: 0}
+    - target: {fileID: 3850106505972407708, guid: a1918ce6c7e30405c8a96acfe5a555ff, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3850106505972407709, guid: a1918ce6c7e30405c8a96acfe5a555ff, type: 3}
       propertyPath: m_LocalPosition.x

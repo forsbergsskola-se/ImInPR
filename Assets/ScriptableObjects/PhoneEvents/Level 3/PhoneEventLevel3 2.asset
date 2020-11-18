@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0e564175ef544e4c8e5bb5a17b3d9fb, type: 3}
+  m_Name: PhoneEventLevel3 2
+  m_EditorClassIdentifier: 
+  dialogue: I got an invite +1 to a secret concert with Bruce.  Wanna tag along?
+  level: 3
+  successChance: 0.5
+  time: 60
+  negativeOutcome:
+    expAmount: 0
+    cashAmount: -600
+    message: Now you understand why they call him The Boss. He did throw you out
+      quite firmly when you climbed up the stage and tried to give him your bussiness
+      card.
+  positiveOutcome:
+    expAmount: 40
+    cashAmount: 0
+    message: 'Now you understand why they call him The Boss. And you got to sit front
+      row just besides Axel Rose. '

@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0e564175ef544e4c8e5bb5a17b3d9fb, type: 3}
+  m_Name: PhoneEventLevel3 3
+  m_EditorClassIdentifier: 
+  dialogue: 'Howdy! Do you want to attend an interesting lunch meeting with three
+    upcoming country artists? '
+  level: 3
+  successChance: 0.5
+  time: 60
+  negativeOutcome:
+    expAmount: 0
+    cashAmount: -800
+    message: Damn. They got me into playing Texas Hold'em and I ended up loosing
+      800 bucks. How could he have three aces and the hand ALL the time?
+  positiveOutcome:
+    expAmount: 45
+    cashAmount: 0
+    message: Fun folks! They rode in on horses, cowboy hats and all. You'll meet
+      them again because one of the challange you to a gun duel... whatever that
+      means? However - a great experience.
