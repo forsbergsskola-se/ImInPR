@@ -19,7 +19,7 @@ public class ProgressCircle : MonoBehaviour, IPointerClickHandler
             canCollect = false;
             OnCollect?.Invoke(this);
             isBeingUsed = false;
-            image.fillAmount = 1;
+            image.fillAmount = 0;
         }
     }
 
