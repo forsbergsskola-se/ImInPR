@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
     public event Action<float> OnXPChanged;
     public int Level
     {
-        get => PlayerPrefs.GetInt($"{this.name}_Level");
+        get => PlayerPrefs.GetInt($"{this.name}_Level", 1);
         private set
         {
             PlayerPrefs.SetInt($"{this.name}_Level", value);
@@ -38,9 +38,7 @@ public class Player : MonoBehaviour
         
         if (playerXP.ExperienceAmount >= xpReqToLevel)
         {
-            //todo Notification that LevelUp is ready.
-            //Exclamation Mark?
-            //Tell Business Card
+            LevelUp();
         }
     }
 

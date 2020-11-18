@@ -46,6 +46,11 @@ public class GameManager : MonoBehaviour
             var instance = Instantiate(BandSelector, transform);
             
         }
+
+        if (Input.GetKeyDown(KeyCode.F9))
+        {
+            FindObjectOfType<Player>().AddXp(5);
+        }
        #endregion
     }
 }
