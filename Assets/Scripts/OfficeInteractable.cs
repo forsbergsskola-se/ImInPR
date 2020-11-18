@@ -6,15 +6,19 @@ using UnityEngine.UI;
 public abstract class OfficeInteractable : MonoBehaviour, IPointerClickHandler
 {
     protected GameManager gm;
-    public Sprite[] models; 
-    public int Level { get; private set; }
+    public Sprite[] models;
+
+    public int Level
+    {
+        get => PlayerPrefs.GetInt($"{name}_Level", 1);
+        private set => PlayerPrefs.SetInt($"{name}_Level", value);
+    }
     public int levelUpCost;
 
     public event Action OnLevelUp;
     protected virtual void Start()
     {
         gm = FindObjectOfType<GameManager>();
-        Level = PlayerPrefs.GetInt($"{name}_Level", 1);
         GetComponent<Image>().sprite = models[Mathf.Clamp(Level - 1, 0, models.Length - 1)];
     }
 
@@ -56,9 +60,7 @@ public abstract class OfficeInteractable : MonoBehaviour, IPointerClickHandler
     
     private string UpgradeText() => $"Upgrade {this.name} To \n" +
                                     $"Level {Level + 1} : Costs {ActualCost()}";
-    
-    private void OnDestroy() => PlayerPrefs.SetInt($"{name}_Level", Level);
-    
+
     void UnsubscribeFromConfirm(ConfirmationPanel confirmationPanel)
     {
         confirmationPanel.OnConfirm -= IncreaseLevel;

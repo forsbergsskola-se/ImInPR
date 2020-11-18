@@ -1164,6 +1164,7 @@ GameObject:
   - component: {fileID: 675821705}
   - component: {fileID: 675821707}
   - component: {fileID: 675821706}
+  - component: {fileID: 675821708}
   m_Layer: 0
   m_Name: ExclamationMark
   m_TagString: Untagged
@@ -1228,6 +1229,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 675821704}
   m_CullTransparentMesh: 0
+--- !u!114 &675821708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 675821704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 061ca3f1ca3554bf2a4c9d795e08ee69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseTransitionTime: 0.45
+  durationBetweenReplay: 5
+  distanceToMoveY: 75
+  downDifference: 2
 --- !u!1 &779436421
 GameObject:
   m_ObjectHideFlags: 0
@@ -1987,7 +2004,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da4d5554eb9fd9744bd0b33e1d72c8b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  models: []
+  models:
+  - {fileID: 21300000, guid: 8e94b1b8c4e7a9e4ab9e60f2067344e6, type: 3}
+  - {fileID: 21300000, guid: bcfcfb2d5f7505044a2c3182eb537bc6, type: 3}
+  - {fileID: 21300000, guid: cb1cd58dc29da44458b1adeadf878689, type: 3}
+  - {fileID: 21300000, guid: 2d64f9d2f6ea3bb42b6745afaf0e0cee, type: 3}
+  - {fileID: 21300000, guid: 2d64f9d2f6ea3bb42b6745afaf0e0cee, type: 3}
   levelUpCost: 10
   ExclamationMarkPrefab: {fileID: 675821704}
 --- !u!114 &930818507
@@ -2002,8 +2024,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 526bd3c702367fb46a603051dbefd6c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  phoneCallRarity: 1
-  repeatTime: 1
+  phoneCallRarity: 5
+  repeatTime: 5
   phoneEvents:
   - {fileID: 11400000, guid: cf90bf7449fcf2d4fb1bad1f9fcce1cc, type: 2}
   - {fileID: 11400000, guid: 92649ea6b5b1a224abcdf1835bbc5448, type: 2}
@@ -3182,26 +3204,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1469920146}
     m_Modifications:
-    - target: {fileID: 1246223059259251297, guid: fdcb28fd3917be7498440fe7d1596cf3, type: 3}
-      propertyPath: m_ChildAlignment
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6772623725637609729, guid: fdcb28fd3917be7498440fe7d1596cf3, type: 3}
-      propertyPath: m_Sprite
+    - target: {fileID: 6458762052504874031, guid: fdcb28fd3917be7498440fe7d1596cf3, type: 3}
+      propertyPath: _gm
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6772623725637609729, guid: fdcb28fd3917be7498440fe7d1596cf3, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6772623725637609729, guid: fdcb28fd3917be7498440fe7d1596cf3, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6772623725637609729, guid: fdcb28fd3917be7498440fe7d1596cf3, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1469920150}
     - target: {fileID: 6772623725637609738, guid: fdcb28fd3917be7498440fe7d1596cf3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

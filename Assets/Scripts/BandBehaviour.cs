@@ -16,7 +16,7 @@ public class BandBehaviour : MonoBehaviour
     public int CurrentLevel
     {
         get => PlayerPrefs.GetInt($"{bandConfig.name}_Level", 1);
-        set => PlayerPrefs.SetInt($"{bandConfig.name}_Level", value);
+        private set => PlayerPrefs.SetInt($"{bandConfig.name}_Level", value);
     }
 
     public int RequiredExp => 100 + (5 * (CurrentLevel - 1));
@@ -24,7 +24,6 @@ public class BandBehaviour : MonoBehaviour
     public void SetUp(Band band)
     {
         bandConfig = band;
-        
         awareness = new BandExperience(this, "Awareness", bandConfig.name);
         popularity = new BandExperience(this, "Popularity", bandConfig.name);
         GetComponent<BandUI>().SetUp(band);

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6772623725637609728}
   - component: {fileID: 6772623725637609729}
   - component: {fileID: 1246223059259251297}
+  - component: {fileID: 6458762052504874031}
   m_Layer: 0
   m_Name: BandsList
   m_TagString: Untagged
@@ -133,7 +134,7 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 4
+  m_ChildAlignment: 3
   m_Spacing: 0
   m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 0
@@ -142,3 +143,17 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &6458762052504874031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6772623725637609739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67f82a648289446ba9f88e53d9e677a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bandList: {fileID: 11400000, guid: 2a09f248b5e251d4aa9dc12dcafc5dbe, type: 2}
+  _gm: {fileID: 0}

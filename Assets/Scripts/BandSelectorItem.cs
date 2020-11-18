@@ -38,7 +38,7 @@ public class BandSelectorItem : MonoBehaviour, IPointerClickHandler
         var instance = Instantiate(_gm.BandUIElement, _gm.BandUIContainer);
         instance.GetComponent<BandBehaviour>().SetUp(band);
         OnItemSelected?.Invoke(this);
-        
+        band.SetOwned(true);
         //Close bandSelectorController
         Destroy(FindObjectOfType<BandSelectorController>().gameObject);
         
