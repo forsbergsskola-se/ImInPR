@@ -2,6 +2,9 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+
+
+
 public class Player : MonoBehaviour
 {
     
@@ -38,7 +41,7 @@ public class Player : MonoBehaviour
         {
             LevelUp();
         }
-        Debug.Log($"current player XP: {ExperienceAmount}");
+        //Debug.Log($"current player XP: {ExperienceAmount}");
         xpBar.UpdateBar(ExperienceAmount);
     }
 
@@ -51,12 +54,13 @@ public class Player : MonoBehaviour
     public void LevelUp()
     {
         Level++;
-        playerModel.sprite = models[Mathf.Clamp(Level, 0, models.Length - 1)];
+        playerModel.sprite = models[Mathf.Clamp(Level - 1, 0, models.Length - 1)];
         ExperienceAmount -= xpReqToLevel;
     }
     
     private void Start() 
     {
+        Debug.Log(Level);
         playerModel.sprite = models[Mathf.Clamp(Level - 1, 0, models.Length - 1)];
         xpBar.UpdateBar(ExperienceAmount);
     }
