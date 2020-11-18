@@ -4,17 +4,24 @@ using UnityEngine.UI;
 public class ProgressBar : MonoBehaviour
 {
     [SerializeField] private Player player;
-    private Image bar;
+    [SerializeField] private Slider slider;
 
     private void Start()
     {
-        bar = GetComponent<Image>();
+        //bar = GetComponent<Image>();
         player.OnXPChanged += UpdateBar;
+        UpdateBar(player.XpPercentage());
     }
 
-    private void UpdateBar(float value)
+    public void UpdateBar(float value)
     {
-        bar.fillAmount = value;
+        slider.value = value;
+    }
+
+    public void SetMax(float value)
+    {
+        slider.maxValue = value;
+        slider.value = value;
     }
 
     private void OnDestroy()

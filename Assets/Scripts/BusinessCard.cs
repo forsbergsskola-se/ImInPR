@@ -12,14 +12,7 @@ public class BusinessCard : MonoBehaviour
     [SerializeField] private TextMeshProUGUI playerHeader;
     [SerializeField] private TextMeshProUGUI playerLevelText;
     [SerializeField] private TextMeshProUGUI playerTitleText;
-    [SerializeField] private ProgressBar xpBar;
-    
-   
 
-    public void XPChanged()
-    {
-        //updateXpBar(playerXP.ExperienceAmount, playerXP.ExperienceAmount + value);
-    }
     public void UpdateLevelText() => playerLevelText.SetText(player.Level.ToString());
 
     private void Awake() => player.OnLevelUp += UpdateLevelText;

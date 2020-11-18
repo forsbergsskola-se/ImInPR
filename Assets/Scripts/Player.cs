@@ -9,22 +9,24 @@ public class Player : MonoBehaviour
     [SerializeField] private Image playerModel;
     [SerializeField] private Sprite[] models;
     
-    
     public event Action OnLevelUp;
     public event Action<float> OnXPChanged;
     public int Level
     {
         get => PlayerPrefs.GetInt($"{this.name}_Level", 1);
-        private set
-        {
-            PlayerPrefs.SetInt($"{this.name}_Level", value);
-        }
+        private set => PlayerPrefs.SetInt($"{this.name}_Level", value);
+    }
+
+    public void Start()
+    {
+        Debug.Log(playerXP.ExperienceAmount);
     }
 
     public void LevelUp()
     {
         playerModel.sprite = models[Mathf.Clamp(++Level, 0, models.Length - 1)];
         playerXP.ExperienceAmount -= xpReqToLevel;
+        OnXPChanged?.Invoke(XpPercentage());
         OnLevelUp?.Invoke();
     }
 
@@ -32,9 +34,8 @@ public class Player : MonoBehaviour
     {
         if (value <= 0) return;
         
-        OnXPChanged?.Invoke(XpPercentage());
-        
         playerXP.ExperienceAmount += value;
+        OnXPChanged?.Invoke(XpPercentage());
         
         if (playerXP.ExperienceAmount >= xpReqToLevel)
         {
@@ -44,9 +45,9 @@ public class Player : MonoBehaviour
 
     public void LoseXp(int value)
     {
-        //updateXpBar(playerXP.ExperienceAmount, playerXP.ExperienceAmount - value);
         playerXP.ExperienceAmount = Mathf.Clamp(playerXP.ExperienceAmount - value, 0, xpReqToLevel);
+        OnXPChanged?.Invoke(XpPercentage());
     }
 
-    public float XpPercentage() => playerXP.ExperienceAmount / xpReqToLevel;
+    public float XpPercentage() => (playerXP.ExperienceAmount / xpReqToLevel) * 100;
 }
