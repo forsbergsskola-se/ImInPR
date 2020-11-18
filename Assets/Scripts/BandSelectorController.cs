@@ -63,7 +63,7 @@ public class BandSelectorController : MonoBehaviour
         return randomBands;
     }
 
-    public void PrintList(List<Band> value)
+    public void PrintList(List<Band> value) //todo cleanup, remove this method and the reference to it.
     {
         foreach (var VARIABLE in value)
         {
@@ -71,13 +71,10 @@ public class BandSelectorController : MonoBehaviour
         }
     }
 
-    private void OnDestroy()
-    {
-        
-    }
-
     public void killmepls(BandSelectorController bsc)
     {
-        Destroy(this.gameObject);
+        //todo unsubscribe this method from OnItemSelected on 
+        //bsc.GetComponent<BandSelectorItem>().OnItemSelected -= killmepls;
+        Destroy(bsc.gameObject);
     }
 }
