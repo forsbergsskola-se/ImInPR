@@ -9,7 +9,7 @@ using Random = UnityEngine.Random;
 
 public class TaskGenerator : MonoBehaviour
 {
-    public List<BandTaskConfig> allTasks;
+    public TaskList allTasks;
     public List<ProgressCircle> progressCircles;
     public GameObject taskPrefab;
     public bool active;
@@ -32,7 +32,7 @@ public class TaskGenerator : MonoBehaviour
         if (!CanGenerateTask) return default;
         var instance = Instantiate(taskPrefab, this.transform);
         var newTask = instance.GetComponentInChildren<BandTask>();
-        newTask.Setup(band.bandConfig.name, GenerateTask(band.currentLevel), band.currentLevel, this);
+        newTask.Setup(band.bandConfig.name, GenerateTask(band.CurrentLevel), band.CurrentLevel, this);
         return newTask;
     }
 
@@ -41,10 +41,10 @@ public class TaskGenerator : MonoBehaviour
         int index;
         do
         {
-            index = Random.Range(0, allTasks.Count);
-        } while (level < allTasks[index].tier);
+            index = Random.Range(0, allTasks.tasks.Length);
+        } while (level < allTasks.tasks[index].levelRequirement);
         
-        return allTasks[index];
+        return allTasks.tasks[index];
     }
 
     public void UpdateProgressCircles()

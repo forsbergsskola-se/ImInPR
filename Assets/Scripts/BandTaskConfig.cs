@@ -1,13 +1,11 @@
 ﻿using UnityEngine;
-[CreateAssetMenu(fileName = "NewTask", menuName = "Task")]
+[CreateAssetMenu(fileName = "NewTask", menuName = "Tasks/Task")]
 public class BandTaskConfig : ScriptableObject
 {
     public RewardAmount[] rewards;
     public int time;
     public int cost;
-    public int tier;
-    public int popularity;
-    public int awareness;
+    public int levelRequirement;
     public string description;
     public string outComeText;
 }

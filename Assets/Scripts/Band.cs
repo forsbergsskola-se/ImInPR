@@ -5,6 +5,7 @@ using UnityEngine;
 public class Band : ScriptableObject
 {
     public string name;
+    public string shortName;
     public string genre;
     public BandTier Tier;
     [TextArea] public string bioText;

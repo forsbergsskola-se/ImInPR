@@ -6,14 +6,22 @@ using Random = UnityEngine.Random;
 public class BandBehaviour : MonoBehaviour
 {
     public Band bandConfig;
-    public int currentLevel, baseCashGenerated;
+    public int baseCashGenerated;
     public float generateInterval = 12f;
     [Range(0f, 1f)] public float likelyHoodToGenerateTask;
     private BandExperience awareness;
     private BandExperience popularity;
     private float _elapsedTime;
 
-    public int RequiredExp => 100 + (5 * (currentLevel - 1));
+    public int CurrentLevel
+    {
+        get => PlayerPrefs.GetInt($"{bandConfig.name}_Level", 1);
+        set => PlayerPrefs.SetInt($"{bandConfig.name}_Level", value);
+    }
+
+    public int RequiredExp => 100 + (5 * (CurrentLevel - 1));
+    
+    
 
     public void SetUp(Band band)
     {
@@ -29,7 +37,7 @@ public class BandBehaviour : MonoBehaviour
     {
         _elapsedTime += Time.deltaTime;
         if (_elapsedTime < generateInterval) return;
-        FindObjectOfType<GameManager>().cash.Add(baseCashGenerated * currentLevel);
+        FindObjectOfType<GameManager>().cash.Add(baseCashGenerated * CurrentLevel);
         _elapsedTime -= generateInterval;
         if (Random.Range(0f, 1f) < likelyHoodToGenerateTask)
         {
@@ -56,7 +64,7 @@ public class BandBehaviour : MonoBehaviour
 
     void LevelUp()
     {
-        currentLevel++;
+        CurrentLevel++;
         awareness.Amount = 0;
         popularity.Amount = 0;
         UpdateUI();
@@ -82,7 +90,7 @@ public class BandBehaviour : MonoBehaviour
     
     void UpdateUI()
     {
-        GetComponent<BandUI>().UpdateUI(currentLevel, CalculateDistanceToNextLevel(popularity), CalculateDistanceToNextLevel(awareness));
+        GetComponent<BandUI>().UpdateUI(CurrentLevel, CalculateDistanceToNextLevel(popularity), CalculateDistanceToNextLevel(awareness));
     }
 
     float CalculateDistanceToNextLevel(BandExperience experience)
