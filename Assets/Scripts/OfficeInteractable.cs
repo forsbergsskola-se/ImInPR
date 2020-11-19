@@ -63,6 +63,11 @@ public abstract class OfficeInteractable : MonoBehaviour, IPointerClickHandler
             var cannotAffordInstance = Instantiate(gm.CannotAffordPrefab, gm.transform);
         }
     }
+
+    public void OnClick()
+    {
+        OnPointerClick(default);
+    }
     
     private string UpgradeText() => $"Upgrade {this.name} To \n" +
                                     $"Level {Level + 1} : Costs {ActualCost()}";
