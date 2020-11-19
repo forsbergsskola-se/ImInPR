@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class PhoneCallGenerator : MonoBehaviour
 {
-    //private Animator phoneAnimator;
     public int phoneCallRarity;
     public float repeatTime = 20f;
     public List<PhoneEvent> phoneEvents;
@@ -16,9 +15,9 @@ public class PhoneCallGenerator : MonoBehaviour
 
     private void IsCalling()
     {
+        
         if (NumberCallGenerator() == phoneCallRarity - 1 && !_isSpawned)
         { 
-            //Spawn Excalmation Mark 
             var instance = Instantiate(FindObjectOfType<GameManager>().PhoneEventPrefab, FindObjectOfType<GameManager>().transform);
             var confirmationPanel = instance.GetComponent<PhoneEventBehaviour>();
             confirmationPanel.SetUp(GeneratePhoneEvent());
@@ -26,6 +25,7 @@ public class PhoneCallGenerator : MonoBehaviour
             _isSpawned = !_isSpawned;
             instance.SetActive(false);
             GetComponent<Phone>().IncomingCall(instance);
+            FindObjectOfType<SoundManager>().PlayGameSound("Ringtone");
         }
     }
 
