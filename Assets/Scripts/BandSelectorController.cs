@@ -35,6 +35,7 @@ public class BandSelectorController : MonoBehaviour
 
     private void AddToBandSelector(List<Band> itemsToDisplay)
     {
+        if (itemsToDisplay.Count == 0) return;
         foreach (var band in itemsToDisplay)
         {
             var instance = Instantiate(bandSelectorItem, transform);

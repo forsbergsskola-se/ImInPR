@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -64,8 +65,9 @@ public class BandTask : MonoBehaviour, IPointerClickHandler, IPointerEnterHandle
             {
                 OnTaskStart?.Invoke();
                 _taskState = TaskState.Active;
-                var progressCircles = FindObjectsOfType<ProgressCircle>();
-                foreach (var progressCircle in progressCircles.Reverse())
+                var progressCircles = FindObjectsOfType<ProgressCircle>().ToList();
+                var sortedProgressCircle = progressCircles.OrderBy(o => o.order);
+                foreach (var progressCircle in sortedProgressCircle)
                 {
                     if (progressCircle.isUnlocked && !progressCircle.isBeingUsed)
                     { 

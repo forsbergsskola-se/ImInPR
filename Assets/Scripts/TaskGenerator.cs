@@ -53,6 +53,7 @@ public class TaskGenerator : MonoBehaviour
         {
             progressCircles[i].isUnlocked = true;
         }
+        progressCircles[FindObjectOfType<Computer>().Level - 1].image.fillAmount = 0;
     }
     
     [ContextMenu("ToggleTaskList")]
