@@ -92,7 +92,7 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F2))
         {
             var instance = Instantiate(BandSelector, transform);
-            
+            instance.GetComponent<BandSelectorController>().PopulateList(BandTier.Tier3);
         }
 
         if (Input.GetKeyDown(KeyCode.F8))
