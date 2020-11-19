@@ -3210,6 +3210,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 860214021}
+  bands: {fileID: 11400000, guid: 2a09f248b5e251d4aa9dc12dcafc5dbe, type: 2}
   taskGenerator: {fileID: 518089940}
   ConfirmationPrefab: {fileID: 9009883112067890, guid: dbf12bd1bf9334beabf35b8c0c0dfb5d, type: 3}
   PhoneEventPrefab: {fileID: 9009883112067890, guid: 93ce36cec96c3ac40997ac3095413d72, type: 3}

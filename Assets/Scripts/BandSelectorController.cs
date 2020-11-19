@@ -9,18 +9,10 @@ public class BandSelectorController : MonoBehaviour
     [SerializeField] private GameObject bandSelectorItem;
     [SerializeField] private int amountBandsToDisplay = 3;
     
-    private List<Band> _eligibleBands;
-
-    private void Start()
-    {
-        _eligibleBands = new List<Band>();
-        //PopulateList(BandTier.Tier1);
-    }
-
+    private List<Band> _eligibleBands = new List<Band>();
+    
     public void PopulateList(BandTier tier)
     {
-        _eligibleBands.Clear();
-        
         foreach (var band in bands.bands)
         {
             if (band.Tier <= tier && !band.GetOwned())
