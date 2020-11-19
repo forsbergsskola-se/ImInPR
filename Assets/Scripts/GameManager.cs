@@ -16,7 +16,8 @@ public class GameManager : MonoBehaviour
     public GameObject CannotAffordPrefab;
     public GameObject OutcomeMessage;
     public GameObject MaxLevelPrefab;
-    
+    public GameObject ImagePopUp;
+
     [Header("Bands UI")]
     public Transform BandUIContainer;
     public GameObject BandUIElement;
