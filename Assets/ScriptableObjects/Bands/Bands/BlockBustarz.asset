@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: BlockBustarz
   m_EditorClassIdentifier: 
   name: Block Bustarz
-  shortName: 
+  shortName: BBZ
   genre: Old school Hip hop
   Tier: 1
   bioText: "These five gangstas are revolutionizing the hip hop scene. No one understands
     them. They create a new sound while everyone else is doing the hippity happedi.
     But someday soon we\u2019ll understand.\n"
   thumbnail: {fileID: 21300000, guid: 4c699491a4beb88469fee4b92a44d5c9, type: 3}
-  song: {fileID: 0}
+  song: {fileID: 11400000, guid: d051ed9d5dd0a784ba35c8272789e17a, type: 2}

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: DarkChocolateMP
   m_EditorClassIdentifier: 
   name: Dark Chocolate Mint Peppers
+  shortName: DCMP
   genre: California Rock
   Tier: 2
   bioText: "DCMP is a huge success. Their sound is a combination of funk, rock and
@@ -21,4 +22,3 @@ MonoBehaviour:
     body and screams \u201CLiar\u201D"
   thumbnail: {fileID: 0}
   song: {fileID: 0}
-  isOwned: 0

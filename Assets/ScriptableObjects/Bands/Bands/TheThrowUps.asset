@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: TheThrowUps
   m_EditorClassIdentifier: Assembly-CSharp::Bands
   name: The Throw Ups
+  shortName: TTU
   genre: Teen punk
   Tier: 0
   bioText: "The Throw Ups is still practicing their chords. They don't know how to
     play and they frankly don\u2019t care. \u201CMusic is not about  technice, it\u2019s
     about getting laid\u201D, the lead singer once said."
   thumbnail: {fileID: 21300000, guid: 8fac955ff48f5014494ee5df6ab8040a, type: 3}
-  song: {fileID: 11400000, guid: 123f8290ffef99b4fbaf652fa53bf294, type: 2}
-  isOwned: 0
+  song: {fileID: 11400000, guid: 1d4c315d3e0cd9747b5f94638bb4c482, type: 2}

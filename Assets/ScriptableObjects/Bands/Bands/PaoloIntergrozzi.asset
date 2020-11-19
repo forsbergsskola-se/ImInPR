@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PaoloIntergrozzi
   m_EditorClassIdentifier: 
   name: 'Paolo Intergrozzi '
-  shortName: 
+  shortName: PIG
   genre: Italian love songs
   Tier: 2
   bioText: "Paolo is a survivor. As a kid he was homeless and walked the streets
