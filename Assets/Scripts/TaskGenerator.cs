@@ -32,7 +32,7 @@ public class TaskGenerator : MonoBehaviour
         if (!CanGenerateTask) return default;
         var instance = Instantiate(taskPrefab, this.transform);
         var newTask = instance.GetComponentInChildren<BandTask>();
-        newTask.Setup(band.bandConfig.name, GenerateTask(band.CurrentLevel), band.CurrentLevel, this);
+        newTask.Setup(band.bandConfig.shortName,GenerateTask(band.CurrentLevel), band.CurrentLevel, this);
         return newTask;
     }
 

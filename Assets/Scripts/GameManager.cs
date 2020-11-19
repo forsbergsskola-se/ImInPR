@@ -56,6 +56,11 @@ public class GameManager : MonoBehaviour
             player.AddXp(5);
             Debug.Log($"Adding 5 xp to {player.name}");
         }
+
+        if (Input.GetKeyDown(KeyCode.F3))
+        {
+            cash.Add(500);
+        }
         #endregion
     }
 
