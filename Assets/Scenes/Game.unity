@@ -1447,7 +1447,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6998918018143786684, guid: f17e72f473af0e146a21c5f645d0b6b6, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6998918018178207013, guid: f17e72f473af0e146a21c5f645d0b6b6, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1459,7 +1459,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6998918018529444914, guid: f17e72f473af0e146a21c5f645d0b6b6, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6998918018669787880, guid: f17e72f473af0e146a21c5f645d0b6b6, type: 3}
       propertyPath: gm
@@ -1563,15 +1563,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6998918018895624411, guid: f17e72f473af0e146a21c5f645d0b6b6, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6998918019129699757, guid: f17e72f473af0e146a21c5f645d0b6b6, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6998918019386526653, guid: f17e72f473af0e146a21c5f645d0b6b6, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6998918019810949199, guid: f17e72f473af0e146a21c5f645d0b6b6, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6998918020065375669, guid: f17e72f473af0e146a21c5f645d0b6b6, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1583,7 +1587,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6998918020068045171, guid: f17e72f473af0e146a21c5f645d0b6b6, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f17e72f473af0e146a21c5f645d0b6b6, type: 3}
