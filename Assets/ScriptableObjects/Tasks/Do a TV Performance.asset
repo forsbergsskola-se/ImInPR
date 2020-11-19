@@ -10,14 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e5a5c54164fa4eb4898b42281d392afd, type: 3}
-  m_Name: Book A Gig
+  m_Name: Do a TV Performance
   m_EditorClassIdentifier: 
-  rewards:
-  - type: {fileID: 11400000, guid: 2317ffa7f55ed034da87eccb05142651, type: 2}
-    amount: 20
-  time: 1
-  cost: 70
-  levelRequirement: 5
-  description: "Beatles played at a roof\u2026 what if we play in a\u2026 Garage?
-    Grandma got one."
+  rewards: []
+  time: 6
+  cost: 200
+  levelRequirement: 0
+  description: TV is the new Radio! Get them out there. Do some calls. Pay someone.
+    Just make it happen.
   outComeText: 

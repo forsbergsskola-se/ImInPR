@@ -17,6 +17,7 @@ MonoBehaviour:
     amount: 20
   time: 2
   cost: 20
-  tier: 0
-  description: 
+  levelRequirement: 1
+  description: "The band singer has a brilliant singing voice\u2026 in the shower.
+    Work that voice."
   outComeText: 
