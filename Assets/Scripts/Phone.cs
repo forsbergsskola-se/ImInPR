@@ -21,7 +21,6 @@ public class Phone : OfficeInteractable
     {
         _isCalling = true;
         _callPanel = callPanel;
-        Debug.Log("Call Incoming");
         ExclamationMarkPrefab.SetActive(true);
     }
 }

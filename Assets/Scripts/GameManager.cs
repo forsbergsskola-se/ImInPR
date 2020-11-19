@@ -38,17 +38,6 @@ public class GameManager : MonoBehaviour
             var instance = Instantiate(FindObjectOfType<GameManager>().BandSelector, FindObjectOfType<GameManager>().transform);
             instance.GetComponent<BandSelectorController>().PopulateList(BandTier.Tier1);
         }
-        
-        //if Saved GameDestroyTime from OnDestroy Method != "null"/000000 or whatever default is
-        DateTime gameStartTime = DateTime.Now;
-        var temp = PlayerPrefs.GetString("GameDestroyTime");
-        if (temp != "")
-        {
-            DateTime destroyedTime = JsonUtility.FromJson<DateTime>(temp);
-            Debug.Log(gameStartTime);
-            Debug.Log(destroyedTime);
-            Debug.Log(destroyedTime - gameStartTime);
-        }
     }
 
     public static int bandsOwned(BandList bandsList)
@@ -95,14 +84,6 @@ public class GameManager : MonoBehaviour
         #endregion
     }
     
-    private void OnDestroy()
-    {
-        //Save Date and Time as String.
-        //var gameDestroyTime = DateTime.Now.ToString("yyyyMMdd-HHMMss");
-        
-        PlayerPrefs.SetString("GameDestroyTime", JsonUtility.ToJson(DateTime.Now));
-    }
-
     [ContextMenu("Delete Save Game")]
     public void DeleteSaveGame()
     {
