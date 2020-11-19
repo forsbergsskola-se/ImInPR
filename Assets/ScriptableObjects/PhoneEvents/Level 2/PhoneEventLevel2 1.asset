@@ -16,7 +16,7 @@ MonoBehaviour:
     the job to get near famous people.
   level: 2
   successChance: 0.6
-  time: 45
+  time: 2
   negativeOutcome:
     expAmount: 0
     cashAmount: -200
