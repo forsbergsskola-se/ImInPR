@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
     public GameObject BandUIElement;
     public GameObject BandSelector;
 
+    public bool NewGame => bandsOwned(bands) == 0;
     private void Awake()
     {
         cash = new Cash();
@@ -30,6 +31,12 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         officeEquipment = GetComponentsInChildren<OfficeInteractable>().ToList();
+
+        if (NewGame)
+        {
+            var instance = Instantiate(FindObjectOfType<GameManager>().BandSelector, FindObjectOfType<GameManager>().transform);
+            instance.GetComponent<BandSelectorController>().PopulateList(BandTier.Tier1);
+        }
         
         //if Saved GameDestroyTime from OnDestroy Method != "null"/000000 or whatever default is
         DateTime gameStartTime = DateTime.Now;
@@ -40,27 +47,6 @@ public class GameManager : MonoBehaviour
             Debug.Log(gameStartTime);
             Debug.Log(destroyedTime);
             Debug.Log(destroyedTime - gameStartTime);
-        }
-
-        if (bandsOwned(bands) < 1)
-        {
-            var instance = Instantiate(BandSelector, transform);
-            instance.GetComponent<BandSelectorController>().PopulateList(BandTier.Tier1);
-        }
-        else if (bandsOwned(bands) < 2 && player.Level >= 5)
-        {
-            var instance = Instantiate(BandSelector, transform);
-            instance.GetComponent<BandSelectorController>().PopulateList(BandTier.Tier2);
-        }
-        else if (bandsOwned(bands) < 3 && player.Level >= 10)
-        {
-            var instance = Instantiate(BandSelector, transform);
-            instance.GetComponent<BandSelectorController>().PopulateList(BandTier.Tier3);
-        }
-        else if (bandsOwned(bands) < 4 && player.Level >= 15)
-        {
-            var instance = Instantiate(BandSelector, transform);
-            instance.GetComponent<BandSelectorController>().PopulateList(BandTier.Tier3);
         }
     }
 

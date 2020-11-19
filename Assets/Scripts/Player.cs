@@ -2,9 +2,6 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-
-
-
 public class Player : MonoBehaviour
 {
     
@@ -54,6 +51,22 @@ public class Player : MonoBehaviour
     public void LevelUp()
     {
         Level++;
+        if (Level == 5)
+        {
+            var instance = Instantiate(FindObjectOfType<GameManager>().BandSelector, FindObjectOfType<GameManager>().transform);
+            instance.GetComponent<BandSelectorController>().PopulateList(BandTier.Tier2);
+        }
+        else if (Level == 10)
+        {
+            var instance = Instantiate(FindObjectOfType<GameManager>().BandSelector, FindObjectOfType<GameManager>().transform);
+            instance.GetComponent<BandSelectorController>().PopulateList(BandTier.Tier3);
+        }
+        else if (Level == 15)
+        {
+            var instance = Instantiate(FindObjectOfType<GameManager>().BandSelector, FindObjectOfType<GameManager>().transform);
+            instance.GetComponent<BandSelectorController>().PopulateList(BandTier.Tier3);
+        }
+        
         playerModel.sprite = models[Mathf.Clamp(Level - 1, 0, models.Length - 1)];
         ExperienceAmount -= xpReqToLevel;
     }

@@ -2180,6 +2180,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: PlayToggle
       objectReference: {fileID: 0}
+    - target: {fileID: 2691118040491620067, guid: 6727c818e1772cf4b9a9c4a9913156f0, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2691118040676851415, guid: 6727c818e1772cf4b9a9c4a9913156f0, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -2507,6 +2511,22 @@ PrefabInstance:
       propertyPath: background
       value: 
       objectReference: {fileID: 1312669909}
+    - target: {fileID: 4816667648022796937, guid: 1c074ab1876cb1846b45e77d0fcb04ed, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 156.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 4816667648022796937, guid: 1c074ab1876cb1846b45e77d0fcb04ed, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 50.726807
+      objectReference: {fileID: 0}
+    - target: {fileID: 4816667648022796937, guid: 1c074ab1876cb1846b45e77d0fcb04ed, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -144.88
+      objectReference: {fileID: 0}
+    - target: {fileID: 4816667648022796937, guid: 1c074ab1876cb1846b45e77d0fcb04ed, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 24.713314
+      objectReference: {fileID: 0}
     - target: {fileID: 4816667648243356265, guid: 1c074ab1876cb1846b45e77d0fcb04ed, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
