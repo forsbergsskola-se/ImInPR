@@ -12,19 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0e564175ef544e4c8e5bb5a17b3d9fb, type: 3}
   m_Name: PhoneEventLevel4 4
   m_EditorClassIdentifier: 
-  dialogue: 'Howdy! Do you want to attend to an interesting lunch meeting with three
-    upcoming country artists? '
+  dialogue: "Hi. I invented a new phone called the yPhone. You can listen to music
+    on it. Wicked right. Can we meet right now at the coffee shop so I can tell you
+    more?\r"
   level: 4
   successChance: 0.4
-  time: 75
+  time: 2
   negativeOutcome:
-    expAmount: 0
-    cashAmount: -1500
-    message: Damn. They got me into playing Texas Hold'em and I ended up loosing
-      800 bucks. How could he have three aces and the hand ALL the time?
-  positiveOutcome:
-    expAmount: 55
+    expAmount: -15
     cashAmount: 0
-    message: Fun folks! They rode in on horses, cowboy hats and all. You'll will
-      meet them again because one of the challange you to a gun duel... whatever
-      that means? However - a great experience.
+    message: "Well, you made the deal and people are laughing at you. They call it
+      the whyPhone. It has only treble and no bass!\r"
+  positiveOutcome:
+    expAmount: 0
+    cashAmount: 350
+    message: "This is so cool. A phone and a walkman? You invest and immediately
+      gain on the stocks.\r"

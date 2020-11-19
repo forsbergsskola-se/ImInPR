@@ -12,15 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0e564175ef544e4c8e5bb5a17b3d9fb, type: 3}
   m_Name: PhoneEventLevel5 3
   m_EditorClassIdentifier: 
-  dialogue: 
+  dialogue: "Someone told me Scorpions are looking for a new PR agent. Hurry to their
+    hotel.\r"
   level: 5
   successChance: 0.3
-  time: 90
+  time: 2
   negativeOutcome:
-    expAmount: 0
-    cashAmount: -2000
-    message: 
-  positiveOutcome:
-    expAmount: 1000
+    expAmount: -10
     cashAmount: 0
-    message: 
+    message: "Embarrassing. You called  them Europe a couple of times and they got
+      mad and threw you out.\r"
+  positiveOutcome:
+    expAmount: 100
+    cashAmount: 0
+    message: "They didn't want you as a PR agent but they gave me 100 dollars just
+      to leave.\r"

@@ -16,7 +16,7 @@ MonoBehaviour:
     Everyone! Wanna try to sneak in?
   level: 2
   successChance: 0.6
-  time: 45
+  time: 2
   negativeOutcome:
     expAmount: 0
     cashAmount: -250

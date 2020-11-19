@@ -16,7 +16,7 @@ MonoBehaviour:
     friends!
   level: 1
   successChance: 0.7
-  time: 30
+  time: 2
   negativeOutcome:
     expAmount: 0
     cashAmount: -100

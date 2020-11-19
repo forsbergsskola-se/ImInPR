@@ -16,7 +16,7 @@ MonoBehaviour:
     up.
   level: 4
   successChance: 0.4
-  time: 75
+  time: 2
   negativeOutcome:
     expAmount: 0
     cashAmount: -1200

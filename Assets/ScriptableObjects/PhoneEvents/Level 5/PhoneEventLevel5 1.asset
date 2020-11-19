@@ -15,7 +15,7 @@ MonoBehaviour:
   dialogue: Madonna is asking for you at Hilton hotel bar. Get there quick!
   level: 5
   successChance: 0.3
-  time: 90
+  time: 2
   negativeOutcome:
     expAmount: 0
     cashAmount: -1500

@@ -12,19 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0e564175ef544e4c8e5bb5a17b3d9fb, type: 3}
   m_Name: PhoneEventLevel4 5
   m_EditorClassIdentifier: 
-  dialogue: 'Howdy! Do you want to attend to an interesting lunch meeting with three
-    upcoming country artists? '
+  dialogue: "Hi! I\u2019m having this photo shot today. Would any of your artists
+    be interested in posing with a product that I'm selling.\r"
   level: 4
   successChance: 0.4
-  time: 75
+  time: 2
   negativeOutcome:
-    expAmount: 0
-    cashAmount: -1500
-    message: Damn. They got me into playing Texas Hold'em and I ended up loosing
-      800 bucks. How could he have three aces and the hand ALL the time?
-  positiveOutcome:
-    expAmount: 55
+    expAmount: -20
     cashAmount: 0
-    message: Fun folks! They rode in on horses, cowboy hats and all. You'll will
-      meet them again because one of the challange you to a gun duel... whatever
-      that means? However - a great experience.
+    message: "Couldn't he have said that the product was a toilet. So not cool! \r"
+  positiveOutcome:
+    expAmount: 0
+    cashAmount: 800
+    message: "What a day. Selling yourself for a product can really be a thing for
+      the future.\r"
