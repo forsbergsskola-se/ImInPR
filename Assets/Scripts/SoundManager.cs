@@ -6,18 +6,15 @@ public class SoundManager : MonoBehaviour
     [Header("Game Sounds")]
     [SerializeField] public AudioSource gameSoundAudioSource;
     [SerializeField] private GameSoundController gameSoundController;
-    [Range(0,1f)]public float gameSoundVolume = 0.5f;
-    
+
     [Header("Game Music")]
     [SerializeField] public AudioSource musicAudioSource;
     [SerializeField] private GameSoundController musicController;
-    [Range(0,1f)] public float musicVolume = 0.5f;
     [SerializeField] private GameObject nowPlayingPrefab;
 
     [Header("Background Music")] 
     [SerializeField] private AudioSource backgroundMusicPlayer;
     [SerializeField] private GameSound idleMusic;
-    [Range(0,1f)]public float backgroundMusicVolume = 0.3f;
 
     private void Start()
     {
@@ -55,7 +52,7 @@ public class SoundManager : MonoBehaviour
     
     public void PlayGameSound(string soundName)
     {
-        Play(gameSoundController.FindGameSound(soundName), gameSoundAudioSource, gameSoundVolume);
+        Play(gameSoundController.FindGameSound(soundName), gameSoundAudioSource, GameSoundVolume);
     }
 
     private void Play(GameSound sound, AudioSource source, float volume)
