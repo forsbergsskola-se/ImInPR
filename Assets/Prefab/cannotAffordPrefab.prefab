@@ -301,7 +301,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47ebcf5ab23934a39a8fe987f23f0590, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  confirmText: {fileID: 9009882809981809}
+  confirmText: {fileID: 2665715057236216157}
   xOffset: 0
   yOffset: 0
 --- !u!1 &2538962032377241467
