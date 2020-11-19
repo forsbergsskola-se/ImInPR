@@ -17,18 +17,45 @@ public class SoundManager : MonoBehaviour
     [Header("Background Music")] 
     [SerializeField] private AudioSource backgroundMusicPlayer;
     [SerializeField] private GameSound idleMusic;
-    [Range(0,1f)] public float backgroundMusicVolume = 0.3f;
+    [Range(0,1f)]public float backgroundMusicVolume = 0.3f;
 
     private void Start()
     {
         playBackgroundMusic();
     }
 
+    public float BackgroundMusicVolume
+    {
+        get => PlayerPrefs.GetFloat("BackGroundVolume", 0.3f);
+        set
+        {
+            PlayerPrefs.SetFloat("BackGroundVolume", value);
+            backgroundMusicPlayer.volume = BackgroundMusicVolume;
+        }
+    }
+
+    public float MusicVolume
+    {
+        get => PlayerPrefs.GetFloat("MusicVolume", 0.5f);
+        set => PlayerPrefs.SetFloat("MusicVolume", value);
+    }
+    
+    public float GameSoundVolume
+    {
+        get => PlayerPrefs.GetFloat("GameSoundVolume", 0.5f);
+        set => PlayerPrefs.SetFloat("GameSoundVolume", value);
+    }
+
     #region GameSound Player
 
     public void PlayGameSound(GameSound sound)
     {
-        Play(sound, gameSoundAudioSource, gameSoundVolume);
+        Play(sound, gameSoundAudioSource, GameSoundVolume);
+    }
+    
+    public void PlayGameSound(string soundName)
+    {
+        Play(gameSoundController.FindGameSound(soundName), gameSoundAudioSource, gameSoundVolume);
     }
 
     private void Play(GameSound sound, AudioSource source, float volume)
@@ -46,13 +73,13 @@ public class SoundManager : MonoBehaviour
     #region Music Player
     public void PlayMusic(Band band) 
     {
-        PlayMusic(band.song, musicVolume);
+        PlayMusic(band.song, MusicVolume);
     }
     
     public void PlayMusic(string songName)
     {
         var sound = (GameSong)musicController.FindGameSound(songName);
-        PlayMusic(sound, musicVolume);
+        PlayMusic(sound, MusicVolume);
     }
     
     private void PlayMusic(GameSong sound, float volume)
@@ -89,6 +116,7 @@ public class SoundManager : MonoBehaviour
     {
         backgroundMusicPlayer.loop = true;
         backgroundMusicPlayer.clip = idleMusic.clip;
+        backgroundMusicPlayer.volume = BackgroundMusicVolume;
         backgroundMusicPlayer.Play();
     }
     #endregion
