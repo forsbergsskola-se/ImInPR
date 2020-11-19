@@ -8,8 +8,7 @@ public class PhoneCallGenerator : MonoBehaviour
     public float repeatTime = 20f;
     public List<PhoneEvent> phoneEvents;
     private bool _isSpawned;
-
-    //TODO Implement a exclamation mark spawner
+    
     void Start()
     {
         InvokeRepeating(nameof(IsCalling),2f, repeatTime);
@@ -41,7 +40,7 @@ public class PhoneCallGenerator : MonoBehaviour
         do
         {
             index = Random.Range(0, phoneEvents.Count);
-        } while (FindObjectOfType<BG>().Level > phoneEvents[index].level); //TODO Integrate BG Level Correctly
+        } while (FindObjectOfType<BG>().Level > phoneEvents[index].level);
         return phoneEvents[index];
     }
     
