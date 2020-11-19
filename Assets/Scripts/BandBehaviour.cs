@@ -23,6 +23,8 @@ public class BandBehaviour : MonoBehaviour, IPointerClickHandler
     [SerializeField] [Range(0f, 1f)]
     private float chanceForBandPopularity;
 
+    public int MoneyPerMinute => baseCashGenerated * CurrentLevel * Mathf.RoundToInt(60 / generateInterval);
+
     public int CurrentLevel
     {
         get => PlayerPrefs.GetInt($"{bandConfig.name}_Level", 1);
