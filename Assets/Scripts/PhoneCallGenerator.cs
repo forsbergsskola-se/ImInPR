@@ -40,7 +40,7 @@ public class PhoneCallGenerator : MonoBehaviour
         do
         {
             index = Random.Range(0, phoneEvents.Count);
-        } while (FindObjectOfType<BG>().Level > phoneEvents[index].level);
+        } while (FindObjectOfType<BG>().Level < phoneEvents[index].level);
         return phoneEvents[index];
     }
     
