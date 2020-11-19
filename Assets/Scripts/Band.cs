@@ -48,7 +48,7 @@ public class Band : ScriptableObject
 
 public enum BandTier
 {
-    Tier1, 
-    Tier2, 
-    Tier3
+    Tier1 = 1, 
+    Tier2 = 5, 
+    Tier3 = 10
 }

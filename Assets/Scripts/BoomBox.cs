@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class BoomBox : MonoBehaviour, IPointerClickHandler
+public class BoomBox : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
     private SoundManager _soundManager;
+    private AudioSource Speakers;
     [SerializeField] private BandList boomBoxPlayList;
     
     private int _songIndex;
@@ -52,5 +53,15 @@ public class BoomBox : MonoBehaviour, IPointerClickHandler
 
         if (_songIndex >= boomBoxPlayList.bands.Length)
             _songIndex = 0;
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        throw new System.NotImplementedException();
     }
 }
