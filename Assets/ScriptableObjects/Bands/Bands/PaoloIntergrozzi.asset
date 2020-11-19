@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: PaoloIntergrozzi
   m_EditorClassIdentifier: 
   name: 'Paolo Intergrozzi '
+  shortName: 
   genre: Italian love songs
   Tier: 2
   bioText: "Paolo is a survivor. As a kid he was homeless and walked the streets
@@ -22,6 +23,5 @@ MonoBehaviour:
     a subject for multiple police investigations in Italy regarding the mafia and
     corruption. He\u2019s ready for a launch in America. Finally a quote from Eros
     Ramazzotti - I fear him."
-  thumbnail: {fileID: 0}
+  thumbnail: {fileID: 21300000, guid: d5fbd76e55eaa56498097993a3486fb1, type: 3}
   song: {fileID: 0}
-  isOwned: 0
