@@ -2412,6 +2412,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1469920146}
     m_Modifications:
+    - target: {fileID: 4816667647319686877, guid: 1c074ab1876cb1846b45e77d0fcb04ed, type: 3}
+      propertyPath: m_fontSize
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 4816667647319686877, guid: 1c074ab1876cb1846b45e77d0fcb04ed, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 14
+      objectReference: {fileID: 0}
     - target: {fileID: 4816667647735082521, guid: 1c074ab1876cb1846b45e77d0fcb04ed, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -110.079834
@@ -2526,15 +2534,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4816667648022796937, guid: 1c074ab1876cb1846b45e77d0fcb04ed, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -144.88
+      value: -145.7
       objectReference: {fileID: 0}
     - target: {fileID: 4816667648022796937, guid: 1c074ab1876cb1846b45e77d0fcb04ed, type: 3}
       propertyPath: m_SizeDelta.y
       value: 24.713314
       objectReference: {fileID: 0}
+    - target: {fileID: 4816667648084259045, guid: 1c074ab1876cb1846b45e77d0fcb04ed, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 3cb7acccc90d51146a63ea289789f083, type: 2}
+    - target: {fileID: 4816667648084259045, guid: 1c074ab1876cb1846b45e77d0fcb04ed, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -7228048480158128994, guid: 3cb7acccc90d51146a63ea289789f083, type: 2}
     - target: {fileID: 4816667648243356265, guid: 1c074ab1876cb1846b45e77d0fcb04ed, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4816667648816852734, guid: 1c074ab1876cb1846b45e77d0fcb04ed, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -1.3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1c074ab1876cb1846b45e77d0fcb04ed, type: 3}

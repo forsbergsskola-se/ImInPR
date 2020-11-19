@@ -28,7 +28,6 @@ public abstract class OfficeInteractable : MonoBehaviour, IPointerClickHandler
     {
         if (gm.cash.Spend(ActualCost()))
         {
-            Debug.Log($"Upgraded {name}");
             Level++;
             OnLevelUp?.Invoke();
             FindObjectOfType<BG>().LevelUp();
@@ -68,10 +67,7 @@ public abstract class OfficeInteractable : MonoBehaviour, IPointerClickHandler
         }
     }
 
-    public void OnClick()
-    {
-        OnPointerClick(default);
-    }
+    public void OnClick() => OnPointerClick(default);
     
     private string UpgradeText() => $"Upgrade {this.name} To \n" +
                                     $"Level {Level + 1} : Costs {ActualCost()}";
@@ -80,6 +76,5 @@ public abstract class OfficeInteractable : MonoBehaviour, IPointerClickHandler
     {
         confirmationPanel.OnConfirm -= IncreaseLevel;
         confirmationPanel.OnDestroyed -= UnsubscribeFromConfirm;
-        Debug.Log($"{this.name} unsubscribed from {confirmationPanel.GetHashCode()}");
     }
 }

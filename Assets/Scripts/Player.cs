@@ -4,7 +4,6 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-    
     [SerializeField] private Image playerModel;
     [SerializeField] private Sprite[] models;
     [SerializeField] private ProgressBar xpBar;
@@ -66,14 +65,13 @@ public class Player : MonoBehaviour
             instance.GetComponent<BandSelectorController>().PopulateList(BandTier.Tier3);
         }
         
-        playerModel.sprite = models[Mathf.Clamp(Level / 4, 0, models.Length - 1)];
+        playerModel.sprite = models[Mathf.Clamp(Level / 5, 0, models.Length - 1)];
         ExperienceAmount -= xpReqToLevel;
     }
     
     private void Start() 
     {
-        Debug.Log(Level);
-        playerModel.sprite = models[Mathf.Clamp(Level / 4, 0, models.Length - 1)];
+        playerModel.sprite = models[Mathf.Clamp(Level / 5, 0, models.Length - 1)];
         xpBar.UpdateBar(ExperienceAmount);
     }
 }

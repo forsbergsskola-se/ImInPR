@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 public class SoundManager : MonoBehaviour
 {
     [Header("Game Sounds")]
@@ -22,7 +20,7 @@ public class SoundManager : MonoBehaviour
             backgroundMusicPlayer.volume = BackgroundMusicVolume;
         }
     }
-
+ 
     public float GameSoundVolume
     {
         get => PlayerPrefs.GetFloat("GameSoundVolume", 0.5f);
@@ -30,16 +28,11 @@ public class SoundManager : MonoBehaviour
     }
 
     #region GameSound Player
-
-    public void PlayGameSound(GameSound sound)
-    {
-        Play(sound, gameSoundAudioSource, GameSoundVolume);
-    }
+    public void PlayGameSound(GameSound sound) => Play(sound, gameSoundAudioSource, GameSoundVolume);
     
-    public void PlayGameSound(string soundName)
-    {
+    public void PlayGameSound(string soundName) =>
         Play(gameSoundController.FindGameSound(soundName), gameSoundAudioSource, GameSoundVolume);
-    }
+    
 
     private void Play(GameSound sound, AudioSource source, float volume)
     {
