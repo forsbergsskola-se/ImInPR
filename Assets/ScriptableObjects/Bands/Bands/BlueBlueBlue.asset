@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: BlueBlueBlue
   m_EditorClassIdentifier: 
   name: Blue, Blue & Blue
+  shortName: 
   genre: Slick Jazz
   Tier: 1
   bioText: "Blue, Blue & Blue or triple Blue as some people call them have their
@@ -20,6 +21,5 @@ MonoBehaviour:
     for ages. They got a small break when one of their tunes \u201CBlue midnight
     sky over Manhattan\u201D was heard in the film \u201CDeadly Love\u201D starring
     the wrestler Brett Branton.\n"
-  thumbnail: {fileID: 0}
+  thumbnail: {fileID: 21300000, guid: 905b4e9c2c5f9e145bfe29ebd818900f, type: 3}
   song: {fileID: 0}
-  isOwned: 0
