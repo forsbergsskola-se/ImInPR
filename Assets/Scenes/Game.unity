@@ -917,7 +917,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3850106505972407709, guid: a1918ce6c7e30405c8a96acfe5a555ff, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3850106505972407709, guid: a1918ce6c7e30405c8a96acfe5a555ff, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1370,7 +1370,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6772623725637609738, guid: fdcb28fd3917be7498440fe7d1596cf3, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6772623725637609738, guid: fdcb28fd3917be7498440fe7d1596cf3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1499,7 +1499,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6998918018669787881, guid: f17e72f473af0e146a21c5f645d0b6b6, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6998918018669787881, guid: f17e72f473af0e146a21c5f645d0b6b6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1739,9 +1739,9 @@ RectTransform:
   - {fileID: 538122239}
   - {fileID: 675821705}
   - {fileID: 1315222419}
-  - {fileID: 730775002}
   - {fileID: 1585710785}
   - {fileID: 518089941}
+  - {fileID: 730775002}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1830,6 +1830,7 @@ MonoBehaviour:
   CannotAffordPrefab: {fileID: 9009883112067890, guid: f606e8cb9631fe64b89b98e307808e12, type: 3}
   OutcomeMessage: {fileID: 8220346330683465956, guid: b4631234e268b42ee84bb669d9727f80, type: 3}
   MaxLevelPrefab: {fileID: 9009883112067890, guid: cf08a8947aea26946a73cb7a2ac17205, type: 3}
+  ImagePopUp: {fileID: 1261336868044424138, guid: e294280acda9d0540b2ccb6ff755b3d4, type: 3}
   BandUIContainer: {fileID: 1585710785}
   BandUIElement: {fileID: 674370227573115301, guid: becd76af845b5834c83bb92f26704246, type: 3}
   BandSelector: {fileID: 1472145324327981489, guid: 3098c326676708d4f91f9bf3d6ac7086, type: 3}

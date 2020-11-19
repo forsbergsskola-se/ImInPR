@@ -116,9 +116,10 @@ public class BandBehaviour : MonoBehaviour, IPointerClickHandler
     public void OnPointerClick(PointerEventData eventData)
     {
         var randomNum = Random.Range(0.0f, 1.0f);
+        var gm = FindObjectOfType<GameManager>();
         if (randomNum < chanceForMoney)
         {
-            FindObjectOfType<GameManager>().cash.Add(1);
+            gm.cash.Add(1);
         }
         if (randomNum > Mathf.Lerp(1, 0, chanceForPlayerExp))
         {
@@ -129,9 +130,16 @@ public class BandBehaviour : MonoBehaviour, IPointerClickHandler
         {
             awareness.Amount++;
             UpdateUI();
+            var popUp = Instantiate(gm.ImagePopUp, this.transform);
+            popUp.GetComponent<ImagePopUp>().SetUp(0);
         }
-        if (randomNum < Mathf.Lerp(1, 0, chanceForBandPopularity)) return;
-        popularity.Amount++;
-        UpdateUI();
+
+        if (randomNum > Mathf.Lerp(1, 0, chanceForBandPopularity))
+        {
+            popularity.Amount++;
+            UpdateUI();
+            var popUp = Instantiate(gm.ImagePopUp, this.transform);
+            popUp.GetComponent<ImagePopUp>().SetUp(1);
+        }
     }
 }
