@@ -21,7 +21,7 @@ MonoBehaviour:
     cashAmount: -1000
     message: Jackpot! You got his number and called it right away. Kind of strange
       that it went  to a charity aid. But. You were in such a good mood that you
-      gave them 1000 $!
+      gave them $1000!
   positiveOutcome:
     expAmount: 45
     cashAmount: 0

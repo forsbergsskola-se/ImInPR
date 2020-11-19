@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0e564175ef544e4c8e5bb5a17b3d9fb, type: 3}
   m_Name: PhoneEventLevel1 3
   m_EditorClassIdentifier: 
-  dialogue: 'Want to attend to a meeting where there might be some interesting people. '
+  dialogue: Do you want to attend a meeting where it might be some interesting people?
   level: 1
   successChance: 0.7
   time: 2

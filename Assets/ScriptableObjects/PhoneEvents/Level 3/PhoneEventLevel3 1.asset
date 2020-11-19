@@ -19,8 +19,8 @@ MonoBehaviour:
   negativeOutcome:
     expAmount: 0
     cashAmount: -500
-    message: 'He was gone when I got there. You ate an expensive brunch to get in
-      a better mood. '
+    message: 'He was gone when you got there. You ate an expensive brunch to get
+      in a better mood. '
   positiveOutcome:
     expAmount: 35
     cashAmount: 0

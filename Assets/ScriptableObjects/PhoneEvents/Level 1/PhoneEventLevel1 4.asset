@@ -19,7 +19,7 @@ MonoBehaviour:
   negativeOutcome:
     expAmount: -5
     cashAmount: 0
-    message: No, the idea sucked. You made a foul out of yourself.
+    message: No, the idea sucked. You made a fool out of yourself.
   positiveOutcome:
     expAmount: 0
     cashAmount: 50

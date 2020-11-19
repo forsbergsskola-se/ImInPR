@@ -12,15 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0e564175ef544e4c8e5bb5a17b3d9fb, type: 3}
   m_Name: PhoneEventLevel4 2
   m_EditorClassIdentifier: 
-  dialogue: Wanna go to a charity auction? Some promenent people are sopose to show
-    up.
+  dialogue: Wanna go to a charity auction? Some promenent people are supposed to
+    show up.
   level: 4
   successChance: 0.4
   time: 2
   negativeOutcome:
     expAmount: 0
     cashAmount: -1200
-    message: No one talked to you. Not even when you bid 1200 $ jar of sand from
+    message: No one talked to you. Not even when you bid $1200 on a jar of sand from
       tibet.
   positiveOutcome:
     expAmount: 50
