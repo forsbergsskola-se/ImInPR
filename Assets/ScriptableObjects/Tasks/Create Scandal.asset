@@ -20,5 +20,7 @@ MonoBehaviour:
   time: 5
   cost: 100
   levelRequirement: 8
-  description: 
+  description: "All news is good news. Your band needs some reputation. Bad reputation
+    is also reputation. A sex scandal, drugs, an awful tatoo - if it\u2019s true
+    - no comments."
   outComeText: 

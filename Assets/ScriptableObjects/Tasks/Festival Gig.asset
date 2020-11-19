@@ -19,6 +19,6 @@ MonoBehaviour:
     amount: 20
   time: 6
   cost: 150
-  levelRequirement: 6
-  description: 
+  levelRequirement: 7
+  description: Play the muddy banks of a huge outdoor festival.
   outComeText: 

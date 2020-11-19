@@ -19,6 +19,7 @@ MonoBehaviour:
     amount: 40
   time: 10
   cost: 200
-  levelRequirement: 7
-  description: 
+  levelRequirement: 6
+  description: MTV is hot! Let's make some videos. All you need is a camera, a smoke
+    machine and fancy effects.
   outComeText: 

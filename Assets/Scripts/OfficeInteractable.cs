@@ -7,6 +7,7 @@ public abstract class OfficeInteractable : MonoBehaviour, IPointerClickHandler
 {
     protected GameManager gm;
     public Sprite[] models;
+    public int[] prices;
 
     public int Level
     {
@@ -37,7 +38,7 @@ public abstract class OfficeInteractable : MonoBehaviour, IPointerClickHandler
 
     public int ActualCost()
     {
-        return levelUpCost * Level * 3;
+        return prices[Level - 1];
     }
 
     public override string ToString() => $"{this.name} : Level {Level}, costs {ActualCost()} to upgrade.";

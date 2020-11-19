@@ -4,6 +4,7 @@ public class PauseMenu : MonoBehaviour
 {
     public static bool GameIsPaused; 
     public GameObject pauseMenuUI;
+    public GameManager gm;
 
     private void Update()
     {
@@ -50,6 +51,6 @@ public class PauseMenu : MonoBehaviour
     }
     public void ResetGame()
     {
-        PlayerPrefs.DeleteAll();
+        gm.DeleteSaveGame();
     }
 }

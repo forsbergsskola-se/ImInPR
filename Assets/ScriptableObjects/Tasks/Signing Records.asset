@@ -19,6 +19,7 @@ MonoBehaviour:
     amount: 20
   time: 7
   cost: 150
-  levelRequirement: 0
-  description: 
+  levelRequirement: 5
+  description: "Your band has records now and they need to sign them and meet their
+    fans. Let\u2019s fix a meet up and do some good."
   outComeText: 

@@ -20,5 +20,7 @@ MonoBehaviour:
   time: 60
   cost: 75000
   levelRequirement: 10
-  description: 
+  description: "Are you ready! I said are you ready? It\u2019s expensive, it\u2019s
+    big, it swallows 35 000 souls easely. It sounds like shit and nobody can see
+    the band, but yet all the stars are doing it. Let's try to book a sports arena!"
   outComeText: 
