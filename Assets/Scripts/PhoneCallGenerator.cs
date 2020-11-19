@@ -15,6 +15,7 @@ public class PhoneCallGenerator : MonoBehaviour
 
     private void IsCalling()
     {
+        
         if (NumberCallGenerator() == phoneCallRarity - 1 && !_isSpawned)
         { 
             var instance = Instantiate(FindObjectOfType<GameManager>().PhoneEventPrefab, FindObjectOfType<GameManager>().transform);
@@ -24,6 +25,7 @@ public class PhoneCallGenerator : MonoBehaviour
             _isSpawned = !_isSpawned;
             instance.SetActive(false);
             GetComponent<Phone>().IncomingCall(instance);
+            FindObjectOfType<SoundManager>().PlayGameSound("Ringtone");
         }
     }
 
