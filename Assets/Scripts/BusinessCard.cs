@@ -1,17 +1,7 @@
 ﻿using TMPro;
 using UnityEngine;
 
-/* Next row is adress based on office level (room level)
-[00:55]
-office 1: Grandma's Basement
-[00:56]
-Office 2: Suburbia backyard
-[00:59]
-Office 3: Small Townhouse
-[01:00]
-office 4: 3rd floor downtown
-[01:00]
-office 5: top floor sky scraper*/
+
 public class BusinessCard : MonoBehaviour
 {
     [SerializeField] private Player player;
