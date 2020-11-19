@@ -20,6 +20,7 @@ public class BoomBox : MonoBehaviour
 
     public void PreviousTrack()
     {
+        Speakers.clip = null;
         LoopTracks();
         Play(boomBoxPlayList.bands[_songIndex]);
         _songIndex--;
@@ -30,7 +31,11 @@ public class BoomBox : MonoBehaviour
         if(Speakers.isPlaying)
             Speakers.Pause();
         else
+        {
             Speakers.UnPause();
+            if(!Speakers.isPlaying)
+                NextTrack();
+        }
     }
 
     public void NextTrack()
