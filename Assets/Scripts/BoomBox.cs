@@ -1,9 +1,7 @@
 ﻿using UnityEngine;
-using UnityEngine.EventSystems;
 [RequireComponent(typeof(AudioSource))]
 public class BoomBox : MonoBehaviour
 {
-    //private SoundManager _soundManager;
     private AudioSource Speakers;
     private int _songIndex;
     
@@ -13,7 +11,10 @@ public class BoomBox : MonoBehaviour
     public float MusicVolume
     {
         get => PlayerPrefs.GetFloat("MusicVolume", 0.5f);
-        set => PlayerPrefs.SetFloat("MusicVolume", value);
+        set {
+                PlayerPrefs.SetFloat("MusicVolume", value);
+                Speakers.volume = MusicVolume;
+            }
     }
 
     private void Start() => Speakers = GetComponent<AudioSource>();

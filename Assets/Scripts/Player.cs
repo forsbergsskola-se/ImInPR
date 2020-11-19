@@ -67,14 +67,14 @@ public class Player : MonoBehaviour
             instance.GetComponent<BandSelectorController>().PopulateList(BandTier.Tier3);
         }
         
-        playerModel.sprite = models[Mathf.Clamp(Level - 1, 0, models.Length - 1)];
+        playerModel.sprite = models[Mathf.Clamp(Level / 4, 0, models.Length - 1)];
         ExperienceAmount -= xpReqToLevel;
     }
     
     private void Start() 
     {
         Debug.Log(Level);
-        playerModel.sprite = models[Mathf.Clamp(Level - 1, 0, models.Length - 1)];
+        playerModel.sprite = models[Mathf.Clamp(Level / 4, 0, models.Length - 1)];
         xpBar.UpdateBar(ExperienceAmount);
     }
 }
