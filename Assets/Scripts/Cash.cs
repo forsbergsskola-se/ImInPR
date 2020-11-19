@@ -6,7 +6,7 @@ public class Cash
     public event Action OnCashChanged;
     public int Amount
     {
-        get => PlayerPrefs.GetInt("Cash", 1000);
+        get => PlayerPrefs.GetInt("Cash", 0);
         private set => PlayerPrefs.SetInt("Cash", Mathf.Clamp(value, 0, int.MaxValue));
     }
 

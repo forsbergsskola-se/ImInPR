@@ -20,5 +20,5 @@ MonoBehaviour:
   time: 1
   cost: 50
   levelRequirement: 1
-  description: Print band merch to increase awareness
-  outComeText: More people now know who the ... are
+  description: " If I can\u2019t sell the band I can always sell their cool T-shirts."
+  outComeText: More people now know who they ... are

@@ -19,6 +19,7 @@ MonoBehaviour:
     amount: -20
   time: 5
   cost: 70
-  tier: 0
-  description: 
+  levelRequirement: 5
+  description: "Let\u2019s make people talk about your band, not their music - a
+    strange love affair? A father that wasn't around, a kid they didn't know about."
   outComeText: 
