@@ -14,7 +14,7 @@ public class BandSelectorController : MonoBehaviour
     private void Start()
     {
         _eligibleBands = new List<Band>();
-        PopulateList(BandTier.Tier1);
+        //PopulateList(BandTier.Tier1);
     }
 
     public void PopulateList(BandTier tier)
