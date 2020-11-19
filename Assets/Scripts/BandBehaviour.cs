@@ -27,7 +27,7 @@ public class BandBehaviour : MonoBehaviour, IPointerClickHandler
 
     public int CurrentLevel
     {
-        get => PlayerPrefs.GetInt($"{bandConfig.name}_Level", 1);
+        get => PlayerPrefs.GetInt($"{bandConfig.name}_Level", (int)bandConfig.Tier);
         private set => PlayerPrefs.SetInt($"{bandConfig.name}_Level", value);
     }
 
