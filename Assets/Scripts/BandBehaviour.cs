@@ -128,18 +128,24 @@ public class BandBehaviour : MonoBehaviour, IPointerClickHandler
         }
         if (randomNum < chanceForBandAwareness)
         {
-            awareness.Amount++;
-            UpdateUI();
-            var popUp = Instantiate(gm.ImagePopUp, this.transform);
-            popUp.GetComponent<ImagePopUp>().SetUp(0);
+            if (awareness.Amount != RequiredExp)
+            {
+                awareness.Amount++;
+                UpdateUI();
+                var popUp = Instantiate(gm.ImagePopUp, this.transform);
+                popUp.GetComponent<ImagePopUp>().SetUp(0);
+            }
         }
 
         if (randomNum > Mathf.Lerp(1, 0, chanceForBandPopularity))
         {
-            popularity.Amount++;
-            UpdateUI();
-            var popUp = Instantiate(gm.ImagePopUp, this.transform);
-            popUp.GetComponent<ImagePopUp>().SetUp(1);
+            if (popularity.Amount != RequiredExp)
+            {
+                popularity.Amount++; 
+                UpdateUI(); 
+                var popUp = Instantiate(gm.ImagePopUp, this.transform); 
+                popUp.GetComponent<ImagePopUp>().SetUp(1);   
+            }
         }
     }
 }
