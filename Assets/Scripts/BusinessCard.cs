@@ -1,5 +1,6 @@
 ﻿using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public class BusinessCard : MonoBehaviour
@@ -10,6 +11,7 @@ public class BusinessCard : MonoBehaviour
     [SerializeField] private TextMeshProUGUI levelText;
     [SerializeField] private TextMeshProUGUI titleText;
     [SerializeField] private TextMeshProUGUI addressText;
+    [SerializeField] private TextMeshProUGUI goldPerMinText;
     
     [Header("Player Title (upgrades with Player level)")]
     [SerializeField] private string title1 = "Freelance Promoter";
@@ -65,6 +67,18 @@ public class BusinessCard : MonoBehaviour
         }
         addressText.SetText(address);
     }
+
+    private void UpdateGoldPerMinText()
+    {
+        int goldPerMin = 0;
+        var temp = FindObjectsOfType<BandBehaviour>();
+        foreach (var band in temp)
+        {
+            goldPerMin += band.MoneyPerMinute;
+        }
+        goldPerMinText.SetText(goldPerMin.ToString());
+    }
+    
     private void Awake(){
         player.OnLevelUp += UpdateLevelText;
         player.OnLevelUp += UpdateJobTitleText;

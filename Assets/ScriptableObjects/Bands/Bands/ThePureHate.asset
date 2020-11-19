@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ThePureHate
   m_EditorClassIdentifier: Assembly-CSharp::Bands
   name: The Pure Hate
-  shortName: 
+  shortName: TPH
   genre: Grind Core
   Tier: 0
   bioText: "A group that despite their fans. A Pure Hate concert often starts with
@@ -21,4 +21,4 @@ MonoBehaviour:
     play. Bradly Freeman, base player in the band once said; \u201CIf you buy our
     fucking reckord I\u2019ll fucking kill you\u201D to a poor fan in a record store.\n"
   thumbnail: {fileID: 21300000, guid: b6af2965b8af3444885117d000fe7551, type: 3}
-  song: {fileID: 11400000, guid: c22aa2e86ebb7d9428c6c38acb735b98, type: 2}
+  song: {fileID: 11400000, guid: 78cce36e86d55ab45aac0c0ff81e9dac, type: 2}

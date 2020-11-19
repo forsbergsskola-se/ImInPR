@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: EBBA
   m_EditorClassIdentifier: 
   name: EBBA
-  shortName: 
+  shortName: EBBA
   genre: Swedish Disco
   Tier: 0
   bioText: 'While some people say that disco is dead, EBBA say; Nope! This swedish
     disco pop phenomenon are here to stay. The married couples Erik & Berit and Beata
     & Arne will keep the disco groove going until eternity.   '
   thumbnail: {fileID: 21300000, guid: a355778390ef6454fa14f938554c84b9, type: 3}
-  song: {fileID: 0}
+  song: {fileID: 11400000, guid: 452c02703ee4be34cafc14f187239c25, type: 2}

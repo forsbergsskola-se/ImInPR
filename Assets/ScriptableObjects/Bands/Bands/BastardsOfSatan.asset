@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: BastardsOfSatan
   m_EditorClassIdentifier: Assembly-CSharp::Bands
   name: Bastards of Satan
+  shortName: BOS
   genre: Deth Metal
   Tier: 0
   bioText: Mostly famous for the never appreciated gesture of throwing pig blood
