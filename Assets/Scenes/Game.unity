@@ -731,6 +731,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 3e03fa6287c942848a4b1a718e955412, type: 3}
   - {fileID: 21300000, guid: 9fb1552592913d645b2651c35a417568, type: 3}
   - {fileID: 21300000, guid: 88d031f5bbd496745bc9af0a1c2d6e5f, type: 3}
+  prices: 050000000f000000280000002c010000
   levelUpCost: 10
 --- !u!114 &518089940 stripped
 MonoBehaviour:
@@ -884,6 +885,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: b5c18aabe02f2574cbe99dcea62e314b, type: 3}
   - {fileID: 21300000, guid: 6d0931808718a9747b6c927b197722cf, type: 3}
   - {fileID: 21300000, guid: fe77a1d06a456294794e281d489e8b20, type: 3}
+  prices: c800000058020000d0070000c4090000
   levelUpCost: 10
 --- !u!1 &666035330
 GameObject:
@@ -1838,6 +1840,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: cb1cd58dc29da44458b1adeadf878689, type: 3}
   - {fileID: 21300000, guid: 2d64f9d2f6ea3bb42b6745afaf0e0cee, type: 3}
   - {fileID: 21300000, guid: 2d64f9d2f6ea3bb42b6745afaf0e0cee, type: 3}
+  prices: 320000009001000020030000b0040000
   levelUpCost: 10
   ExclamationMarkPrefab: {fileID: 675821704}
 --- !u!114 &930818507
@@ -1891,6 +1894,7 @@ GameObject:
   - component: {fileID: 937066199}
   - component: {fileID: 937066201}
   - component: {fileID: 937066200}
+  - component: {fileID: 937066202}
   m_Layer: 0
   m_Name: Lamp
   m_TagString: Untagged
@@ -1955,6 +1959,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 937066198}
   m_CullTransparentMesh: 0
+--- !u!114 &937066202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 937066198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb32ec43e1ca2486d8f58c7a6d76cf70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  models:
+  - {fileID: 21300000, guid: 5ab91aafcecd6684397c4fafe4c57b24, type: 3}
+  - {fileID: 21300000, guid: b1fb5188d1800ef4fa52036dfab1a100, type: 3}
+  - {fileID: 21300000, guid: fed2795d1f985614b830d7428931d946, type: 3}
+  - {fileID: 21300000, guid: b52caeebfe8130d43831e43b15e87717, type: 3}
+  - {fileID: 21300000, guid: edc9c40c7cbac4345af05b5608e79495, type: 3}
+  prices: 14000000640000002c010000e8030000
+  levelUpCost: 0
 --- !u!1001 &1011547029
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2767,6 +2791,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 7dd0271ee782ed34b9168a52315a186d, type: 3}
   - {fileID: 21300000, guid: 63af992a35ebcec4eae4f5468fd8c797, type: 3}
   - {fileID: 21300000, guid: 37071fe011465ce4f843db11334e9b46, type: 3}
+  prices: 3200000064000000ee020000d0070000
   levelUpCost: 10
 --- !u!1001 &1185716460
 PrefabInstance:
@@ -4199,6 +4224,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: c4542a6cb6aa7f34d80c2425d329b976, type: 3}
   - {fileID: 21300000, guid: c4542a6cb6aa7f34d80c2425d329b976, type: 3}
   - {fileID: 21300000, guid: 15e6631a11b90b846baa02705ae1a765, type: 3}
+  prices: 1e0000007d00000090010000dc050000
   levelUpCost: 10
 --- !u!1 &2071048468
 GameObject:
