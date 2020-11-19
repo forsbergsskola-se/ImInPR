@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b9b932ae55ff31a4ab76d28c945d7419, type: 3}
-  m_Name: New GameSong
+  m_Name: Dark Choclate Mint Peppers - Sunset Boulevard
   m_EditorClassIdentifier: 
-  clip: {fileID: 0}
-  songName: 
-  bandName: 
-  soundDesignerName: 
+  clip: {fileID: 8300000, guid: 9d7b36aa8b1215e43bb8250c770b9c86, type: 3}
+  songName: Sunset Boulevard
+  bandName: Dark Choclate Mint peppers
+  soundDesignerName: Svante Westin Gustavsson
