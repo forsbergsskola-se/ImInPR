@@ -20,7 +20,8 @@ public abstract class OfficeInteractable : MonoBehaviour, IPointerClickHandler
     protected virtual void Start()
     {
         gm = FindObjectOfType<GameManager>();
-        GetComponent<Image>().sprite = models[Mathf.Clamp(Level - 1, 0, models.Length - 1)];
+        var temp = GetComponent<Image>().sprite = models[Mathf.Clamp(Level - 1, 0, models.Length - 1)];
+        GetComponent<RectTransform>().sizeDelta = new Vector2(temp.rect.width, temp.rect.height);
     }
 
     public virtual void IncreaseLevel()
@@ -31,9 +32,11 @@ public abstract class OfficeInteractable : MonoBehaviour, IPointerClickHandler
             Level++;
             OnLevelUp?.Invoke();
             FindObjectOfType<BG>().LevelUp();
+            FindObjectOfType<SoundManager>().PlayGameSound("upgrade1");
         }
 
-        GetComponent<Image>().sprite = models[Mathf.Clamp(Level - 1, 0, models.Length - 1)];
+        var temp = GetComponent<Image>().sprite = models[Mathf.Clamp(Level - 1, 0, models.Length - 1)];
+        GetComponent<RectTransform>().sizeDelta = new Vector2(temp.rect.width, temp.rect.height);
     }
 
     public int ActualCost()

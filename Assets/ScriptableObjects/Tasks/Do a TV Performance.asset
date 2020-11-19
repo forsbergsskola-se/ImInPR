@@ -19,7 +19,7 @@ MonoBehaviour:
     amount: 40
   time: 6
   cost: 200
-  levelRequirement: 0
+  levelRequirement: 7
   description: TV is the new Radio! Get them out there. Do some calls. Pay someone.
     Just make it happen.
   outComeText: 
