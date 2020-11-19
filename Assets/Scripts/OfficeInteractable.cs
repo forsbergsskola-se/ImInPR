@@ -61,6 +61,7 @@ public abstract class OfficeInteractable : MonoBehaviour, IPointerClickHandler
         else
         {
             var cannotAffordInstance = Instantiate(gm.CannotAffordPrefab, gm.transform);
+            cannotAffordInstance.GetComponent<ConfirmationPanel>().SetUp($"You can't afford this yet! it costs {ActualCost()}$");
         }
     }
 

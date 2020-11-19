@@ -123,6 +123,7 @@ public class BandBehaviour : MonoBehaviour, IPointerClickHandler
         if (randomNum > Mathf.Lerp(1, 0, chanceForPlayerExp))
         {
             FindObjectOfType<Player>().AddXp(1);
+            FindObjectOfType<SoundManager>().PlayGameSound("upgrade");
         }
         if (randomNum < chanceForBandAwareness)
         {
