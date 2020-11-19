@@ -17,16 +17,15 @@ public class CashUI : MonoBehaviour
         UpdateCashUILabel();
     }
 
-    void UpdateCashUILabel()
+    void UpdateCashUILabel() 
     {
         cashText.SetText($"{gm.cash.Amount} Cash");
-        
-        
     }
 
     void ching()
     {
         Debug.Log("Ching");
+        _soundManager.PlayGameSound("Cash");
     }
 
     private void OnDestroy()
