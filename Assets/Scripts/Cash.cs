@@ -4,6 +4,7 @@ using UnityEngine;
 public class Cash
 {
     public event Action OnCashChanged;
+
     public int Amount
     {
         get => PlayerPrefs.GetInt("Cash", 0);
@@ -14,6 +15,7 @@ public class Cash
     {
         this.Amount += value;
         OnCashChanged?.Invoke();
+        
     }
 
     public bool Spend(int value)
@@ -29,4 +31,6 @@ public class Cash
     {
         return value < this.Amount;
     }
+    
+    
 }
