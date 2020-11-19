@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fca6a1aa3f34817409e000cfee8f0ac8, type: 3}
   m_Name: Cash
   m_EditorClassIdentifier: 
-  clip: {fileID: 8300000, guid: ce2799cd2cb9aa146a0f1a3529343bce, type: 3}
+  clip: {fileID: 8300000, guid: 3373880239848964998f1ec5da5db87a, type: 3}

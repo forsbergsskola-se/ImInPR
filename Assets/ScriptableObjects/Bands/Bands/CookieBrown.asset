@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: CookieBrown
   m_EditorClassIdentifier: 
   name: Cookie Brown
+  shortName: 
   genre: Electric Funk
   Tier: 1
   bioText: "Cookie started up as a tambourine player for James Brown and then created
     his own take on funk - made it more electric. His single \u201CEat the dough,
     don\u2019t break the law\u201D made it up to top ten\u2026 in Peru!\n"
-  thumbnail: {fileID: 0}
+  thumbnail: {fileID: 21300000, guid: f5b6df522fb563a479206c50b9d3297f, type: 3}
   song: {fileID: 11400000, guid: 123f8290ffef99b4fbaf652fa53bf294, type: 2}
-  isOwned: 0

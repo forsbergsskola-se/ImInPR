@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9b932ae55ff31a4ab76d28c945d7419, type: 3}
   m_Name: EBBA_Disco
   m_EditorClassIdentifier: 
-  clip: {fileID: 8300000, guid: d0a1a564ea96c194a8bcce4990189a66, type: 3}
-  songName: Dancing queen
-  bandName: Ebba
+  clip: {fileID: 8300000, guid: 331f549743e50e44890ea2323eb2f882, type: 3}
+  songName: Dancing all night
+  bandName: EBBA
   soundDesignerName: Erik
