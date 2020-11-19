@@ -3477,6 +3477,7 @@ MonoBehaviour:
   levelText: {fileID: 818728208}
   titleText: {fileID: 880080210}
   addressText: {fileID: 2071048470}
+  goldPerMinText: {fileID: 1064938464}
   title1: Freelance Promoter
   title2: Junior Promoter
   title3: PR agent

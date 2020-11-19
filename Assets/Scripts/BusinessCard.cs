@@ -70,15 +70,22 @@ public class BusinessCard : MonoBehaviour
 
     private void UpdateGoldPerMinText()
     {
+        var goldPerMin = GetGoldPerMin();
+        goldPerMinText.SetText(goldPerMin.ToString());
+    }
+
+    private static int GetGoldPerMin()
+    {
         int goldPerMin = 0;
         var temp = FindObjectsOfType<BandBehaviour>();
         foreach (var band in temp)
         {
             goldPerMin += band.MoneyPerMinute;
         }
-        goldPerMinText.SetText(goldPerMin.ToString());
+
+        return goldPerMin;
     }
-    
+
     private void Awake(){
         player.OnLevelUp += UpdateLevelText;
         player.OnLevelUp += UpdateJobTitleText;
@@ -90,6 +97,7 @@ public class BusinessCard : MonoBehaviour
         UpdateLevelText();
         UpdateJobTitleText();
         UpdateAddressText();
+        InvokeRepeating(nameof(UpdateGoldPerMinText), 1f, 1f);
     }
 
     private void OnDestroy()
