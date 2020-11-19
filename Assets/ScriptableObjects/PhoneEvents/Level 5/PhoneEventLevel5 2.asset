@@ -19,8 +19,8 @@ MonoBehaviour:
   negativeOutcome:
     expAmount: 0
     cashAmount: -1750
-    message: You got a biit to exited and did'nt listned to the diirections. You
-      flew to Chelsea, England.
+    message: You got a bit to excited and didn't listen to the directions. You flew
+      to Chelsea, England.
   positiveOutcome:
     expAmount: 75
     cashAmount: 0

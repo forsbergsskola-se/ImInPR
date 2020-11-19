@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PhoneEventLevel1 2
   m_EditorClassIdentifier: 
   dialogue: Hello! Come to my party tonight! I know someone who know someone who
-    know that guy who had that hit song... what was the persons name?
+    know that guy who had that hit song... what was that guys name?
   level: 1
   successChance: 0.7
   time: 2

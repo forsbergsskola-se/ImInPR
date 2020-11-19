@@ -20,10 +20,10 @@ MonoBehaviour:
     expAmount: 0
     cashAmount: -600
     message: Now you understand why they call him The Boss. He did throw you out
-      quite firmly when you climbed up the stage and tried to give him your bussiness
+      quite firmly when you climbed up the stage and tried to give him your business
       card.
   positiveOutcome:
     expAmount: 40
     cashAmount: 0
     message: 'Now you understand why they call him The Boss. And you got to sit front
-      row just besides Axel Rose. '
+      row just beside Axel Rose. '

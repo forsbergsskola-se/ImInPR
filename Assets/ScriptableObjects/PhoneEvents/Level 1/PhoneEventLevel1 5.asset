@@ -19,7 +19,7 @@ MonoBehaviour:
   negativeOutcome:
     expAmount: -10
     cashAmount: 0
-    message: Record store? I would call it a museum. I hope no one saw me go in.
+    message: Record store? I would call it a museum. I hope no one saw me go in there.
   positiveOutcome:
     expAmount: 0
     cashAmount: 100

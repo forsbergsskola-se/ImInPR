@@ -19,8 +19,8 @@ MonoBehaviour:
   negativeOutcome:
     expAmount: 0
     cashAmount: -1500
-    message: You wer'nt quick enough. But she did left you a note. Her bar check.
+    message: You weren't quick enough. But she did leave you a note. Her bar check.
   positiveOutcome:
     expAmount: 60
     cashAmount: 0
-    message: It really was her! And she laught at one of your jokes.
+    message: It really was her! And she laughed at one of your jokes.

@@ -12,18 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0e564175ef544e4c8e5bb5a17b3d9fb, type: 3}
   m_Name: PhoneEventLevel5 5
   m_EditorClassIdentifier: 
-  dialogue: "Prince wants to do a christmas collaboration with one of your artists.
-    You\u2019re game?\r"
+  dialogue: Prince wants to do a christmas collaboration with one of your artists.
+    Do you wanna go for it?
   level: 5
   successChance: 0.3
   time: 2
   negativeOutcome:
     expAmount: -30
     cashAmount: 0
-    message: "My singer came drunk and sang like an amatour. Prince got mad. Awful
-      christmas and bad reputation to you.\r"
+    message: "My singer came drunk and sang like an amateur. Prince got mad. Awful
+      christmas and bad reputation for you.\r"
   positiveOutcome:
     expAmount: 0
     cashAmount: 1500
-    message: "Merry Christmas! My cut was pretty bad, Prince can really negotiate, 
+    message: "Merry Christmas! My cut was pretty bad, Prince can really negotiate,
       but still\u2026 some money in the bank! \r"
