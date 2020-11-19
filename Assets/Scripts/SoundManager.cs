@@ -7,19 +7,11 @@ public class SoundManager : MonoBehaviour
     [SerializeField] public AudioSource gameSoundAudioSource;
     [SerializeField] private GameSoundController gameSoundController;
 
-    [Header("Game Music")]
-    [SerializeField] public AudioSource musicAudioSource;
-    [SerializeField] private GameSoundController musicController;
-    [SerializeField] private GameObject nowPlayingPrefab;
-
     [Header("Background Music")] 
     [SerializeField] private AudioSource backgroundMusicPlayer;
     [SerializeField] private GameSound idleMusic;
 
-    private void Start()
-    {
-        playBackgroundMusic();
-    }
+    private void Start() => playBackgroundMusic();
 
     public float BackgroundMusicVolume
     {
@@ -31,12 +23,6 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-    public float MusicVolume
-    {
-        get => PlayerPrefs.GetFloat("MusicVolume", 0.5f);
-        set => PlayerPrefs.SetFloat("MusicVolume", value);
-    }
-    
     public float GameSoundVolume
     {
         get => PlayerPrefs.GetFloat("GameSoundVolume", 0.5f);
@@ -63,48 +49,6 @@ public class SoundManager : MonoBehaviour
         }
             
         source.PlayOneShot(sound.clip, volume);
-    }
-    #endregion
-    
-    
-    #region Music Player
-    public void PlayMusic(Band band) 
-    {
-        PlayMusic(band.song, MusicVolume);
-    }
-    
-    public void PlayMusic(string songName)
-    {
-        var sound = (GameSong)musicController.FindGameSound(songName);
-        PlayMusic(sound, MusicVolume);
-    }
-    
-    private void PlayMusic(GameSong sound, float volume)
-    {
-        if (sound != null)
-        {
-            if(musicAudioSource.isPlaying)
-                musicAudioSource.Stop();
-            
-            backgroundMusicPlayer.Pause();
-            StartCoroutine(resumePlayingAfter(sound.clip.length));
-            Play(sound, musicAudioSource, volume);
-            var instance = Instantiate(nowPlayingPrefab, this.transform);
-            instance.GetComponent<NowPlaying>().Setup(sound.bandName, sound.songName, sound.soundDesignerName);
-        }
-    }
-
-    IEnumerator resumePlayingAfter(float t)
-    {
-        yield return new WaitForSeconds(t);
-        backgroundMusicPlayer.UnPause();
-    }
-    public void PauseToggleMusic()
-    {
-        if(musicAudioSource.isPlaying)
-            musicAudioSource.Pause();
-        else
-            musicAudioSource.UnPause();
     }
     #endregion
 

@@ -1,51 +1,45 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
-
-public class BoomBox : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
+[RequireComponent(typeof(AudioSource))]
+public class BoomBox : MonoBehaviour
 {
-    private SoundManager _soundManager;
+    //private SoundManager _soundManager;
     private AudioSource Speakers;
-    [SerializeField] private BandList boomBoxPlayList;
-    
     private int _songIndex;
     
-    private void Start() => _soundManager = FindObjectOfType<SoundManager>();
+    [SerializeField] private BandList boomBoxPlayList;
+    [SerializeField] private GameObject nowPlayingPrefab;
 
-    public void OnPointerClick(PointerEventData eventData)
+    public float MusicVolume
     {
-        NextTrack();
+        get => PlayerPrefs.GetFloat("MusicVolume", 0.5f);
+        set => PlayerPrefs.SetFloat("MusicVolume", value);
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.F5))
-        {
-            PreviousTrack();
-        }
-        if (Input.GetKeyDown(KeyCode.F6))
-        {
-            _soundManager.PauseToggleMusic();
-        }
-        if (Input.GetKeyDown(KeyCode.F7))
-        {
-            NextTrack();
-        }
-    }
+    private void Start() => Speakers = GetComponent<AudioSource>();
 
-    private void PreviousTrack()
+    public void PreviousTrack()
     {
         LoopTracks();
-        _soundManager.PlayMusic(boomBoxPlayList.bands[_songIndex]);
+        Play(boomBoxPlayList.bands[_songIndex]);
         _songIndex--;
     }
+    
+    public void PlayToggle()
+    {
+        if(Speakers.isPlaying)
+            Speakers.Pause();
+        else
+            Speakers.UnPause();
+    }
 
-    private void NextTrack()
+    public void NextTrack()
     {
         LoopTracks();
-        _soundManager.PlayMusic(boomBoxPlayList.bands[_songIndex]);
+        Play(boomBoxPlayList.bands[_songIndex]);
         _songIndex++;
     }
-    
+
     private void LoopTracks()
     {
         if (_songIndex <= 0)
@@ -54,14 +48,22 @@ public class BoomBox : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler
         if (_songIndex >= boomBoxPlayList.bands.Length)
             _songIndex = 0;
     }
-
-    public void OnPointerEnter(PointerEventData eventData)
+    
+    public void Play(Band band) 
     {
-        throw new System.NotImplementedException();
+        Play(band.song);
     }
-
-    public void OnPointerExit(PointerEventData eventData)
+    
+    private void Play(GameSong sound)
     {
-        throw new System.NotImplementedException();
+        if (sound != null)
+        {
+            if(Speakers.isPlaying)
+                Speakers.Stop();
+
+            Speakers.PlayOneShot(sound.clip, MusicVolume);
+            var instance = Instantiate(nowPlayingPrefab, this.transform);
+            instance.GetComponent<NowPlaying>().Setup(sound.bandName, sound.songName, sound.soundDesignerName);
+        }
     }
 }
