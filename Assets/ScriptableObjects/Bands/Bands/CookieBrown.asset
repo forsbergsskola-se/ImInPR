@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CookieBrown
   m_EditorClassIdentifier: 
   name: Cookie Brown
-  shortName: 
+  shortName: COB
   genre: Electric Funk
   Tier: 1
   bioText: "Cookie started up as a tambourine player for James Brown and then created

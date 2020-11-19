@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: TheThrowUps
   m_EditorClassIdentifier: Assembly-CSharp::Bands
   name: The Throw Ups
-  shortName: 
+  shortName: TTU
   genre: Teen punk
   Tier: 0
   bioText: "The Throw Ups is still practicing their chords. They don't know how to
