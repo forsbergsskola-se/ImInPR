@@ -23,7 +23,7 @@ MonoBehaviour:
     message: "Embarrassing. You called  them Europe a couple of times and they got
       mad and threw you out.\r"
   positiveOutcome:
-    expAmount: 100
-    cashAmount: 0
+    expAmount: 0
+    cashAmount: 100
     message: "They didn't want you as a PR agent but they gave me 100 dollars just
       to leave.\r"
