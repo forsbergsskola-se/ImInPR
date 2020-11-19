@@ -16,7 +16,7 @@ MonoBehaviour:
     upcoming country artists? '
   level: 3
   successChance: 0.5
-  time: 60
+  time: 2
   negativeOutcome:
     expAmount: 0
     cashAmount: -800

@@ -15,3 +15,5 @@ MonoBehaviour:
   gameSounds:
   - {fileID: 11400000, guid: a6522bfb1d9e23042a645c9a6ec89e95, type: 2}
   - {fileID: 11400000, guid: 75f8120ec1d9f3b4487e4145cdf0ed10, type: 2}
+  - {fileID: 11400000, guid: 66e8db48e581f9145b9e1304c514d9a7, type: 2}
+  - {fileID: 11400000, guid: b55bcccd050d948438716088bc858ddc, type: 2}

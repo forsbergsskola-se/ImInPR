@@ -22,7 +22,7 @@ public class TaskUI : MonoBehaviour
         this.taskLevel.text = taskConfig.levelRequirement.ToString();
         foreach (var outcome in outcomes)
         {
-            this.outcome.text += outcome + "\n";
+            this.outcome.text += outcome + " ";
         }
         clickArea.color = colors[state];
         if (!onComputer)

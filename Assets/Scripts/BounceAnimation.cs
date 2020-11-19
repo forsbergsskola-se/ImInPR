@@ -26,7 +26,6 @@ public class BounceAnimation : MonoBehaviour
     {
         if (isPlaying)
         {
-            Debug.Log("move");
             if (transform.position.y < _endLocation.y && !movingDownwards)
             {
                 movingUpwards = true;

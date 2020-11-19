@@ -7,6 +7,7 @@ public class BG : MonoBehaviour
 {
     [SerializeField] private Sprite[] images;
 
+    public event Action OnBGChanged;
     public int Level { get; private set; }
 
     private void Start()
@@ -18,7 +19,7 @@ public class BG : MonoBehaviour
     {
         Level = GetLowestLevel();
         GetComponent<Image>().sprite = images[Mathf.Clamp(Level - 1, 0, 4)];
-        
+        OnBGChanged?.Invoke();
     }
 
     public int GetLowestLevel()
@@ -34,7 +35,6 @@ public class BG : MonoBehaviour
                 lowestLvlItem = Mathf.Min(upgradable.Level);
             }
         }
-        Debug.Log($"{lowestLvlItem} is the lowest level Upgradable in scene");
         
         return lowestLvlItem;
     }

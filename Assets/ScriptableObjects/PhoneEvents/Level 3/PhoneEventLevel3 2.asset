@@ -15,7 +15,7 @@ MonoBehaviour:
   dialogue: I got an invite +1 to a secret concert with Bruce.  Wanna tag along?
   level: 3
   successChance: 0.5
-  time: 60
+  time: 2
   negativeOutcome:
     expAmount: 0
     cashAmount: -600

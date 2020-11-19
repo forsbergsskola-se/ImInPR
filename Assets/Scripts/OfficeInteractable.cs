@@ -45,6 +45,11 @@ public abstract class OfficeInteractable : MonoBehaviour, IPointerClickHandler
 
     public virtual void OnPointerClick(PointerEventData eventData)
     {
+        if (Level == 5)
+        {
+            Instantiate(gm.MaxLevelPrefab, gm.transform);
+            return;
+        }
         if (gm.cash.CanAfford(ActualCost()))
         {
             var confirmInstance= Instantiate(gm.ConfirmationPrefab, gm.transform);

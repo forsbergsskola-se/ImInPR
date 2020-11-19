@@ -15,7 +15,7 @@ MonoBehaviour:
   dialogue: Meet me in the park. Boy, do I got a great idea!
   level: 1
   successChance: 0.7
-  time: 30
+  time: 2
   negativeOutcome:
     expAmount: -5
     cashAmount: 0

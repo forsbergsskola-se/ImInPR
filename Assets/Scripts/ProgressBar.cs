@@ -1,38 +1,20 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(Slider))]
 public class ProgressBar : MonoBehaviour
 {
-    [SerializeField] private Player player;
-    private Image bar;
+    [SerializeField] private Slider slider;
 
-    private void Start()
-    {
-        bar = GetComponent<Image>();
-        player.OnXPChanged += UpdateBar;
-    }
+   private void Start()
+   {
+       slider = GetComponent<Slider>();
+       UpdateBar(FindObjectOfType<Player>().ExperienceAmount);
+   }
 
-    private void UpdateBar(float value)
+   public void UpdateBar(float value)
     {
-        bar.fillAmount = value;
+        slider.value = value;
     }
-
-    private void OnDestroy()
-    {
-        player.OnXPChanged -= UpdateBar;
-    }
-    
-    /*private void UpdateXpBar(float start, float end)
-    {
-        float elapsedTime = 0;
-        float timeToComplete = 1f;
-        
-        while (elapsedTime < timeToComplete)
-        {
-            elapsedTime += Time.deltaTime;
-            xpBar.fillAmount = Mathf.Lerp(start, end, elapsedTime);
-        }
-    }
-      
-     */
 }

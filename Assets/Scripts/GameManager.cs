@@ -7,12 +7,14 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public Cash cash;
+    public Player player;
     public static List<OfficeInteractable> officeEquipment;
     public TaskGenerator taskGenerator;
     public GameObject ConfirmationPrefab;
     public GameObject PhoneEventPrefab;
     public GameObject CannotAffordPrefab;
     public GameObject OutcomeMessage;
+    public GameObject MaxLevelPrefab;
     
     [Header("Bands UI")]
     public Transform BandUIContainer;
@@ -49,9 +51,10 @@ public class GameManager : MonoBehaviour
             
         }
 
-        if (Input.GetKeyDown(KeyCode.F9))
+        if (Input.GetKeyDown(KeyCode.F8))
         {
-            FindObjectOfType<Player>().AddXp(5);
+            player.AddXp(5);
+            Debug.Log($"Adding 5 xp to {player.name}");
         }
         #endregion
     }

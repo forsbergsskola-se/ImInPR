@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9b932ae55ff31a4ab76d28c945d7419, type: 3}
   m_Name: BastardsOfSatan
   m_EditorClassIdentifier: 
-  clip: {fileID: 8300000, guid: bf9a8640159ecd1479671fc3b6b76636, type: 3}
-  songName: luciferNoticeMe
-  BandName: Bastards Of Satan
+  clip: {fileID: 8300000, guid: bafa77b6404ddfe4fa28889820d3b457, type: 3}
+  songName: Blood Bones
+  bandName: Bastards of Satan
   soundDesignerName: Daniel Larsen

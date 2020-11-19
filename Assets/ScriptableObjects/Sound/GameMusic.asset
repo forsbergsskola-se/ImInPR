@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: GameMusic
   m_EditorClassIdentifier: 
   gameSounds:
-  - {fileID: 11400000, guid: 1207551b2333e344ca15c5417192db72, type: 2}
-  - {fileID: 11400000, guid: 123f8290ffef99b4fbaf652fa53bf294, type: 2}
   - {fileID: 11400000, guid: 9355f150944f8a14ebb4b86541d8472f, type: 2}
+  - {fileID: 11400000, guid: d051ed9d5dd0a784ba35c8272789e17a, type: 2}
+  - {fileID: 11400000, guid: 3d1265d8752a95a4e8022b70fb058dc8, type: 2}
   - {fileID: 11400000, guid: 452c02703ee4be34cafc14f187239c25, type: 2}
-  - {fileID: 11400000, guid: c22aa2e86ebb7d9428c6c38acb735b98, type: 2}
+  - {fileID: 11400000, guid: 78cce36e86d55ab45aac0c0ff81e9dac, type: 2}
+  - {fileID: 11400000, guid: 1d4c315d3e0cd9747b5f94638bb4c482, type: 2}

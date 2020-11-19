@@ -12,19 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0e564175ef544e4c8e5bb5a17b3d9fb, type: 3}
   m_Name: PhoneEventLevel4 3
   m_EditorClassIdentifier: 
-  dialogue: 'Howdy! Do you want to attend to an interesting lunch meeting with three
-    upcoming country artists? '
+  dialogue: "Hey Man. I got an idea of a crazy ad sale campaign including cats and
+    icecream. Wanna meet up?\r"
   level: 4
   successChance: 0.4
-  time: 75
+  time: 2
   negativeOutcome:
-    expAmount: 0
-    cashAmount: -1500
-    message: Damn. They got me into playing Texas Hold'em and I ended up loosing
-      800 bucks. How could he have three aces and the hand ALL the time?
-  positiveOutcome:
-    expAmount: 55
+    expAmount: -10
     cashAmount: 0
-    message: Fun folks! They rode in on horses, cowboy hats and all. You'll will
-      meet them again because one of the challange you to a gun duel... whatever
-      that means? However - a great experience.
+    message: "Maybe you didn't listen carefully enough but the campaign where your
+      band ate cats while holding ice cream totally bombed. Shame on you?\r"
+  positiveOutcome:
+    expAmount: 0
+    cashAmount: 150
+    message: "The campaign with your band holding cats while eating ice cream really
+      made business bloom. You earned some bucks.\r"

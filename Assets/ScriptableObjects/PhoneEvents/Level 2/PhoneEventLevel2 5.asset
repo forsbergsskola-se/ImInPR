@@ -15,7 +15,7 @@ MonoBehaviour:
   dialogue: Paul Simon want a private chat with you at Chelsea Hotel. Wanna go?
   level: 2
   successChance: 0.6
-  time: 45
+  time: 2
   negativeOutcome:
     expAmount: -15
     cashAmount: 0

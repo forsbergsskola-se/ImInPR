@@ -14,7 +14,7 @@ public class TaskGenerator : MonoBehaviour
     public GameObject taskPrefab;
     public bool active;
     public TMP_Text message;
-    private int MaxAmountOfTasks => FindObjectOfType<Computer>().Level * 3;
+    private int MaxAmountOfTasks => Mathf.Clamp(FindObjectOfType<Computer>().Level * 3,3, 10);
     private bool CanGenerateTask => GetComponentsInChildren<BandTask>().Length < MaxAmountOfTasks;
     
 
@@ -53,6 +53,7 @@ public class TaskGenerator : MonoBehaviour
         {
             progressCircles[i].isUnlocked = true;
         }
+        progressCircles[FindObjectOfType<Computer>().Level - 1].image.fillAmount = 0;
     }
     
     [ContextMenu("ToggleTaskList")]
