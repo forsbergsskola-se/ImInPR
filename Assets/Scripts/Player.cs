@@ -38,7 +38,6 @@ public class Player : MonoBehaviour
         {
             LevelUp();
         }
-        //Debug.Log($"current player XP: {ExperienceAmount}");
         xpBar.UpdateBar(ExperienceAmount);
     }
 

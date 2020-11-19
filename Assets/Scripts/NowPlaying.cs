@@ -10,7 +10,7 @@ public class NowPlaying : MonoBehaviour
     [SerializeField] private float transitionTime = 1.5f;
     [SerializeField] private float durationToLive = 3f;
 
-    private enum State{ TransitionIn, Display, TransitionOut}
+    private enum State{ TransitionIn, Display, TransitionOut }
     private State _currentState = State.TransitionIn;
     private Vector2 _startingPos;
     private Vector2 _endPos;
