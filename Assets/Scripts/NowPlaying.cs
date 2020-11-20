@@ -29,7 +29,6 @@ public class NowPlaying : MonoBehaviour
         var exists = FindObjectsOfType<NowPlaying>();
         foreach (var instance in exists)
         {
-            Debug.Log(instance);
             if(instance != this)
                 Destroy(instance.gameObject);
         }

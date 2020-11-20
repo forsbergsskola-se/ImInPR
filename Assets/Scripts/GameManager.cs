@@ -52,38 +52,6 @@ public class GameManager : MonoBehaviour
         return counter;
     }
 
-    private void Update()
-    {
-        
-        #region Testing
-        if (Input.GetKeyDown(KeyCode.F1)) //Shows name, level and cost of upgrade of all OfficeInteractables
-        {
-            foreach (var value in officeEquipment)
-            {
-                Debug.Log(value);
-            }
-            Debug.Log($"{FindObjectOfType<BG>().GetLowestLevel()} is the level of the lowest item");;
-        }
-
-        if (Input.GetKeyDown(KeyCode.F2))
-        {
-            var instance = Instantiate(BandSelector, transform);
-            instance.GetComponent<BandSelectorController>().PopulateList(BandTier.Tier3);
-        }
-
-        if (Input.GetKeyDown(KeyCode.F8))
-        {
-            player.AddXp(50);
-            Debug.Log($"Adding 5 xp to {player.name}");
-        }
-
-        if (Input.GetKeyDown(KeyCode.F3))
-        {
-            cash.Add(500);
-        }
-        #endregion
-    }
-    
     [ContextMenu("Delete Save Game")]
     public void DeleteSaveGame()
     {
