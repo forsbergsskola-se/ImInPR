@@ -8,6 +8,7 @@ public class BoomBox : MonoBehaviour
     [SerializeField] private BandList boomBoxPlayList;
     [SerializeField] private GameObject nowPlayingPrefab;
 
+    public bool isPlaying => Speakers.isPlaying;
     public float MusicVolume
     {
         get => PlayerPrefs.GetFloat("MusicVolume", 0.5f);
