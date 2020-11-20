@@ -1736,6 +1736,10 @@ PrefabInstance:
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: BoomBox, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 7552952886468137259, guid: f17e72f473af0e146a21c5f645d0b6b6, type: 3}
+      propertyPath: m_text
+      value: BoomBox Volume
+      objectReference: {fileID: 0}
     - target: {fileID: 8186609521827961689, guid: f17e72f473af0e146a21c5f645d0b6b6, type: 3}
       propertyPath: key
       value: MusicVolume
