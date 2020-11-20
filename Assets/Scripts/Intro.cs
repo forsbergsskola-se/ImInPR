@@ -8,6 +8,7 @@ public class Intro : MonoBehaviour
 {
     public VideoPlayer videoPlayer;
     public float elapsedTime;
+    public GameObject helpMenu;
     private void Update()
     {
         elapsedTime += Time.deltaTime;
@@ -20,7 +21,7 @@ public class Intro : MonoBehaviour
         
         if (!videoPlayer.isPlaying)
         {
-            LoadScene();
+            helpMenu.SetActive(true);
         }
     }
 
