@@ -36,11 +36,8 @@ public class Band : ScriptableObject
     {
         switch (isOwned)
         {
-            case 0:
-                return false;
-                break;
+            case 0: return false;
             case 1: return true;
-                break;
         }
         return false;
     }

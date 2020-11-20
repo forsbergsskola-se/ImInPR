@@ -17,9 +17,14 @@ public class BG : MonoBehaviour
 
     public void LevelUp()
     {
+        var originalLevel = Level;
         Level = GetLowestLevel();
         GetComponent<Image>().sprite = images[Mathf.Clamp(Level - 1, 0, 4)];
-        OnBGChanged?.Invoke();
+        if (Level != originalLevel)
+        {
+            OnBGChanged?.Invoke();
+            FindObjectOfType<SoundManager>().PlayGameSound("NewOffice");
+        }
     }
 
     public int GetLowestLevel()

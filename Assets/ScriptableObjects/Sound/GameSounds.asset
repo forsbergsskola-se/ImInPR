@@ -13,7 +13,22 @@ MonoBehaviour:
   m_Name: GameSounds
   m_EditorClassIdentifier: 
   gameSounds:
+  - {fileID: 11400000, guid: 7d15d8b1040f6054aabda216284694c0, type: 2}
+  - {fileID: 11400000, guid: 0cb9365ca7934984fb705bd39434dfe5, type: 2}
   - {fileID: 11400000, guid: a6522bfb1d9e23042a645c9a6ec89e95, type: 2}
+  - {fileID: 11400000, guid: 38bc34bda6a15fc45bf5a5fd935eae0d, type: 2}
+  - {fileID: 11400000, guid: 1822c0171e79f504cb3bf48ad8649816, type: 2}
+  - {fileID: 11400000, guid: 3dc2e2f07358a774f95f399a9af79e26, type: 2}
+  - {fileID: 11400000, guid: 0f39e36f82b4c164cb656267e9795e85, type: 2}
+  - {fileID: 11400000, guid: ecc45c6005e858a4ba2ab31bd8e173b5, type: 2}
+  - {fileID: 11400000, guid: 81b143ebea68a2448986fa758d4659ae, type: 2}
+  - {fileID: 11400000, guid: 40ff56f8b3b13b243b109be4bc6524bc, type: 2}
+  - {fileID: 11400000, guid: b55bcccd050d948438716088bc858ddc, type: 2}
+  - {fileID: 11400000, guid: 12bfb042b0d623b4b97cabecbe7b1b2e, type: 2}
+  - {fileID: 11400000, guid: 5e876c12a66843c418c340eb36577b4c, type: 2}
   - {fileID: 11400000, guid: 75f8120ec1d9f3b4487e4145cdf0ed10, type: 2}
   - {fileID: 11400000, guid: 66e8db48e581f9145b9e1304c514d9a7, type: 2}
-  - {fileID: 11400000, guid: b55bcccd050d948438716088bc858ddc, type: 2}
+  - {fileID: 11400000, guid: 7a5d0043fd137684592a4194d4d87e95, type: 2}
+  - {fileID: 11400000, guid: 32f58d4aed6e82b47b990a329d9ee69c, type: 2}
+  - {fileID: 11400000, guid: 84e21b1db3337494c90a27ef1f5088a8, type: 2}
+  - {fileID: 11400000, guid: acc06ffa468724f4fad3c0f38b2041f6, type: 2}
