@@ -29,7 +29,7 @@ public class Cash
 
     public bool CanAfford(int value)
     {
-        return value < this.Amount;
+        return value <= this.Amount;
     }
     
     

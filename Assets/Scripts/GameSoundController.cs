@@ -27,4 +27,10 @@ public class GameSoundController : ScriptableObject
         }
         return null;
     }
+    
+    public void PlayRandomSound()
+    {
+        var randomSound = Random.Range(0, gameSounds.Length);
+        FindObjectOfType<SoundManager>().PlayGameSound(gameSounds[randomSound]);
+    }
 }

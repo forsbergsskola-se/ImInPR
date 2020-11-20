@@ -10,7 +10,12 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private AudioSource backgroundMusicPlayer;
     [SerializeField] private GameSound idleMusic;
 
-    [SerializeField] private BoomBox _boomBox; 
+    [SerializeField] private BoomBox _boomBox;
+
+    [Header("Sound Collections")] 
+    public GameSoundController levelUpSounds;
+    public GameSoundController officeLevelUpSounds;
+
     private void Start() => playBackgroundMusic();
 
     private void Update()

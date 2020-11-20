@@ -32,7 +32,7 @@ public class BG : MonoBehaviour
         {
             OnBGChanged?.Invoke();
             var num = Random.Range(0, 1);
-            FindObjectOfType<SoundManager>().PlayGameSound(num == 0 ? "New Office" : "New Office 2");
+            FindObjectOfType<SoundManager>().officeLevelUpSounds.PlayRandomSound();
         }
     }
 

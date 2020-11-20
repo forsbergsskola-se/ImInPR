@@ -1802,7 +1802,6 @@ GameObject:
   - component: {fileID: 1469920150}
   - component: {fileID: 1469920151}
   - component: {fileID: 1469920152}
-  - component: {fileID: 1469920153}
   m_Layer: 0
   m_Name: UI
   m_TagString: Untagged
@@ -1937,6 +1936,8 @@ MonoBehaviour:
   backgroundMusicPlayer: {fileID: 1469920152}
   idleMusic: {fileID: 11400000, guid: cab17b31ab1b74140bf6d0885305e6d1, type: 2}
   _boomBox: {fileID: 296079782}
+  levelUpSounds: {fileID: 11400000, guid: 73b572c5df6e844e4b5fb475e0dafcce, type: 2}
+  officeLevelUpSounds: {fileID: 11400000, guid: e3462f970628a9f4ab9b6bc89beb4044, type: 2}
 --- !u!82 &1469920152
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2033,19 +2034,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1469920153
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1469920145}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4df196d9b895b4de1a809088794a6e55, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  soundController: {fileID: 11400000, guid: 73b572c5df6e844e4b5fb475e0dafcce, type: 2}
 --- !u!224 &1585710785 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6772623725637609738, guid: fdcb28fd3917be7498440fe7d1596cf3, type: 3}
@@ -2086,7 +2074,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 39, y: -50}
+  m_AnchoredPosition: {x: 39, y: -83.2}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1909260369

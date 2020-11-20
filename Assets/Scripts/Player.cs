@@ -49,7 +49,7 @@ public class Player : MonoBehaviour
     public void LevelUp()
     {
         Level++;
-        FindObjectOfType<LevelUpSounds>().PlayRandomSound();
+        FindObjectOfType<SoundManager>().levelUpSounds.PlayRandomSound();
         if (Level == 5)
         {
             var instance = Instantiate(FindObjectOfType<GameManager>().BandSelector, FindObjectOfType<GameManager>().transform);
