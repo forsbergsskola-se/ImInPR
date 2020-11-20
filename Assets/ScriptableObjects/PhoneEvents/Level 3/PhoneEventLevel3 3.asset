@@ -21,7 +21,7 @@ MonoBehaviour:
     expAmount: 0
     cashAmount: -800
     message: Damn. They got me into playing Texas Hold'em and I ended up loosing
-      800 bucks. How could he have three aces and the hand ALL the time?
+      800 bucks. How could he have three aces in the hand ALL the time?
   positiveOutcome:
     expAmount: 45
     cashAmount: 0

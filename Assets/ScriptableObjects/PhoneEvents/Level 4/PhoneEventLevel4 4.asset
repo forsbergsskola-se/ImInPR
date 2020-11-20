@@ -19,12 +19,12 @@ MonoBehaviour:
   successChance: 0.4
   time: 2
   negativeOutcome:
-    expAmount: -15
+    expAmount: -20
     cashAmount: 0
     message: "Well, you made the deal and people are laughing at you. They call it
       the whyPhone. It has only treble and no bass!\r"
   positiveOutcome:
     expAmount: 0
-    cashAmount: 350
+    cashAmount: 800
     message: "This is so cool. A phone and a walkman? You invest and immediately
       gain on the stocks.\r"

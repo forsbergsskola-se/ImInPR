@@ -17,12 +17,12 @@ MonoBehaviour:
   successChance: 0.3
   time: 2
   negativeOutcome:
-    expAmount: -15
+    expAmount: -25
     cashAmount: 0
     message: "What a Joke! Kurt Cosain or whatever his name was has no place in the
       music industry. And you said that loud and clear so everybody heard. \r"
   positiveOutcome:
-    expAmount: 200
-    cashAmount: 0
+    expAmount: 0
+    cashAmount: 1350
     message: "Well, you met the \u201Cartist\u201D and didn't really get the music.
       You sold him some of your Merch though. Ca-tjing! \r"
