@@ -1,4 +1,5 @@
-﻿using TMPro;
+﻿using System.Collections;
+using TMPro;
 using UnityEngine;
 
 public class BusinessCard : MonoBehaviour
@@ -24,7 +25,42 @@ public class BusinessCard : MonoBehaviour
     [SerializeField] private string address3 = "Small Townhouse";
     [SerializeField] private string address4 = "3rd floor downtown";
     [SerializeField] private string address5 = "top floor sky scraper";
-    private void UpdateLevelText() => levelText.SetText(player.Level.ToString());
+    private void UpdateLevelText() {
+        levelText.SetText(player.Level.ToString());
+        StartCoroutine(TextEffect(levelText, Color.magenta, 1f));
+
+    }
+
+    private IEnumerator TextEffect(TextMeshProUGUI textToAffect, Color effectColor, float duration)
+    {
+        Color startingColor = textToAffect.color;
+        Color endColor = effectColor;
+       
+        float _elapsedtime = 0f;
+
+        while (_elapsedtime < duration)
+        {
+            textToAffect.color = Color.Lerp(startingColor, endColor, _elapsedtime/duration);
+            _elapsedtime += Time.deltaTime;
+            yield return null;
+        }
+        StartCoroutine(ChangeMeBack(textToAffect, startingColor, duration));
+    }
+
+    private IEnumerator ChangeMeBack(TextMeshProUGUI text, Color endColor, float duration)
+    {
+        Color startingColor = text.color;
+        Color temp = endColor;
+       
+        float _elapsedtime = 0f;
+
+        while (_elapsedtime < duration)
+        {
+            text.color = Color.Lerp(startingColor, temp, _elapsedtime/duration);
+            _elapsedtime += Time.deltaTime;
+            yield return null;
+        }
+    }
 
     private void UpdateJobTitleText()
     {
