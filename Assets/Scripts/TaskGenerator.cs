@@ -16,7 +16,6 @@ public class TaskGenerator : MonoBehaviour
     public TMP_Text message;
     private int MaxAmountOfTasks => Mathf.Clamp(FindObjectOfType<Computer>().Level * 3,3, 10);
     private bool CanGenerateTask => GetComponentsInChildren<BandTask>().Length < MaxAmountOfTasks;
-    
 
     public bool CanActivateTask
     {
