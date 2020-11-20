@@ -1564,6 +1564,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.x
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 4546504331692953920, guid: f17e72f473af0e146a21c5f645d0b6b6, type: 3}
+      propertyPath: key
+      value: BackGroundVolume
+      objectReference: {fileID: 0}
     - target: {fileID: 5000256688661618079, guid: f17e72f473af0e146a21c5f645d0b6b6, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 37
@@ -1731,6 +1735,10 @@ PrefabInstance:
     - target: {fileID: 7185504447531339372, guid: f17e72f473af0e146a21c5f645d0b6b6, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: BoomBox, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8186609521827961689, guid: f17e72f473af0e146a21c5f645d0b6b6, type: 3}
+      propertyPath: key
+      value: MusicVolume
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f17e72f473af0e146a21c5f645d0b6b6, type: 3}
