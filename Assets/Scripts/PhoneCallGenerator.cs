@@ -10,7 +10,7 @@ public class PhoneCallGenerator : MonoBehaviour
     
     void Start()
     {
-        InvokeRepeating(nameof(IsCalling),2f, repeatTime);
+        InvokeRepeating(nameof(IsCalling), repeatTime, repeatTime);
     }
 
     private void IsCalling()
