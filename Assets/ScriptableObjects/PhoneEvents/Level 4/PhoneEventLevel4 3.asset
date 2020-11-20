@@ -18,12 +18,12 @@ MonoBehaviour:
   successChance: 0.4
   time: 2
   negativeOutcome:
-    expAmount: -10
-    cashAmount: 0
+    expAmount: 0
+    cashAmount: -1500
     message: "Maybe you didn't listen carefully enough but the campaign where your
       band ate cats while holding ice cream totally bombed. Shame on you?\r"
   positiveOutcome:
-    expAmount: 0
-    cashAmount: 150
+    expAmount: 55
+    cashAmount: 0
     message: "The campaign with your band holding cats while eating ice cream really
       made business bloom. You earned some bucks.\r"

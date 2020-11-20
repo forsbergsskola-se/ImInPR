@@ -18,6 +18,6 @@ MonoBehaviour:
   time: 2
   cost: 20
   levelRequirement: 0
-  description: "Your band needs a better look. Buy them some new clothes, cut their
+  description: "Your band needs a better look. Buy them some cool clothing, cut their
     hair\u2026 do something!"
   outComeText: 

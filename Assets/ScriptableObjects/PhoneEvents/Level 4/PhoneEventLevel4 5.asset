@@ -18,11 +18,11 @@ MonoBehaviour:
   successChance: 0.4
   time: 2
   negativeOutcome:
-    expAmount: -20
+    expAmount: -25
     cashAmount: 0
     message: "Couldn't he have said that the product was a toilet. So not cool! \r"
   positiveOutcome:
     expAmount: 0
-    cashAmount: 800
+    cashAmount: 1000
     message: "What a day. Selling yourself for a product can really be a thing for
       the future.\r"
