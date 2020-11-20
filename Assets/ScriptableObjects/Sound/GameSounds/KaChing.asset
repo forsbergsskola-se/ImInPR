@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fca6a1aa3f34817409e000cfee8f0ac8, type: 3}
   m_Name: KaChing
   m_EditorClassIdentifier: 
-  clip: {fileID: 0}
+  clip: {fileID: 8300000, guid: 6c6f0a89d2e31e34fbbf3fd96b135bdf, type: 3}
