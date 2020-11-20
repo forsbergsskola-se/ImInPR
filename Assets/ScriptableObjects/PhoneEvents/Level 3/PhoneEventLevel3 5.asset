@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PhoneEventLevel3 5
   m_EditorClassIdentifier: 
   dialogue: Hey man. I've got a cancelation on a major TV show tonight. Are any of
-    your bands available... like right now? If so-  bring them here.
+    your bands available... like right now? If so - bring them here.
   level: 3
   successChance: 0.5
   time: 2

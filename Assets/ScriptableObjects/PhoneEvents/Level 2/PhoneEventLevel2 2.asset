@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0e564175ef544e4c8e5bb5a17b3d9fb, type: 3}
   m_Name: PhoneEventLevel2 2
   m_EditorClassIdentifier: 
-  dialogue: Rumors says theres a private party tonight and guess who's gonna be there?
-    Everyone! Wanna try to sneak in?
+  dialogue: Rumours says there's a private party tonight and guess who's gonna be
+    there? Everyone! Wanna try to sneak in?
   level: 2
   successChance: 0.6
   time: 2
