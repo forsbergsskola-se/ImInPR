@@ -23,7 +23,6 @@ public class BG : MonoBehaviour
         if (Level != originalLevel)
         {
             OnBGChanged?.Invoke();
-            //TODO SoundEffects
             FindObjectOfType<SoundManager>().PlayGameSound("NewOffice");
         }
     }
