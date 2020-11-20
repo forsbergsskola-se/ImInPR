@@ -102,22 +102,22 @@ public class BusinessCard : MonoBehaviour
         addressText.SetText(address);
     }
 
-    private void UpdateGoldPerMinText()
+    private void UpdateCashPerMinText()
     {
-        var goldPerMin = GetGoldPerMin();
+        var goldPerMin = GetCashPerMin();
         goldPerMinText.SetText(goldPerMin.ToString());
     }
 
-    private static int GetGoldPerMin()
+    public static int GetCashPerMin()
     {
-        int goldPerMin = 0;
+        int cashPerMin = 0;
         var temp = FindObjectsOfType<BandBehaviour>();
         foreach (var band in temp)
         {
-            goldPerMin += band.MoneyPerMinute;
+            cashPerMin += band.MoneyPerMinute;
         }
 
-        return goldPerMin;
+        return cashPerMin;
     }
 
     private void Awake(){
@@ -131,7 +131,7 @@ public class BusinessCard : MonoBehaviour
         UpdateLevelText();
         UpdateJobTitleText();
         UpdateAddressText();
-        InvokeRepeating(nameof(UpdateGoldPerMinText), 1f, 1f);
+        InvokeRepeating(nameof(UpdateCashPerMinText), 1f, 1f);
     }
 
     private void OnDestroy()
