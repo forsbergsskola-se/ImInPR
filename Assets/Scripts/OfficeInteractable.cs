@@ -14,8 +14,7 @@ public abstract class OfficeInteractable : MonoBehaviour, IPointerClickHandler
         get => PlayerPrefs.GetInt($"{name}_Level", 1);
         private set => PlayerPrefs.SetInt($"{name}_Level", value);
     }
-    public int levelUpCost;
-
+    
     public event Action OnLevelUp;
     protected virtual void Start()
     {
@@ -23,7 +22,7 @@ public abstract class OfficeInteractable : MonoBehaviour, IPointerClickHandler
         var temp = GetComponent<Image>().sprite = models[Mathf.Clamp(Level - 1, 0, models.Length - 1)];
         GetComponent<RectTransform>().sizeDelta = new Vector2(temp.rect.width, temp.rect.height);
     }
-
+    
     public virtual void IncreaseLevel()
     {
         if (gm.cash.Spend(ActualCost()))
@@ -38,10 +37,7 @@ public abstract class OfficeInteractable : MonoBehaviour, IPointerClickHandler
         GetComponent<RectTransform>().sizeDelta = new Vector2(temp.rect.width, temp.rect.height);
     }
 
-    public int ActualCost()
-    {
-        return prices[Level - 1];
-    }
+    public int ActualCost() => prices[Level - 1];
 
     public override string ToString() => $"{this.name} : Level {Level}, costs {ActualCost()} to upgrade.";
 
