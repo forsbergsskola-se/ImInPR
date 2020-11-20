@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class NowPlaying : MonoBehaviour
 {
+    [SerializeField] private TextMeshProUGUI songArtist;
     [SerializeField] private TextMeshProUGUI songTitle;
     [SerializeField] private TextMeshProUGUI soundDesignStudent;
     [SerializeField] private float distanceToMoveOnX = 500f;
@@ -18,7 +19,8 @@ public class NowPlaying : MonoBehaviour
     
     public void Setup(string bandName, string songName, string studentName)
     {
-        songTitle.SetText($"{bandName} - {songName}");
+        songArtist.SetText($"{bandName}");
+        songTitle.SetText($"{songName}");
         soundDesignStudent.SetText($"composed by: {studentName}");
     }
 
