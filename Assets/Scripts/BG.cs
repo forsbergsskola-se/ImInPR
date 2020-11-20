@@ -2,6 +2,7 @@
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class BG : MonoBehaviour
 {
@@ -23,7 +24,8 @@ public class BG : MonoBehaviour
         if (Level != originalLevel)
         {
             OnBGChanged?.Invoke();
-            FindObjectOfType<SoundManager>().PlayGameSound("NewOffice");
+            var num = Random.Range(0, 1);
+            FindObjectOfType<SoundManager>().PlayGameSound(num == 0 ? "New Office" : "New Office 2");
         }
     }
 

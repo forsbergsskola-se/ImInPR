@@ -73,7 +73,7 @@ public class BandBehaviour : MonoBehaviour, IPointerClickHandler
 
     void LevelUp()
     {
-        //TODO Add SoundEffect
+        FindObjectOfType<LevelUpSounds>().PlayRandomSound();
         CurrentLevel++;
         awareness.Amount = 0;
         popularity.Amount = 0;
