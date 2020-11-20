@@ -13,7 +13,14 @@ public class BG : MonoBehaviour
 
     private void Start()
     {
-        LevelUp();
+        GetLevelOnStartUp();
+    }
+
+    void GetLevelOnStartUp()
+    {
+        Level = GetLowestLevel();
+        GetComponent<Image>().sprite = images[Mathf.Clamp(Level - 1, 0, 4)];
+        OnBGChanged?.Invoke();
     }
 
     public void LevelUp()
