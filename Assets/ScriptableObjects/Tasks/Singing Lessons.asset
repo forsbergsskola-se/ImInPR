@@ -18,6 +18,6 @@ MonoBehaviour:
   time: 2
   cost: 20
   levelRequirement: 1
-  description: "The band singer has a brilliant singing voice\u2026 in the shower.
-    Work that voice."
+  description: "The bands singers got a brilliant voice\u2026in the shower. Work
+    that voice!"
   outComeText: 

@@ -18,6 +18,6 @@ MonoBehaviour:
   time: 1
   cost: 70
   levelRequirement: 5
-  description: "Beatles played at a roof\u2026 what if we play in a\u2026 Garage?
-    Grandma got one."
+  description: "Beatles played off a roof\u2026 what if we play in a\u2026 Garage?
+    Your grandmas got one."
   outComeText: 
