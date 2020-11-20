@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 public class SoundManager : MonoBehaviour
 {
     [Header("Game Sounds")]
@@ -9,7 +10,20 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private AudioSource backgroundMusicPlayer;
     [SerializeField] private GameSound idleMusic;
 
+    [SerializeField] private BoomBox _boomBox; 
     private void Start() => playBackgroundMusic();
+
+    private void Update()
+    {
+        if (_boomBox.isPlaying)
+        {
+            backgroundMusicPlayer.Pause();
+        }
+        else
+        {
+            backgroundMusicPlayer.UnPause();
+        }
+    }
 
     public float BackgroundMusicVolume
     {
@@ -24,7 +38,10 @@ public class SoundManager : MonoBehaviour
     public float GameSoundVolume
     {
         get => PlayerPrefs.GetFloat("GameSoundVolume", 0.5f);
-        set => PlayerPrefs.SetFloat("GameSoundVolume", value);
+        set{
+            PlayerPrefs.SetFloat("GameSoundVolume", value);
+            gameSoundAudioSource.volume = GameSoundVolume;
+        }
     }
 
     #region GameSound Player
@@ -36,11 +53,6 @@ public class SoundManager : MonoBehaviour
 
     private void Play(GameSound sound, AudioSource source, float volume)
     {
-        if (backgroundMusicPlayer.isPlaying)
-        {
-            backgroundMusicPlayer.Pause();
-        }
-            
         source.PlayOneShot(sound.clip, volume);
     }
     #endregion
