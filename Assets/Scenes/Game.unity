@@ -2000,6 +2000,7 @@ MonoBehaviour:
   gameSoundController: {fileID: 11400000, guid: f540d6372d402d544bd02048404e904b, type: 2}
   backgroundMusicPlayer: {fileID: 1469920152}
   idleMusic: {fileID: 11400000, guid: cab17b31ab1b74140bf6d0885305e6d1, type: 2}
+  _boomBox: {fileID: 296079782}
 --- !u!82 &1469920152
 AudioSource:
   m_ObjectHideFlags: 0
