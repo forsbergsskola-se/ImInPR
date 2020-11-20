@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fca6a1aa3f34817409e000cfee8f0ac8, type: 3}
   m_Name: New Office
   m_EditorClassIdentifier: 
-  clip: {fileID: 0}
+  clip: {fileID: 8300000, guid: 11ff1e4364621764f8fd2b073c87ec66, type: 3}
