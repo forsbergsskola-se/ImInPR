@@ -72,7 +72,7 @@ public static class TimePlayed
     public static void SaveTimePlayed()
     {
         PlayerPrefs.SetString("GameDestroyTime", DateTime.Now.ToString());
-        var startTime = DateTime.Parse(PlayerPrefs.GetString("TotalPlayTime", DateTime.MinValue.ToString())) + (DateTime.Now - lastUpdatedTime);
-        PlayerPrefs.SetString("TotalPlayTime", startTime.ToString());
+        var timePlayed = DateTime.Parse(PlayerPrefs.GetString("TotalPlayTime", DateTime.MinValue.ToString())) + (DateTime.Now - lastUpdatedTime);
+        PlayerPrefs.SetString("TotalPlayTime", timePlayed.ToString());
     }
 }
