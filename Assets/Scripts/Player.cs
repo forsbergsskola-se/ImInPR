@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
     public event Action OnLevelUp;
     
     public float XpPercentage => Convert.ToSingle(ExperienceAmount / xpReqToLevel);
-    [SerializeField] private int xpReqToLevel = 100;
+    public int xpReqToLevel = 100;
     public int ExperienceAmount
     {
         get => PlayerPrefs.GetInt(this.name, 0);
@@ -42,8 +42,8 @@ public class Player : MonoBehaviour
 
     public void LoseXp(int value)
     {
-        if (value <= 0) return;
-        ExperienceAmount = Mathf.Clamp(ExperienceAmount - value, 0, xpReqToLevel);
+        ExperienceAmount = Mathf.Clamp(ExperienceAmount + value, 0, xpReqToLevel);
+        xpBar.UpdateBar(ExperienceAmount);
     }
     
     public void LevelUp()

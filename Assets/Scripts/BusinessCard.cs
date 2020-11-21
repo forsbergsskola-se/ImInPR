@@ -65,7 +65,7 @@ public class BusinessCard : MonoBehaviour
     private void UpdateJobTitleText()
     {
         string title = "";
-        switch (player.Level)
+        switch (Mathf.Clamp(player.Level / 5, 1, 5))
         {
             case 1: title = title1;
                 break;

@@ -10,6 +10,7 @@ public class ProgressBar : MonoBehaviour
    private void Start()
    {
        slider = GetComponent<Slider>();
+       slider.maxValue = FindObjectOfType<Player>().xpReqToLevel;
        UpdateBar(FindObjectOfType<Player>().ExperienceAmount);
    }
 

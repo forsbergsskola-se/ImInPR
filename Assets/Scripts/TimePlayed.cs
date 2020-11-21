@@ -4,12 +4,13 @@ using System;
 public static class TimePlayed
 {
     private static DateTime lastUpdatedTime;
+    private const string DefaultTime = "0001-01-01 00:00:00";
 
     public static void Initialize(Cash cash)
     {
         lastUpdatedTime = DateTime.Now;
-        var temp = PlayerPrefs.GetString("GameDestroyTime");
-        var totalPlayTime = PlayerPrefs.GetString("TotalPlayTime");
+        var temp = PlayerPrefs.GetString("GameDestroyTime", DateTime.Now.ToString());
+        var totalPlayTime = PlayerPrefs.GetString("TotalPlayTime", DefaultTime);
         Debug.Log(FormatPlayTime(DateTime.Parse(totalPlayTime)));
         if (temp != "")
         {
@@ -30,7 +31,7 @@ public static class TimePlayed
     public static DateTime UpdateTimePlayed()
     {
         var currentTime = DateTime.Now;
-        var totalPlayTime = DateTime.Parse(PlayerPrefs.GetString("TotalPlayTime"));
+        var totalPlayTime = DateTime.Parse(PlayerPrefs.GetString("TotalPlayTime" , DefaultTime));
         var difference = currentTime - lastUpdatedTime;
         var newTime = totalPlayTime.Add(difference);
         SaveTimePlayed();
@@ -60,15 +61,12 @@ public static class TimePlayed
             else
                 result += " Hour ";
         }
-        if (minutes != 0)
-        {
-            result += $"{minutes}";
-            if (minutes > 1)
+        result += $"{minutes}";
+            if (minutes > 1 || minutes == 0)
                 result += " Minutes ";
             else
                 result += " Minute ";
-        }
-        return result;
+            return result;
     }
 
     public static void SaveTimePlayed()
