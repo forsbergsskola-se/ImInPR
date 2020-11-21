@@ -1,10 +1,12 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
 
 public class PauseMenu : MonoBehaviour
 {
     public static bool GameIsPaused; 
     public GameObject pauseMenuUI;
     public GameManager gm;
+    public TMP_Text playTimeText;
 
     private void Update()
     {
@@ -26,8 +28,6 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
-        
-        
     }
     
     public void Pause()
@@ -35,6 +35,7 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
+        playTimeText.text = TimePlayed.GetTimePlayed();
     }
     
     public void Quit()

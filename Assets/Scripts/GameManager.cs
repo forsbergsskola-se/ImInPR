@@ -38,17 +38,8 @@ public class GameManager : MonoBehaviour
             var instance = Instantiate(FindObjectOfType<GameManager>().BandSelector, FindObjectOfType<GameManager>().transform);
             instance.GetComponent<BandSelectorController>().PopulateList(BandTier.Tier1);
         }
-        var gameStartTime = DateTime.Now;
-        var temp = PlayerPrefs.GetString("GameDestroyTime");
-        if (temp != "")
-        {
-            DateTime destroyedTime = DateTime.Parse(temp);
-            Debug.Log(gameStartTime);
-            Debug.Log(destroyedTime);
-            var difference = (gameStartTime - destroyedTime).Minutes;
-            Debug.Log(difference);
-            cash.Add(BusinessCard.GetCashPerMin() * difference);
-        }
+        
+        TimePlayed.Initialize(cash);
     }
 
     public static int bandsOwned(BandList bandsList)
@@ -65,7 +56,7 @@ public class GameManager : MonoBehaviour
 
     private void OnDestroy()
     {
-        PlayerPrefs.SetString("GameDestroyTime", DateTime.Now.ToString());
+        TimePlayed.SaveTimePlayed();
     }
 
     [ContextMenu("Delete Save Game")]
