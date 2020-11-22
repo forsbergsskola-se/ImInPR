@@ -89,7 +89,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveDirection: {x: 0, y: 200, z: 0}
-  variation: 100
+  variation: 50
   alphaFadeSpeed: 0.5
   image: {fileID: 8276991379627749686}
   sprites:

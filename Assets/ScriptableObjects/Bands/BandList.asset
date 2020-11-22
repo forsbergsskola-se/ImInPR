@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bands:
   - {fileID: 11400000, guid: fb19bd737c2081642a2c8122e4be5164, type: 2}
-  - {fileID: 11400000, guid: 25124984807de194694ee5acb04b2708, type: 2}
   - {fileID: 11400000, guid: 155949067b867b248bf4fd4a5fdb27c6, type: 2}
+  - {fileID: 11400000, guid: 25124984807de194694ee5acb04b2708, type: 2}
   - {fileID: 11400000, guid: 93e8f17ad016840a7ab9ff3b3d003e5d, type: 2}
   - {fileID: 11400000, guid: 468b40eae3bcf49a1b4ebe3be12c6573, type: 2}
   - {fileID: 11400000, guid: d553987e4065745c2836d8f4cd8dcdb0, type: 2}

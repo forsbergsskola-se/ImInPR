@@ -20,7 +20,7 @@ public class SoundManager : MonoBehaviour
 
     private void Update()
     {
-        if (_boomBox.isPlaying)
+        if (_boomBox.IsPlaying)
         {
             backgroundMusicPlayer.Pause();
         }

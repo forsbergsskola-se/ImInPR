@@ -9,9 +9,13 @@ public class ImagePopUp : MonoBehaviour
     public Image image;
     public Sprite[] sprites;
     
+    private float ScreenRelation => (float)Screen.width * Screen.height / 2073600;
+    private float RealVariation => variation * ScreenRelation;
+    private Vector3 RealMoveDirection => moveDirection * ScreenRelation;
+    
     void Start() {
         this.variation = Random.Range(-this.variation, this.variation);
-        this.transform.position += new Vector3(Random.Range(-this.variation, this.variation), 0f, 0f);
+        this.transform.position += new Vector3(RealVariation, 0f, 0f);
         this.moveDirection.x += this.variation;
     }
     
@@ -22,7 +26,7 @@ public class ImagePopUp : MonoBehaviour
 
     private void Update()
     {
-        this.transform.position += this.moveDirection * Time.deltaTime;
+        this.transform.position += RealMoveDirection * Time.deltaTime;
         var color = image.color;
         color.a -= this.alphaFadeSpeed * Time.deltaTime;
         image.color = color;
