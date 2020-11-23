@@ -17,7 +17,7 @@ public class BounceAnimation : MonoBehaviour
 
     private void Start()
     {
-        _startLocation = this.transform.position;
+        _startLocation = this.transform.localPosition;
         _endLocation = new Vector2(_startLocation.x, _startLocation.y + distanceToMoveY);
         waitTimeRemaining = durationBetweenReplay;
     }
@@ -26,7 +26,7 @@ public class BounceAnimation : MonoBehaviour
     {
         if (isPlaying)
         {
-            if (transform.position.y < _endLocation.y && !movingDownwards)
+            if (transform.localPosition.y < _endLocation.y && !movingDownwards)
             {
                 movingUpwards = true;
             }
@@ -40,7 +40,7 @@ public class BounceAnimation : MonoBehaviour
             elapsedTime += Time.deltaTime;
             Move();
 
-            if (transform.position.y <= _startLocation.y)
+            if (transform.localPosition.y <= _startLocation.y)
             {
                 timesToDo++;
                 movingDownwards = false;
@@ -80,9 +80,9 @@ public class BounceAnimation : MonoBehaviour
     {
         if (movingUpwards)
         {
-            transform.position = Vector2.Lerp(_startLocation, _endLocation, elapsedTime / transitionTime);
+            transform.localPosition = Vector2.Lerp(_startLocation, _endLocation, elapsedTime / transitionTime);
         }
         else
-            transform.position = Vector2.Lerp(_endLocation, _startLocation, elapsedTime / (transitionTime / downDifference));
+            transform.localPosition = Vector2.Lerp(_endLocation, _startLocation, elapsedTime / (transitionTime / downDifference));
     }
 }

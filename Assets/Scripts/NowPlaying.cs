@@ -1,6 +1,6 @@
-﻿using System;
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
+using static ResolutionRelation;
 
 public class NowPlaying : MonoBehaviour
 {
@@ -33,7 +33,7 @@ public class NowPlaying : MonoBehaviour
                 Destroy(instance.gameObject);
         }
         _startingPos = transform.position; 
-        _endPos = new Vector2(_startingPos.x + distanceToMoveOnX, _startingPos.y);
+        _endPos = new Vector2(_startingPos.x + distanceToMoveOnX * WidthRelation, _startingPos.y);
         Destroy(this.gameObject, 2 * transitionTime + durationToLive);
         
     }

@@ -1,5 +1,6 @@
 ﻿using UnityEngine.UI;
 using UnityEngine;
+using static ResolutionRelation;
 
 public class ImagePopUp : MonoBehaviour
 {
@@ -8,10 +9,8 @@ public class ImagePopUp : MonoBehaviour
     public float alphaFadeSpeed = 5f;
     public Image image;
     public Sprite[] sprites;
-    
-    private float ScreenRelation => (float)Screen.width * Screen.height / 2073600;
-    private float RealVariation => variation * ScreenRelation;
-    private Vector3 RealMoveDirection => moveDirection * ScreenRelation;
+    private float RealVariation => variation * WidthRelation;
+    private Vector3 RealMoveDirection => moveDirection * HeightRelation;
     
     void Start() {
         this.variation = Random.Range(-this.variation, this.variation);
