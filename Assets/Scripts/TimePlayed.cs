@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System;
+using System.Globalization;
 
 public static class TimePlayed
 {
@@ -8,18 +9,18 @@ public static class TimePlayed
 
     public static void Initialize(Cash cash)
     {
-        lastUpdatedTime = DateTime.Now;
-        var temp = PlayerPrefs.GetString("GameDestroyTime", DateTime.Now.ToString());
+        lastUpdatedTime = DateTime.UtcNow;
+        var temp = PlayerPrefs.GetString("GameDestroyTime", DateTime.UtcNow.ToString(CultureInfo.InvariantCulture));
         var totalPlayTime = PlayerPrefs.GetString("TotalPlayTime", DefaultTime);
-        Debug.Log(FormatPlayTime(DateTime.Parse(totalPlayTime)));
+        Debug.Log(FormatPlayTime(DateTime.Parse(totalPlayTime, CultureInfo.InvariantCulture)));
         if (temp != "")
         {
-            DateTime destroyedTime = DateTime.Parse(temp);
+            DateTime destroyedTime = DateTime.Parse(temp, CultureInfo.InvariantCulture);
             Debug.Log(lastUpdatedTime);
             Debug.Log(destroyedTime);
             var difference = (lastUpdatedTime - destroyedTime).TotalMinutes;
             Debug.Log(difference);
-            cash.TryAdd(Mathf.RoundToInt((float)(BusinessCard.GetCashPerMin() * difference)));
+            cash.Add(Mathf.RoundToInt((float)(BusinessCard.GetCashPerMin() * difference)));
         }
     }
 
@@ -30,8 +31,8 @@ public static class TimePlayed
     
     public static DateTime UpdateTimePlayed()
     {
-        var currentTime = DateTime.Now;
-        var totalPlayTime = DateTime.Parse(PlayerPrefs.GetString("TotalPlayTime" , DefaultTime));
+        var currentTime = DateTime.UtcNow;
+        var totalPlayTime = DateTime.Parse(PlayerPrefs.GetString("TotalPlayTime" , DefaultTime), CultureInfo.InvariantCulture);
         var difference = currentTime - lastUpdatedTime;
         var newTime = totalPlayTime.Add(difference);
         SaveTimePlayed();
@@ -71,8 +72,8 @@ public static class TimePlayed
 
     public static void SaveTimePlayed()
     {
-        PlayerPrefs.SetString("GameDestroyTime", DateTime.Now.ToString());
-        var timePlayed = DateTime.Parse(PlayerPrefs.GetString("TotalPlayTime", DateTime.MinValue.ToString())) + (DateTime.Now - lastUpdatedTime);
-        PlayerPrefs.SetString("TotalPlayTime", timePlayed.ToString());
+        PlayerPrefs.SetString("GameDestroyTime", DateTime.UtcNow.ToString(CultureInfo.InvariantCulture));
+        var timePlayed = DateTime.Parse(PlayerPrefs.GetString("TotalPlayTime", DateTime.MinValue.ToString(CultureInfo.InvariantCulture)), CultureInfo.InvariantCulture) + (DateTime.UtcNow - lastUpdatedTime);
+        PlayerPrefs.SetString("TotalPlayTime", timePlayed.ToString(CultureInfo.InvariantCulture));
     }
 }
