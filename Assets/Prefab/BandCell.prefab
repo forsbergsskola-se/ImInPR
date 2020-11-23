@@ -156,12 +156,96 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab8ccb8072ec14bedae6d6064e369369, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lvl: {fileID: 1374996384710272550}
-  genre: {fileID: 97848302036503289}
-  bandName: {fileID: 4933462669066368667}
-  popularity: {fileID: 2515399495657085470}
-  awareness: {fileID: 6502953261640359028}
-  logo: {fileID: 7119948980024923922}
+  lvl:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1374996384710272550}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
+        m_MethodName: set_text
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  genre:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 97848302036503289}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
+        m_MethodName: set_text
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  bandName:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4933462669066368667}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
+        m_MethodName: set_text
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  awareness:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6502953261640359028}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
+        m_MethodName: set_fillAmount
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  popularity:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2515399495657085470}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
+        m_MethodName: set_fillAmount
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  logo:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7119948980024923922}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
+        m_MethodName: set_sprite
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &6579157941141120872
 MonoBehaviour:
   m_ObjectHideFlags: 0

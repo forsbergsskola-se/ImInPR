@@ -3,9 +3,11 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using Random = UnityEngine.Random;
 
-[RequireComponent(typeof(BandUI))]
 public class BandBehaviour : MonoBehaviour, IPointerClickHandler
 {
+    public event Action<float> OnAwarenessChange;
+    public event Action<float> OnPopularityChange;
+    public event Action<int> OnLevelUp; 
     public Band bandConfig;
     public int baseCashGenerated;
     public float generateInterval = 12f;
@@ -38,8 +40,9 @@ public class BandBehaviour : MonoBehaviour, IPointerClickHandler
         bandConfig = band;
         awareness = new BandExperience(this, "Awareness", bandConfig.name);
         popularity = new BandExperience(this, "Popularity", bandConfig.name);
-        GetComponent<BandUI>().SetUp(band);
-        UpdateUI();
+        OnAwarenessChange?.Invoke(CalculateDistanceToNextLevel(awareness));
+        OnPopularityChange?.Invoke(CalculateDistanceToNextLevel(popularity));
+        OnLevelUp?.Invoke(CurrentLevel);
     }
 
     private void Update()
@@ -52,7 +55,6 @@ public class BandBehaviour : MonoBehaviour, IPointerClickHandler
         {
             GenerateTask();
         }
-
     }
 
     void GenerateTask()
@@ -77,7 +79,7 @@ public class BandBehaviour : MonoBehaviour, IPointerClickHandler
         CurrentLevel++;
         awareness.Amount = 0;
         popularity.Amount = 0;
-        UpdateUI();
+        OnLevelUp?.Invoke(CurrentLevel);
     }
 
 
@@ -89,18 +91,14 @@ public class BandBehaviour : MonoBehaviour, IPointerClickHandler
             {
                 case "Awareness":
                     awareness.Amount += rewardAmount.amount;
+                    OnAwarenessChange?.Invoke(CalculateDistanceToNextLevel(awareness));
                     break;
                 case "Popularity":
                     popularity.Amount += rewardAmount.amount;
+                    OnPopularityChange?.Invoke(CalculateDistanceToNextLevel(popularity));
                     break;
             }
         }
-        UpdateUI();
-    }
-    
-    void UpdateUI()
-    {
-        GetComponent<BandUI>().UpdateUI(CurrentLevel, CalculateDistanceToNextLevel(popularity), CalculateDistanceToNextLevel(awareness));
     }
 
     float CalculateDistanceToNextLevel(BandExperience experience)
@@ -132,7 +130,7 @@ public class BandBehaviour : MonoBehaviour, IPointerClickHandler
             if (awareness.Amount != RequiredExp)
             {
                 awareness.Amount++;
-                UpdateUI();
+                OnAwarenessChange?.Invoke(CalculateDistanceToNextLevel(awareness));
                 var popUp = Instantiate(gm.ImagePopUp, this.transform);
                 popUp.GetComponent<ImagePopUp>().SetUp(0);
             }
@@ -143,7 +141,7 @@ public class BandBehaviour : MonoBehaviour, IPointerClickHandler
             if (popularity.Amount != RequiredExp)
             {
                 popularity.Amount++; 
-                UpdateUI(); 
+                OnPopularityChange?.Invoke(CalculateDistanceToNextLevel(popularity));
                 var popUp = Instantiate(gm.ImagePopUp, this.transform); 
                 popUp.GetComponent<ImagePopUp>().SetUp(1);   
             }

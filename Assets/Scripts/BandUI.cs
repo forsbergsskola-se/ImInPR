@@ -1,24 +1,36 @@
-﻿using UnityEngine.UI;
-using TMPro;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(BandBehaviour))]
 public class BandUI : MonoBehaviour
 {
-    public Text lvl, genre, bandName;
-    public Image popularity, awareness, logo;
+    public SetString lvl, genre, bandName;
+    public SetFloat awareness, popularity;
+    public SetSprite logo;
 
     public void SetUp(Band band)
     {
-        genre.text = band.genre;
-        bandName.text = band.name;
-        logo.sprite = band.thumbnail;
+        var bandBehaviour = GetComponent<BandBehaviour>();
+        bandName.Invoke(band.name);
+        genre.Invoke(band.genre);
+        logo.Invoke(band.thumbnail);
+        bandBehaviour.OnLevelUp += BandBehaviourOnLevelUp;
+        bandBehaviour.OnPopularityChange += BandBehaviourOnPopularityChange;
+        bandBehaviour.OnAwarenessChange += BandBehaviourOnAwarenessChange;
     }
-    
-    public void UpdateUI(int currentLvl, float popularity, float awareness)
+
+    private void BandBehaviourOnAwarenessChange(float value)
     {
-        this.awareness.fillAmount = awareness;
-        this.popularity.fillAmount = popularity;
-        this.lvl.text = currentLvl.ToString();
+        awareness.Invoke(value);
+    }
+
+    private void BandBehaviourOnPopularityChange(float value)
+    {
+        popularity.Invoke(value);
+    }
+
+    private void BandBehaviourOnLevelUp(int level)
+    {
+        lvl.Invoke(level.ToString());
     }
 }

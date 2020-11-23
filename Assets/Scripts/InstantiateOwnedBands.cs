@@ -14,6 +14,7 @@ public class InstantiateOwnedBands : MonoBehaviour
         {
             if (!band.GetOwned()) continue;
             var instance = Instantiate(_gm.BandUIElement, _gm.BandUIContainer);
+            instance.GetComponent<BandUI>().SetUp(band);
             instance.GetComponent<BandBehaviour>().SetUp(band);
         }
     }
