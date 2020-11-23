@@ -1,13 +1,14 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using Random = UnityEngine.Random;
 
 public class BandBehaviour : MonoBehaviour, IPointerClickHandler
 {
-    public event Action<float> OnAwarenessChange;
-    public event Action<float> OnPopularityChange;
-    public event Action<int> OnLevelUp; 
+    public SetString onLevelUp, onGenreSetUp, onBandNameSetUp;
+    public SetFloat onAwarenessChange, onPopularityChange;
+    public SetSprite onLogoSetUp;
     public Band bandConfig;
     public int baseCashGenerated;
     public float generateInterval = 12f;
@@ -40,9 +41,12 @@ public class BandBehaviour : MonoBehaviour, IPointerClickHandler
         bandConfig = band;
         awareness = new BandExperience(this, "Awareness", bandConfig.name);
         popularity = new BandExperience(this, "Popularity", bandConfig.name);
-        OnAwarenessChange?.Invoke(CalculateDistanceToNextLevel(awareness));
-        OnPopularityChange?.Invoke(CalculateDistanceToNextLevel(popularity));
-        OnLevelUp?.Invoke(CurrentLevel);
+        onGenreSetUp.Invoke(band.genre);
+        onBandNameSetUp.Invoke(band.name);
+        onLogoSetUp.Invoke(band.thumbnail);
+        onAwarenessChange.Invoke(CalculateDistanceToNextLevel(awareness));
+        onPopularityChange.Invoke(CalculateDistanceToNextLevel(popularity));
+        onLevelUp.Invoke(CurrentLevel.ToString());
     }
 
     private void Update()
@@ -79,7 +83,7 @@ public class BandBehaviour : MonoBehaviour, IPointerClickHandler
         CurrentLevel++;
         awareness.Amount = 0;
         popularity.Amount = 0;
-        OnLevelUp?.Invoke(CurrentLevel);
+        onLevelUp.Invoke(CurrentLevel.ToString());
     }
 
 
@@ -91,11 +95,11 @@ public class BandBehaviour : MonoBehaviour, IPointerClickHandler
             {
                 case "Awareness":
                     awareness.Amount += rewardAmount.amount;
-                    OnAwarenessChange?.Invoke(CalculateDistanceToNextLevel(awareness));
+                    onAwarenessChange.Invoke(CalculateDistanceToNextLevel(awareness));
                     break;
                 case "Popularity":
                     popularity.Amount += rewardAmount.amount;
-                    OnPopularityChange?.Invoke(CalculateDistanceToNextLevel(popularity));
+                    onPopularityChange.Invoke(CalculateDistanceToNextLevel(popularity));
                     break;
             }
         }
@@ -130,7 +134,7 @@ public class BandBehaviour : MonoBehaviour, IPointerClickHandler
             if (awareness.Amount != RequiredExp)
             {
                 awareness.Amount++;
-                OnAwarenessChange?.Invoke(CalculateDistanceToNextLevel(awareness));
+                onAwarenessChange.Invoke(CalculateDistanceToNextLevel(awareness));
                 var popUp = Instantiate(gm.ImagePopUp, this.transform);
                 popUp.GetComponent<ImagePopUp>().SetUp(0);
             }
@@ -141,7 +145,7 @@ public class BandBehaviour : MonoBehaviour, IPointerClickHandler
             if (popularity.Amount != RequiredExp)
             {
                 popularity.Amount++; 
-                OnPopularityChange?.Invoke(CalculateDistanceToNextLevel(popularity));
+                onPopularityChange.Invoke(CalculateDistanceToNextLevel(popularity));
                 var popUp = Instantiate(gm.ImagePopUp, this.transform); 
                 popUp.GetComponent<ImagePopUp>().SetUp(1);   
             }

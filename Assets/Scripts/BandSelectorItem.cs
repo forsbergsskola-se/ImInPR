@@ -36,7 +36,6 @@ public class BandSelectorItem : MonoBehaviour, IPointerClickHandler
     public void OnPointerClick(PointerEventData eventData)
     {
         var instance = Instantiate(_gm.BandUIElement, _gm.BandUIContainer);
-        instance.GetComponent<BandUI>().SetUp(band);
         instance.GetComponent<BandBehaviour>().SetUp(band);
         OnItemSelected?.Invoke(this);
         band.SetOwned(true);

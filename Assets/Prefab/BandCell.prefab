@@ -156,7 +156,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab8ccb8072ec14bedae6d6064e369369, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lvl:
+--- !u!114 &6579157941141120872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 674370227573115301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e8944c9bda36412297221b5f976085d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onLevelUp:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1374996384710272550}
@@ -171,7 +183,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  genre:
+  onGenreSetUp:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 97848302036503289}
@@ -186,7 +198,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  bandName:
+  onBandNameSetUp:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 4933462669066368667}
@@ -201,7 +213,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  awareness:
+  onAwarenessChange:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 6502953261640359028}
@@ -216,7 +228,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  popularity:
+  onPopularityChange:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2515399495657085470}
@@ -231,7 +243,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  logo:
+  onLogoSetUp:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 7119948980024923922}
@@ -246,18 +258,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &6579157941141120872
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 674370227573115301}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e8944c9bda36412297221b5f976085d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   bandConfig: {fileID: 0}
   baseCashGenerated: 1
   generateInterval: 12
