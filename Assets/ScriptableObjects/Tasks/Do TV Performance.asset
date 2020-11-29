@@ -10,15 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e5a5c54164fa4eb4898b42281d392afd, type: 3}
-  m_Name: Produce Band Merchandise
+  m_Name: Do TV Performance
   m_EditorClassIdentifier: 
   rewards:
   - type: {fileID: 11400000, guid: 2317ffa7f55ed034da87eccb05142651, type: 2}
-    amount: 20
+    amount: 40
   - type: {fileID: 11400000, guid: f768b680bc22ac24591c6f0e7f8d44de, type: 2}
-    amount: 20
-  time: 1
-  cost: 50
-  levelRequirement: 1
-  description: " If you can\u2019t sell the band you can always sell their cool T-shirts."
-  outComeText: More people now know who they ... are
+    amount: 40
+  time: 6
+  cost: 200
+  levelRequirement: 7
+  description: TV is the new Radio! Get them out there. Do some calls. Pay someone.
+    Just make it happen.
+  outComeText: 

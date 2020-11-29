@@ -17,7 +17,8 @@ public class TaskUI : MonoBehaviour
     public void SetUpUI(BandTaskConfig taskConfig, float taskTime, string bandName, string cost, RewardAmount[] outcomes, int state, bool onComputer)
     {
         this.taskName.text = taskConfig.name;
-        this.timeCost.text = $"Time {taskTime} | Cost {cost}";
+        //this.timeCost.text = $"Time {taskTime} | Cost {cost}";
+        this.timeCost.text = $"{taskTime}   /   {cost} $";
         this.bandName.text = bandName;
         this.taskLevel.text = taskConfig.levelRequirement.ToString();
         foreach (var outcome in outcomes)

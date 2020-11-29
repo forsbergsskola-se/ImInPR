@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e5a5c54164fa4eb4898b42281d392afd, type: 3}
-  m_Name: Do a TV Performance
+  m_Name: Make Music Video
   m_EditorClassIdentifier: 
   rewards:
-  - type: {fileID: 11400000, guid: 2317ffa7f55ed034da87eccb05142651, type: 2}
-    amount: 40
   - type: {fileID: 11400000, guid: f768b680bc22ac24591c6f0e7f8d44de, type: 2}
     amount: 40
-  time: 6
+  - type: {fileID: 11400000, guid: 2317ffa7f55ed034da87eccb05142651, type: 2}
+    amount: 40
+  time: 10
   cost: 200
-  levelRequirement: 7
-  description: TV is the new Radio! Get them out there. Do some calls. Pay someone.
-    Just make it happen.
+  levelRequirement: 6
+  description: MTV is hot! Let's make some videos. All you need is a camera, a smoke
+    machine and fancy effects.
   outComeText: 
